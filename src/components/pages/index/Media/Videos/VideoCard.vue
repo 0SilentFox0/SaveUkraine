@@ -51,8 +51,9 @@ export default defineComponent({
   margin-bottom: 20px;
 
   .hover-mask {
-    z-index: 2;
     position: absolute;
+    top: 0;
+    z-index: 2;
 
     display: flex;
     flex-direction: column;
@@ -60,10 +61,10 @@ export default defineComponent({
     justify-content: center;
     width: 100%;
     height: 100%;
+
+    background: rgba(45, 43, 43, 0.36);
     visibility: hidden;
     opacity: 0;
-    top: 0;
-    background: rgba(45, 43, 43, 0.36);
 
     transition: all 0.4s;
 
@@ -84,9 +85,10 @@ export default defineComponent({
   }
 
   .image {
+    position: relative;
+
     width: 100%;
     height: 100%;
-    position: relative;
   }
 
   :deep(img) {

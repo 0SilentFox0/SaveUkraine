@@ -1,34 +1,68 @@
 <template>
   <div class="photo">
-    <ImageWebpWrapper :image-default="photo.png" :image-webp="photo.webp" :width="photo.width" :height="photo.height"/>
+    <div class="img">
+      <ImageWebpWrapper
+        :image-default="photo.png"
+        :image-webp="photo.webp"
+        :width="photo.width"
+        :height="photo.height" />
+    </div>
+    <div class="hover-mask"></div>
   </div>
 </template>
 
 <script lang="ts">
-import {defineComponent, PropType} from 'vue';
-import ImageWebpWrapper from "@/components/ui/ImageWebpWrapper.vue";
-import {IMedia} from "@/components/pages/index/Media/Media.types";
+import { defineComponent, PropType } from 'vue';
+import ImageWebpWrapper from '@/components/ui/ImageWebpWrapper.vue';
+import { IMedia } from '@/components/pages/index/Media/Media.types';
 
 export default defineComponent({
-  components: {ImageWebpWrapper},
+  components: { ImageWebpWrapper },
   props: {
     photo: {
       type: Object as PropType<IMedia.Photo>,
-      required: true
-    }
-  }
+      required: true,
+    },
+  },
 });
 </script>
 
 <style lang="scss" scoped>
 .photo {
   cursor: pointer;
+  position: relative;
+
+  .img {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
 
   :deep(img) {
     width: 100%;
     height: 100%;
 
     object-fit: cover;
+  }
+
+  &:hover {
+    .hover-mask {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+
+  .hover-mask {
+    z-index: 2;
+    background: rgba(45, 43, 43, 0.36);
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+
+    transition: all 0.4s;
   }
 }
 </style>
