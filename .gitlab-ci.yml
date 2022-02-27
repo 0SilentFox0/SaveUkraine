@@ -1,0 +1,21 @@
+image: google/cloud-sdk:alpine
+
+stages:
+  - Build
+  - Deploy
+  - Production
+  - Cleaning
+
+variables:
+  GCP_IMAGE_DESTINATION: gcr.io/$GCP_PROJECT_ID/$CI_PROJECT_NAME/$CI_COMMIT_REF_SLUG
+  GCP_SERVICE_META: --project $GCP_PROJECT_ID --platform managed --region $GCP_REGION
+  GCP_DEPLOY_PROD: --min-instances=1 --max-instances=10 --memory=2Gi --timeout 20
+  GCP_DEPLOY_STAGE: --min-instances=1 --max-instances=2 --memory=2Gi --timeout 20
+  GCP_DEPLOY_REVIEW: --min-instances=0 --max-instances=1 --memory=2Gi --timeout 20
+
+include:
+  - '/.gitlab-ci/_common.yml'
+  - '/.gitlab-ci/build.yml'
+  - '/.gitlab-ci/review.yml'
+  - '/.gitlab-ci/stage.yml'
+  - '/.gitlab-ci/production.yml'
