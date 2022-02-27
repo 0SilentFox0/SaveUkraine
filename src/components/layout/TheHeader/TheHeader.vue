@@ -10,11 +10,18 @@
 
         <div class="right-side">
           <div class="languages">
-            <span class="item"> EN </span>
-            <span class="item divider"> EN </span>
-            <span class="item"> EN </span>
+            <!-- <span class="item"> EN </span> -->
+            <!-- <span class="item divider"> EN </span> -->
+            <!-- <span class="item"> EN </span> -->
           </div>
-          <VButton class="button">SUPPORT UKRAINE</VButton>
+          <VButton
+            tag="a"
+            href="https://savelife.in.ua/en/donate/"
+            target="_blank"
+            rel="noopener nofollow"
+            class="button"
+            >SUPPORT UKRAINE</VButton
+          >
         </div>
       </div>
     </div>
@@ -40,10 +47,12 @@ export default defineComponent({
 });
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .header {
   position: fixed;
   top: 0;
+
+  z-index: $z-v-header;
 
   width: 100%;
 
@@ -52,8 +61,6 @@ export default defineComponent({
   background-color: $color-header;
 
   border-bottom: 1px solid $color-divider;
-
-  z-index: $z-v-header;
 }
 
 .header-container {

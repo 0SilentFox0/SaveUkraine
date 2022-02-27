@@ -20,8 +20,22 @@
             <span class="accent-text"> need all the help we can get. </span>
           </div>
           <div class="buttons">
-            <VButton class="button">DONATE TO HELP UKRAINE</VButton>
-            <VButton class="button" type="white">SHARE</VButton>
+            <VButton
+              tag="a"
+              href="https://savelife.in.ua/en/donate/"
+              target="_blank"
+              rel="noopener nofollow"
+              >DONATE TO HELP UKRAINE</VButton
+            >
+            <!-- <VButton
+              tag="a"
+              href="https://savelife.in.ua/en/donate/"
+              target="_blank"
+              rel="noopener nofollow"
+              class="button"
+              type="white"
+              >SHARE</VButton
+            > -->
           </div>
         </div>
         <div class="image-wrapper">
@@ -35,6 +49,7 @@
         </div>
       </div>
     </Container>
+    <Statistics class="welcome-stats" />
   </section>
 </template>
 
@@ -45,10 +60,11 @@ import ukraineWebp from '@/assets/img/pages/index/ua.webp';
 import ukrainePng from '@/assets/img/pages/index/ua.png';
 import VButton from '@/components/ui/VButton/VButton.vue';
 import ImageWebpWrapper from '@/components/ui/ImageWebpWrapper.vue';
-import Container from '../ui/Container.vue';
+import Container from '@/components/ui/Container.vue';
+import Statistics from '@/components/sections/Statistics.vue';
 
 export default defineComponent({
-  components: { VButton, ImageWebpWrapper, Container },
+  components: { VButton, ImageWebpWrapper, Container, Statistics },
 
   data() {
     return {
@@ -64,23 +80,66 @@ export default defineComponent({
 <style lang="scss" scoped>
 .welcome {
   height: 956px;
+
   background-image: url('@/assets/img/pages/index/home-background.png');
   background-repeat: no-repeat;
   background-position: center;
+
+  position: relative;
+}
+
+.welcome-stats {
+  position: absolute;
+  bottom: -80px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .content {
-  padding-top: calc(150px + $header-height);
   display: flex;
+  align-items: flex-start;
   justify-content: space-between;
-  align-items: center;
+  padding-top: calc(150px + $header-height);
+}
+
+.text-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-right: 90px;
 }
 
 .text {
+  margin-top: 20px;
+
   color: $color-black;
+  font-weight: 400;
+
+  font-size: 15px;
+  line-height: 24px;
 }
 
 .accent-text {
   color: $color-brand;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 72px;
+  font-family: $secondary-font;
+  line-height: 72px;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.button {
+  margin-left: 15px;
 }
 </style>
