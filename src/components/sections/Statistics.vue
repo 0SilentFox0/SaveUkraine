@@ -9,7 +9,13 @@
           <span class="text">
             {{ stat.text }}
           </span>
-          <a :href="stat.link" class="link"> Source</a>
+          <a
+            :href="stat.link"
+            target="_blank"
+            rel="noopener nofollow"
+            class="link">
+            Source</a
+          >
         </div>
       </div>
     </Container>
@@ -18,7 +24,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import Container from '../ui/Container.vue';
+import Container from '@/components/ui/Container.vue';
 
 export default defineComponent({
   components: { Container },
@@ -28,17 +34,17 @@ export default defineComponent({
         {
           title: '50,000',
           text: 'Estimated number of casualties in Ukraine',
-          link: '',
+          link: 'https://www.cfr.org/global-conflict-tracker/conflict/conflict-ukraine',
         },
         {
           title: '1.5 million',
           text: 'Internally displaced persons',
-          link: '',
+          link: 'https://www.cfr.org/global-conflict-tracker/conflict/conflict-ukraine',
         },
         {
           title: '280 miles',
           text: 'Length of front line',
-          link: '',
+          link: 'https://www.cfr.org/global-conflict-tracker/conflict/conflict-ukraine',
         },
       ],
     };

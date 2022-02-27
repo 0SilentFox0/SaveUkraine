@@ -9,10 +9,21 @@
             <span class="goal-text">{{ item }}</span>
           </div>
         </div>
-        <div class="how-to-help">
+        <div class="block how-to-help">
           <span class="title"> Ways to help </span>
           <div
             v-for="(item, index) in howToHelp"
+            :key="index"
+            class="how-to-help-item">
+            <a :href="item.link" class="how-to-help-link link">{{
+              item.text
+            }}</a>
+          </div>
+        </div>
+        <div class="block sources">
+          <span class="title">Trusted news sources </span>
+          <div
+            v-for="(item, index) in sources"
             :key="index"
             class="how-to-help-item">
             <a :href="item.link" class="how-to-help-link link">{{
@@ -52,12 +63,18 @@ export default defineComponent({
           text: 'Help Ukrainian refugees',
         },
       ],
+      sources: [
+        {
+          link: '',
+          text: 'Telegram channel in English',
+        },
+      ],
     };
   },
 });
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .what-to-do {
   padding-top: 166px;
 }
@@ -79,7 +96,7 @@ export default defineComponent({
   font-family: $secondary-font;
 }
 
-.goals {
+.block {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -104,11 +121,23 @@ export default defineComponent({
   color: $color-brand;
 }
 
-.goal-text {
+.text {
   font-weight: 500;
   font-size: 14px;
   line-height: 20px;
 
   margin-top: 10px;
+}
+
+.how-to-help-item {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 22px;
+  margin-bottom: 10px;
+}
+
+.sources,
+.hot-to-help {
+  padding-left: 40px;
 }
 </style>
