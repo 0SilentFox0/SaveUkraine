@@ -1,7 +1,7 @@
 export namespace VButtonInterface {
   export namespace Props {
     export type Size = 'reqular' | 'small';
-    export type Type = 'primary' | 'basic' | 'outline';
+    export type Type = 'basic' | 'white';
   }
 
   export type Class = [

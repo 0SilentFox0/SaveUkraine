@@ -6,29 +6,9 @@
     class="v-button"
     v-bind="$attrs"
     @click="buttonClick">
-    <!--    <SvgIcon-->
-    <!--      v-if="iconLeft"-->
-    <!--      :key="iconLeft"-->
-    <!--      :height="iconSizes[size]"-->
-    <!--      :name="iconLeft"-->
-    <!--      :width="iconSizes[size]"-->
-    <!--      class="icon-left"-->
-    <!--      fill="currentColor" />-->
-
-    <!--    <span v-if="!isIcon">-->
     <span class="text">
       <slot></slot>
     </span>
-    <!--    </span>-->
-
-    <!--    <SvgIcon-->
-    <!--      v-if="iconRight"-->
-    <!--      :key="iconRight"-->
-    <!--      :height="iconSizes[size]"-->
-    <!--      :name="iconRight"-->
-    <!--      :width="iconSizes[size]"-->
-    <!--      class="icon-right"-->
-    <!--      fill="currentColor" />-->
   </component>
 </template>
 
@@ -42,7 +22,7 @@ export default defineComponent({
     type: {
       type: String as PropType<VButtonInterface.Props.Type>,
       required: false,
-      default: 'primary',
+      default: 'basic',
     },
 
     size: {
@@ -59,22 +39,9 @@ export default defineComponent({
     tag: { type: String, default: 'button' },
     fluid: { type: Boolean, default: false },
     maxWidth: { type: String, default: 'auto' },
-    // rounded: { type: Boolean, default: false },
-    // isIcon: { type: Boolean, default: false },
-    // iconLeft: { type: String, default: '' },
-    // iconRight: { type: String, default: '' },
   },
 
   emits: ['click'],
-
-  // data: () => ({
-  //   iconSizes: {
-  //     large: '14',
-  //     big: '14',
-  //     medium: '14',
-  //     small: '12',
-  //   },
-  // }),
 
   computed: {
     classes(): VButtonInterface.Class {
@@ -82,8 +49,6 @@ export default defineComponent({
         this.size,
         this.type,
         {
-          // 'is-icon': this.isIcon,
-          // rounded: this.rounded,
           fluid: this.fluid,
         },
       ];
@@ -116,52 +81,25 @@ export default defineComponent({
   align-items: center;
   justify-content: center;
 
-  color: #ffffff;
+  color: $color-white;
 
   font-weight: 600;
 
-  border-radius: 5px;
   outline: none;
   cursor: pointer;
 
   transition: color 0.3s ease, border-color 0.3s ease, background 0.3s ease;
 
-  //&:not(.is-icon) {
-  //  .icon-left {
-  //    margin-right: 12px;
-  //  }
-  //
-  //  .icon-right {
-  //    margin-left: 12px;
-  //  }
-  //}
-
   /** Props => Disabled */
-  &:disabled {
-    color: #8287a6;
-
-    background-color: #f7f8fa;
-    border-color: #f7f8fa;
-
-    pointer-events: none;
-  }
-}
-
-.text {
-  z-index: 3;
-}
-
-.is-icon.rounded {
-  border-radius: 50%;
 }
 
 // Props => Size
 .regular {
   min-height: 50px;
-  padding: 15.5px 36px;
+  padding: 16px 24px;
 
-  font-size: 16px;
-  line-height: 19px;
+  font-size: 14px;
+  line-height: 17px;
 }
 
 .small {
@@ -174,89 +112,22 @@ export default defineComponent({
 
 // Props => Type
 .basic {
+  color: $color-white;
 
-  color: $color-basic-80;
-
-  background: $color-white;
-
-  border: 1px solid $color-basic-20;
-
-  box-shadow: 0px 1px 4px rgba(0, 12, 118, 0.08);
+  background: $color-brand;
 
   &:hover {
-    background: $color-basic-0;
-  }
-
-  &:active {
-    background: $color-basic-5;
+    background-color: $color-brand-hover;
   }
 }
 
-.primary {
-  position: relative;
+.white {
+  color: $color-black;
 
-  background: linear-gradient(180deg, #23a494 0%, #1d8a7d 100%);
-
-  &:active {
-    background: linear-gradient(180deg, #1d8a7d 0%, #23a494 100%);
-  }
-}
-
-.outline {
-  position: relative;
-
-  color: white;
-
-  background: transparent;
-
-  border: 2px solid $color-basic-70;
-  box-shadow: 0px 1px 4px rgba(0, 12, 118, 0.08);
+  background-color: $color-white;
 
   &:hover {
-    color: white !important;
-
-    border: 2px solid transparent;
+    color: $color-brand;
   }
-
-  &:active {
-    color: white !important;
-
-    background: linear-gradient(180deg, #1d8a7d 0%, #23a494 100%);
-    border: 2px solid transparent;
-  }
-}
-
-.primary:before,
-.outline:before {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: -1;
-
-  background-image: linear-gradient(
-    180deg,
-    #23a494 0%,
-    #3accba 0%,
-    #229c8e 100%
-  );
-  border-radius: 5px;
-  opacity: 0;
-
-  transition: opacity 0.3s;
-
-  content: '';
-}
-
-.primary:hover::before,
-.outline:hover::before {
-  opacity: 1;
-}
-
-.primary:active::before,
-.outline:active::before {
-  background-image: linear-gradient(180deg, #1d8a7d 0%, #23a494 100%);
-  opacity: 1;
 }
 </style>
