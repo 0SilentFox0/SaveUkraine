@@ -13,7 +13,7 @@ export default {};
   position: relative;
 
   width: 100%;
-  max-width: 1200px;
+  max-width: 1240px;
   height: 100%;
   margin: 0 auto;
   padding-right: 20px;
