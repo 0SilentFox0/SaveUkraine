@@ -38,7 +38,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import Container from '../ui/Container.vue';
+import Container from '../../ui/Container.vue';
 
 export default defineComponent({
   components: { Container },

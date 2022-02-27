@@ -8,8 +8,8 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import Welcome from '@/components/pages/Welcome.vue';
-import WhatToDo from '@/components/pages/WhatToDo.vue';
+import Welcome from '@/components/pages/index/Welcome.vue';
+import WhatToDo from '@/components/pages/index/WhatToDo.vue';
 import Media from '@/components/pages/index/Media/Media.vue';
 
 // import HeadWrapper from '@/components/ui/HeadWrapper.vue';
