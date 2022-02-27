@@ -5,10 +5,7 @@
       <Photo
         v-for="image in images"
         :key="image"
-        :height="image.height"
-        :url-png="image.png"
-        :url-webp="image.webp"
-        :width="image.width"
+        :photo="image"
         @click="openImage(image.png)" />
     </div>
     <VPopup :is-opened="!!openedImageUrl" width="1202px" @close="closeImage">
@@ -21,7 +18,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import { images } from '@/components/pages/index/Media/Photos/images';
+import { images } from '@/components/pages/index/content';
 import Photo from '@/components/pages/index/Media/Photos/Photo.vue';
 import VPopup from '@/components/ui/VPopup.vue';
 
