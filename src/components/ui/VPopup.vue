@@ -116,5 +116,7 @@ export default defineComponent({
 <style>
 .scroll-off {
   overflow-y: hidden;
+
+  margin-right: 17px;
 }
 </style>

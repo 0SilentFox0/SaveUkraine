@@ -2,7 +2,7 @@
   <section class="what-to-do">
     <Container>
       <div class="content">
-        <div class="goals">
+        <div class="block goals">
           <span class="title"> Our goal: </span>
           <div v-for="(item, index) in goals" :key="index" class="goal-item">
             <span class="goal-number">#{{ index + 1 }}</span>
@@ -10,7 +10,7 @@
           </div>
         </div>
         <div class="block how-to-help">
-          <span class="title"> Ways to help </span>
+          <span class="title"> How to help </span>
           <div
             v-for="(item, index) in howToHelp"
             :key="index"
@@ -65,8 +65,32 @@ export default defineComponent({
       ],
       sources: [
         {
-          link: '',
-          text: 'Telegram channel in English',
+          link: 'https://www.dls.gov.ua/en/government-websites-of-ukraine/',
+          text: 'Government websites of Ukraine',
+        },
+        {
+          link: 'https://www.president.gov.ua/en',
+          text: 'President of Ukraine - Official website',
+        },
+        {
+          link: 'https://twitter.com/DefenceU?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor',
+          text: 'Defence of Ukraine on Twitter ',
+        },
+        {
+          link: 'https://www.bbc.com/news/topics/cx1m7zg0gzdt/ukraine',
+          text: 'BBC News - Ukraine',
+        },
+        {
+          link: 'https://www.kyivpost.com/',
+          text: 'Kyiv Post - Ukraine’s English-language newspaper',
+        },
+        {
+          link: 'https://ukraine.ua/ukraine-news/',
+          text: 'Ukraine NOW ',
+        },
+        {
+          link: 'https://twitter.com/i/lists/1497381085268922370',
+          text: 'Ukraine at war On Twitter ',
         },
       ],
     };
@@ -77,12 +101,13 @@ export default defineComponent({
 <style lang="scss" scoped>
 .what-to-do {
   padding-top: 166px;
+  padding-bottom: 100px;
 }
 
 .content {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
 
   color: $color-black;
 }
@@ -101,8 +126,8 @@ export default defineComponent({
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-
-  width: calc(100% / 3);
+  width: 100%;
+  height: 100%;
 }
 
 .goal-item {
@@ -111,6 +136,7 @@ export default defineComponent({
   justify-content: flex-start;
   align-items: flex-start;
   margin-bottom: 20px;
+  width: 100%;
 }
 
 .goal-number {
@@ -121,12 +147,13 @@ export default defineComponent({
   color: $color-brand;
 }
 
-.text {
+.goal-text {
   font-weight: 500;
   font-size: 14px;
   line-height: 20px;
 
   margin-top: 10px;
+  max-width: 65%;
 }
 
 .how-to-help-item {
@@ -137,7 +164,8 @@ export default defineComponent({
 }
 
 .sources,
-.hot-to-help {
+.how-to-help {
   padding-left: 40px;
+  border-left: 1px solid $color-divider;
 }
 </style>
