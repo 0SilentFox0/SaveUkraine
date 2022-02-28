@@ -34,9 +34,12 @@
             v-for="(item, index) in helpInfo.sources.content"
             :key="index"
             class="how-to-help-item">
-            <a :href="item.link" class="how-to-help-link link">{{
-              item.text
-            }}</a>
+            <a
+              :href="item.link"
+              target="_blank"
+              class="how-to-help-link link"
+              >{{ item.text }}</a
+            >
           </div>
         </div>
       </div>

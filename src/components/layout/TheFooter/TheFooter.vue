@@ -36,31 +36,24 @@ export default defineComponent({
   components: { Container },
   computed: {
     currentLoacaleText() {
-      let text = {
-        follow: '',
-        contact: '',
-        contribute: '',
+      const path = this.$route.path;
+      if (path === '/ru')
+        return {
+          follow: 'ПОДПИШИСЬ В Facebook',
+          contact: 'СВЯЗЬ С НАМИ',
+          contribute: 'ПОДДЕРЖАТЬ УКРАИНСКУЮ АРМИЮ',
+        };
+      else if (path === '/ua')
+        return {
+          follow: 'ПIДПИШИСЬ У Facebook',
+          contact: 'ЗʼЯЗОК З НАМИ',
+          contribute: 'ПIДТРИМАТИ УКРАЇНСЬКУ АРМIЮ',
+        };
+      return {
+        follow: 'Follow us on Facebook',
+        contact: 'Contact us at',
+        contribute: 'Contribute to Ukrainian army',
       };
-
-      switch (this.$route.path) {
-        case '/':
-          text.follow = 'Follow us on Facebook';
-          text.contact = 'Contact us at';
-          text.contribute = 'Contribute to Ukrainian army';
-          break;
-        case '/ru':
-          text.follow = 'ПОДПИШИСЬ В Facebook';
-          text.contact = 'СВЯЗЬ С НАМИ';
-          text.contribute = 'ПОДДЕРЖАТЬ УКРАИНСКУЮ АРМИЮ';
-          break;
-        case '/ua':
-          text.follow = 'ПIДПИШИСЬ У Facebook';
-          text.contact = 'ЗʼЯЗОК З НАМИ';
-          text.contribute = 'ПIДТРИМАТИ УКРАЇНСЬКУ АРМIЮ';
-          break;
-      }
-
-      return text;
     },
   },
 });
