@@ -48,7 +48,7 @@ export default defineComponent({
     buttonText() {
       const path = this.$route.path;
       if (path === '/ru') return 'ПОМОЧЬ УКРАИНЕ';
-      else if (path === '/ua') return 'Підтримати Україну';
+      else if (path === '/ua') return 'Support Ukraine';
       return 'Support Ukraine';
     },
   },
