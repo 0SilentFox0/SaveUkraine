@@ -39,30 +39,43 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .footer {
-  background-image: url('@/assets/img/pages/index/footer-bg.png');
-  background-position: center;
-  background-repeat: no-repeat;
   height: 570px;
+
+  background-image: url('@/assets/img/pages/index/footer-bg.png');
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .content {
-  width: 100%;
-  height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+
+  @include media(tablet) {
+    max-width: 530px;
+  }
 }
 
 .text {
   margin-bottom: 10px;
   padding: 10px;
+
   color: $color-white;
   font-weight: bold;
   font-size: 72px;
-  line-height: 72px;
   font-family: $secondary-font;
+  line-height: 72px;
 
+  @include media(tablet) {
+    font-size: 52px;
+  }
+
+  @include media(mobile) {
+    font-size: 32px;
+  }
   &.black {
     background: rgba(36, 36, 36, 0.8);
   }
@@ -76,14 +89,17 @@ export default defineComponent({
   position: relative;
 
   &::before {
-    content: '';
     position: absolute;
     bottom: 10px;
     left: 50%;
-    transform: translateX(-50%);
+
     width: 97%;
     height: 2px;
+
     background-color: $color-white;
+    transform: translateX(-50%);
+
+    content: '';
   }
 }
 </style>

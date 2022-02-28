@@ -42,18 +42,20 @@ export default defineComponent({
 
 .live-label {
   display: flex;
-  justify-content: flex-start;
   align-items: center;
+  justify-content: flex-start;
   margin-bottom: 10px;
 
   .circle {
     width: 20px;
     height: 20px;
-    border-radius: 50%;
-    background-color: $color-brand;
     margin-right: 10px;
+
+    background-color: $color-brand;
+    border-radius: 50%;
     box-shadow: 0 0 17px $color-brand-hover;
-    animation: pulsate 1s ease-out infinite;
+
+    animation: pulsate 2s ease-out infinite;
   }
 
   .text {
@@ -79,12 +81,20 @@ export default defineComponent({
   display: grid;
   grid-column-gap: 40px;
   grid-template-columns: 1fr 1fr;
+
+  @include media(tablet) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .grid {
   display: grid;
   grid-column-gap: 40px;
   grid-template-columns: repeat(3, 1fr);
+
+  @include media(tablet) {
+    grid-template-columns: 1fr;
+  }
 }
 
 @keyframes pulsate {

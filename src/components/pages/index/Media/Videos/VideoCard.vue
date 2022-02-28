@@ -6,7 +6,7 @@
           <ImageWebpWrapper
             :image-default="video.thumb.png"
             :image-webp="video.thumb.webp"
-            height="210"
+            height="236"
             width="374" />
         </div>
         <div class="hover-mask">
@@ -49,6 +49,15 @@ export default defineComponent({
   width: 374px;
   height: 236px;
   margin-bottom: 20px;
+
+  @include media(tablet) {
+    width: 500px;
+  }
+
+  @include media(mobile) {
+    width: 100%;
+    max-width: 350px;
+  }
 
   .hover-mask {
     position: absolute;
@@ -98,6 +107,8 @@ export default defineComponent({
 }
 
 .title {
+  width: 100%;
+
   color: #ffffff;
   font-weight: bold;
   font-size: 18px;

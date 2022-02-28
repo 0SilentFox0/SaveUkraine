@@ -1,6 +1,6 @@
 <template>
   <section class="statistics">
-    <Container class="custom-container">
+    <div class="custom-container">
       <div class="content">
         <div v-for="(stat, index) in stats" :key="index" class="stat-item">
           <span class="title">
@@ -18,16 +18,14 @@
           >
         </div>
       </div>
-    </Container>
+    </div>
   </section>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import Container from '@/components/ui/Container.vue';
 
 export default defineComponent({
-  components: { Container },
   data() {
     return {
       stats: [
@@ -54,7 +52,22 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .custom-container {
+  position: relative;
+
   width: 1240px;
+  height: 100%;
+  margin: 0 auto;
+  @include media(laptop) {
+    max-width: 900px;
+  }
+
+  @include media(tablet) {
+    max-width: 540px;
+  }
+
+  @include media(mobile) {
+    max-width: 420px;
+  }
 }
 .content {
   display: grid;
@@ -62,26 +75,38 @@ export default defineComponent({
   gap: 40px;
 
   width: 100%;
+
+  @include media(tablet) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
   padding: 30px;
+
+  color: $color-black;
+
   background-color: $color-white;
   box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.1);
 
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-
-  color: $color-black;
+  @include media(mobile) {
+    padding: 30px 40px;
+  }
 }
 
 .title {
-  font-family: $secondary-font;
   font-weight: bold;
   font-size: 72px;
+  font-family: $secondary-font;
   line-height: 72px;
+
+  @include media(tablet) {
+    font-size: 62px;
+  }
 }
 
 .text {
