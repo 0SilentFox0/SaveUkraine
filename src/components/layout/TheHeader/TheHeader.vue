@@ -41,31 +41,8 @@ export default defineComponent({
       img: {
         logo,
       },
-      locales: [
-        {
-          slug: 'en',
-          route: '/',
-        },
-        {
-          slug: 'ru',
-          route: '/ru',
-        },
-        {
-          slug: 'ua',
-          route: '/ua',
-        },
-      ],
     };
   },
-<<<<<<< HEAD
-
-  methods: {
-    isLocaleActive(locale: string): boolean {
-      return locale === this.$route.path;
-    },
-  },
-=======
->>>>>>> 78b33e5110bdd62ab1fc938d74e50673ffcdace4
 });
 </script>
 
