@@ -1,9 +1,9 @@
 <template>
   <div class="photos">
-    <div class="title">Photos</div>
+    <div class="title"><slot name="title"></slot></div>
     <div class="photos-grid">
       <Photo
-        v-for="image in images"
+        v-for="image in photos"
         :key="image"
         :photo="image"
         @click="openImage(image.png)" />
@@ -17,16 +17,22 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
-import { images } from '@/components/pages/index/content';
+import { defineComponent, PropType } from 'vue';
 import Photo from '@/components/pages/index/Media/Photos/Photo.vue';
 import VPopup from '@/components/ui/VPopup.vue';
+import { IMedia } from '@/components/pages/index/Media/Media.types';
 
 export default defineComponent({
   components: { VPopup, Photo },
 
+  props: {
+    photos: {
+      type: Array as PropType<IMedia.Photo[]>,
+      required: true,
+    },
+  },
+
   data: () => ({
-    images,
     openedImageUrl: '',
   }),
 

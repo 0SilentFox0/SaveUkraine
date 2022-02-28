@@ -19,18 +19,18 @@ import photo8webp from '@/assets/img/pages/index/photo/photo-8.webp';
 import photo9webp from '@/assets/img/pages/index/photo/photo-9.webp';
 import photo10webp from '@/assets/img/pages/index/photo/photo-10.webp';
 
-import videoPreview1Png from '@/assets/img/pages/index/video/video-preview-1.png';
-import videoPreview1Webp from '@/assets/img/pages/index/video/video-preview-1.webp';
-import videoPreview2Png from '@/assets/img/pages/index/video/video-preview-2.png';
-import videoPreview2Webp from '@/assets/img/pages/index/video/video-preview-2.webp';
-import videoPreview3Png from '@/assets/img/pages/index/video/video-preview-3.png';
-import videoPreview3Webp from '@/assets/img/pages/index/video/video-preview-3.webp';
-import videoPreview4Png from '@/assets/img/pages/index/video/video-preview-4.png';
-import videoPreview4Webp from '@/assets/img/pages/index/video/video-preview-4.webp';
-import videoPreview5Png from '@/assets/img/pages/index/video/video-preview-5.png';
-import videoPreview5Webp from '@/assets/img/pages/index/video/video-preview-5.webp';
-import videoPreview6Png from '@/assets/img/pages/index/video/video-preview-6.png';
-import videoPreview6Webp from '@/assets/img/pages/index/video/video-preview-6.webp';
+import videoPreview1Png from '@/assets/img/pages/index/video/en/video-preview-1.png';
+import videoPreview1Webp from '@/assets/img/pages/index/video/en/video-preview-1.webp';
+import videoPreview2Png from '@/assets/img/pages/index/video/en/video-preview-2.png';
+import videoPreview2Webp from '@/assets/img/pages/index/video/en/video-preview-2.webp';
+import videoPreview3Png from '@/assets/img/pages/index/video/en/video-preview-3.png';
+import videoPreview3Webp from '@/assets/img/pages/index/video/en/video-preview-3.webp';
+import videoPreview4Png from '@/assets/img/pages/index/video/en/video-preview-4.png';
+import videoPreview4Webp from '@/assets/img/pages/index/video/en/video-preview-4.webp';
+import videoPreview5Png from '@/assets/img/pages/index/video/en/video-preview-5.png';
+import videoPreview5Webp from '@/assets/img/pages/index/video/en/video-preview-5.webp';
+import videoPreview6Png from '@/assets/img/pages/index/video/en/video-preview-6.png';
+import videoPreview6Webp from '@/assets/img/pages/index/video/en/video-preview-6.webp';
 
 import { IMedia } from '@/components/pages/index/Media/Media.types';
 
