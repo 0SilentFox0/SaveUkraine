@@ -4,23 +4,25 @@
       title="Stop war in Ukraine"
       description="Since February 24th, Ukraine is being attacked by Russian armed forces. Thanks to the unity of Ukrainians, we are standing strong but need help to get through this."
       :route="$route.path" />
-    <Welcome :stats="stats.en">
+    <Welcome :stats="stats.ua">
       <template #firstText>
-        On February, 24th its whole territory
-        <span class="accent-text">was attacked by Russian armed forces</span> -
-        from the territories of Russia and Belarus, from the sea, and the sky.
-        They are deploying paratroopers, carrying our air strikes and shoot at
-        us from across the border.
+        Вранці
+        <span class="accent">
+          24-го лютого 2022-го року, по всій Україні пролунали вибухи. Росія
+          атакувала з неба та моря, оголосивши нам війну.</span
+        >
+        Окупант перекидає на нашу територію десантні війська, стріляє по нам
+        із-за кордону з Білоруссю.
       </template>
       <template #secondText>
-        Thanks to the Army and the unity of Ukrainians, we are standing strong
-        but
-        <span class="accent-text"> need all the help we can get. </span>
+        З нашою армію та нашою єдністю, ми міцно стоїмо проти агресора. Але наша
+        мета - зупинити війну. Для цього
+        <span class="accent"> нам потрібна уся можлива допомога.</span>
       </template>
-      <template #buttonText>DONATE TO HELP UKRAINE </template>
+      <template #buttonText> ПОЖЕРТВУВАТИ КОШТИ </template>
     </Welcome>
-    <!-- <WhatToDo /> -->
-    <!-- <News />
+    <!-- <WhatToDo />
+    <News />
     <Media /> -->
   </main>
 </template>

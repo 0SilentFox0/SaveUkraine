@@ -5,7 +5,6 @@ import { createRouter } from './router';
 import { createHead } from '@vueuse/head';
 
 import VueLazyLoad from 'vue3-lazyload';
-import i18n from '@/plugins/i18n';
 
 import SvgIcon from '@/components/ui/SvgIcon.vue';
 import 'virtual:svg-icons-register';
@@ -22,7 +21,6 @@ export function createApp() {
   app.use(head);
 
   app.use(VueLazyLoad);
-  app.use(i18n);
 
   app.component('SvgIcon', SvgIcon);
 

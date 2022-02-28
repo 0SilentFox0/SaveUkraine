@@ -14,7 +14,7 @@
             target="_blank"
             rel="noopener nofollow"
             class="link">
-            {{ $t('index.stats_source') }}</a
+            {{ stat.linkText }}</a
           >
         </div>
       </div>
@@ -23,30 +23,15 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
-import i18n from '@/plugins/i18n';
+import { defineComponent, PropType } from 'vue';
+import { IStat } from './content';
 
 export default defineComponent({
-  data() {
-    return {
-      stats: [
-        {
-          title: i18n.global.t('index.stats1_value'),
-          text: i18n.global.t('index.stats1_text'),
-          link: 'https://www.cfr.org/global-conflict-tracker/conflict/conflict-ukraine',
-        },
-        {
-          title: i18n.global.t('index.stats2_value'),
-          text: i18n.global.t('index.stats2_text'),
-          link: 'https://www.cfr.org/global-conflict-tracker/conflict/conflict-ukraine',
-        },
-        {
-          title: i18n.global.t('index.stats3_value'),
-          text: i18n.global.t('index.stats3_text'),
-          link: 'https://www.cfr.org/global-conflict-tracker/conflict/conflict-ukraine',
-        },
-      ],
-    };
+  props: {
+    stats: {
+      type: Array as PropType<IStat[]>,
+      required: true,
+    },
   },
 });
 </script>

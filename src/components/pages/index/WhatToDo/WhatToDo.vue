@@ -3,7 +3,7 @@
     <Container>
       <div class="content">
         <div class="block goals">
-          <span class="title"> {{ $t('index.our_goal') }}  </span>
+          <span class="title"> {{ $t('index.our_goal') }} </span>
           <div class="goal-item-box">
             <div v-for="(item, index) in goals" :key="index" class="goal-item">
               <span class="goal-number">#{{ index + 1 }}</span>
@@ -17,9 +17,12 @@
             v-for="(item, index) in howToHelp"
             :key="index"
             class="how-to-help-item">
-            <a :href="item.link" class="how-to-help-link link">{{
-              item.text
-            }}</a>
+            <a
+              :href="item.link"
+              target="_blank"
+              class="how-to-help-link link"
+              >{{ item.text }}</a
+            >
           </div>
         </div>
         <div class="block sources">
@@ -40,8 +43,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import Container from '../../ui/Container.vue';
-import i18n from '@/plugins/i18n';
+import Container from '../../../ui/Container.vue';
 
 export default defineComponent({
   components: { Container },
@@ -160,7 +162,6 @@ export default defineComponent({
 }
 
 .goal-number {
-
   color: $color-brand;
   font-weight: bold;
   font-size: 36px;

@@ -9,24 +9,15 @@
         </div>
 
         <div class="right-side">
-          <div class="languages">
-            <span
-              v-for="locale in locales"
-              :key="locale"
-              :class="{ active: isLocaleActive(locale) }"
-              class="locale"
-              @click="setLocale(locale)"
-              >{{ locale }}</span
-            >
-          </div>
+          <Languages />
           <VButton
             class="button"
             href="https://uahelp.monobank.ua/"
             rel="noopener nofollow"
             tag="a"
             target="_blank"
-            >{{ $t('header.support') }}
-          </VButton>
+            >Support</VButton
+          >
         </div>
       </div>
     </div>
@@ -37,10 +28,11 @@
 import { defineComponent } from 'vue';
 import VButton from '@/components/ui/VButton/VButton.vue';
 import logo from '@/assets/img/global/logo.svg?url';
-import i18n from '@/plugins/i18n';
+import Languages from '@/components/layout/TheHeader/Languages.vue';
 
 export default defineComponent({
   components: {
+    Languages,
     VButton,
   },
 
@@ -49,19 +41,31 @@ export default defineComponent({
       img: {
         logo,
       },
-      locales: ['en', 'ua', 'ru'],
+      locales: [
+        {
+          slug: 'en',
+          route: '/',
+        },
+        {
+          slug: 'ru',
+          route: '/ru',
+        },
+        {
+          slug: 'ua',
+          route: '/ua',
+        },
+      ],
     };
   },
+<<<<<<< HEAD
 
   methods: {
-    setLocale(locale: string) {
-      i18n.global.locale.value = locale;
-      this.$router.replace({ query: { lang: locale } });
-    },
     isLocaleActive(locale: string): boolean {
-      return locale === i18n.global.locale.value;
+      return locale === this.$route.path;
     },
   },
+=======
+>>>>>>> 78b33e5110bdd62ab1fc938d74e50673ffcdace4
 });
 </script>
 
@@ -101,46 +105,10 @@ export default defineComponent({
   display: flex;
   align-items: center;
   justify-content: flex-end;
-}
 
-.locale {
-  margin: 0 10px;
-
-  color: $color-black;
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 17px;
-  text-transform: uppercase;
-
-  cursor: pointer;
-
-  &.active {
-    color: #e23328;
-  }
-
-  &:nth-child(2) {
-    position: relative;
-
-    &::before,
-    &::after {
-      position: absolute;
-      top: 0;
-
-      width: 1px;
-      height: 15px;
-
-      color: $color-divider;
-
-      content: '|';
-    }
-
-    &::before {
-      left: -13px;
-    }
-
-    &::after {
-      right: -8px;
-    }
+  @include media(mobile) {
+    flex-direction: row-reverse;
+    gap: 10px;
   }
 }
 
