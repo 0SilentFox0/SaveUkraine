@@ -20,8 +20,10 @@
       <template #buttonText>DONATE TO HELP UKRAINE </template>
     </Welcome>
     <!-- <WhatToDo /> -->
-    <!-- <News />
-    <Media /> -->
+    <News :news="news">
+      <template #title>LATEST NEWS</template>
+    </News>
+    <!--    <Media /> &ndash;&gt;-->
   </main>
 </template>
 
@@ -34,12 +36,14 @@ import Media from '@/components/pages/index/Media/Media.vue';
 import HeadWrapper from '@/components/ui/HeadWrapper.vue';
 
 import { stats } from '@/components/sections/content';
+import { news } from '@/components/pages/index/News/news_en';
 
 export default defineComponent({
   components: { News, Welcome, WhatToDo, Media, HeadWrapper },
   data() {
     return {
       stats,
+      news,
     };
   },
 });

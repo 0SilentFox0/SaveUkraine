@@ -21,9 +21,9 @@
       </template>
       <template #buttonText> ПОЖЕРТВУВАТИ КОШТИ </template>
     </Welcome>
-    <!-- <WhatToDo />
-    <News />
-    <Media /> -->
+    <!--    <WhatToDo />-->
+    <News :news="news"><template #title>Останні новини</template></News>
+    <!--    <Media /> -->
   </main>
 </template>
 
@@ -36,12 +36,14 @@ import Media from '@/components/pages/index/Media/Media.vue';
 import HeadWrapper from '@/components/ui/HeadWrapper.vue';
 
 import { stats } from '@/components/sections/content';
+import { news } from '@/components/pages/index/News/news_ua';
 
 export default defineComponent({
   components: { News, Welcome, WhatToDo, Media, HeadWrapper },
   data() {
     return {
       stats,
+      news,
     };
   },
 });

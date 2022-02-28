@@ -171,11 +171,7 @@ export default defineComponent({
 }
 
 .resource-logo {
-  margin-bottom: 10px;
-
-  .big & {
-    margin-bottom: 20px;
-  }
+  margin-bottom: 20px;
 }
 
 .description {
@@ -191,14 +187,15 @@ export default defineComponent({
 }
 
 .title {
-  margin-bottom: 10px;
+  margin-bottom: 20px;
+
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 22px;
+
+  /* Black */
 
   color: #242424;
-  font-weight: bold;
-  font-size: 30px;
-  font-family: Bebas Neue;
-  font-style: normal;
-  line-height: 30px;
 
   transition: all 0.3s ease-out;
 
@@ -207,11 +204,9 @@ export default defineComponent({
     text-decoration-line: underline;
   }
 
-  .medium & {
-    margin-bottom: 20px;
-  }
-
   .big & {
+    font-family: Bebas Neue;
+
     margin-bottom: 30px;
 
     font-size: 48px;

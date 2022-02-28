@@ -4,7 +4,7 @@
       <span class="circle" />
       <span class="text">Live</span>
     </div>
-    <div class="title">{{ $t('index.latest_news') }}</div>
+    <div class="title"><slot name="title"></slot></div>
     <Article :article="news[0]" size="big" />
     <div class="row-2">
       <Article :article="news[1]" size="medium" />
@@ -20,18 +20,19 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
-import liveLabel from '@/assets/img/icons/live-label.svg?url';
+import { defineComponent, PropType } from 'vue';
 import Container from '@/components/ui/Container.vue';
 import Article from '@/components/pages/index/News/Article.vue';
-import { news } from '@/components/pages/index/content';
+import { INews } from '@/components/pages/index/News/News.types';
 
 export default defineComponent({
   components: { Article, Container },
-  data: () => ({
-    liveLabel,
-    news,
-  }),
+  props: {
+    news: {
+      type: Array as PropType<INews.Article[]>,
+      required: true,
+    },
+  },
 });
 </script>
 
