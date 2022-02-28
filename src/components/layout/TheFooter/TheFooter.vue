@@ -3,7 +3,7 @@
     <Container>
       <div class="content">
         <a
-          href="https://www.facebook.com/stooopwarinukraine"
+          href=" https://www.facebook.com/stooopwarinukraine"
           target="_blank"
           class="text black underline"
           >{{ currentLoacaleText.follow }}</a
@@ -18,7 +18,7 @@
           >
         </div>
         <a
-          href="https://uahelp.monobank.ua/"
+          href="https://savelife.in.ua/en/donate/"
           target="_blank"
           class="text black underline"
           >{{ currentLoacaleText.contact }}</a

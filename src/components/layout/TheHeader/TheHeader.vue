@@ -12,7 +12,7 @@
           <Languages />
           <VButton
             class="button"
-            href="https://uahelp.monobank.ua/"
+            href="https://savelife.in.ua/en/donate/"
             rel="noopener nofollow"
             tag="a"
             target="_blank"

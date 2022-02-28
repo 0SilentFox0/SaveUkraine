@@ -70,6 +70,10 @@ const sourcesEn: IHelp = {
       text: 'Ukraine at war On Twitter',
       link: 'https://twitter.com/i/lists/1497381085268922370',
     },
+    {
+      text: 'Website to locate killed Russian soldiers',
+      link: 'https://200rf.com/',
+    },
   ],
 };
 
@@ -118,6 +122,10 @@ const sourcesRu: IHelp = {
     {
       text: 'BBC News - Украина',
       link: 'https://www.bbc.com/ukrainian',
+    },
+    {
+      text: 'Сайт для поиска убитых Российских солдат',
+      link: 'https://200rf.com/',
     },
   ],
 };
@@ -179,6 +187,10 @@ const sourcesUa: IHelp = {
     {
       text: 'Володимир Зеленский у Twitter',
       link: 'https://twitter.com/zelenskyyua?s=21',
+    },
+    {
+      text: 'Сайт для пошуку вбитих Російських солдатів',
+      link: 'https://200rf.com/',
     },
   ],
 };
