@@ -13,18 +13,19 @@ import { defineComponent } from 'vue';
 import TheHeader from '@/components/layout/TheHeader/TheHeader.vue';
 import TheFooter from '@/components/layout/TheFooter/TheFooter.vue';
 
+import { initGTag } from '@/utils/google-gtag';
+
 export default defineComponent({
   name: 'DefaultLayout',
   components: {
     TheHeader,
     TheFooter,
   },
-
-  setup() {},
-
-  computed: {},
-
-  mounted() {},
+  mounted() {
+    window.addEventListener('load', () => {
+      initGTag();
+    });
+  },
 });
 </script>
 
