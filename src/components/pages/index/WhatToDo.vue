@@ -3,14 +3,14 @@
     <Container>
       <div class="content">
         <div class="block goals">
-          <span class="title"> Our goal: </span>
+          <span class="title"> {{ $t('index.our_goal') }} </span>
           <div v-for="(item, index) in goals" :key="index" class="goal-item">
             <span class="goal-number">#{{ index + 1 }}</span>
             <span class="goal-text">{{ item }}</span>
           </div>
         </div>
         <div class="block how-to-help">
-          <span class="title"> How to help </span>
+          <span class="title"> {{ $t('index.how_to_help') }} </span>
           <div
             v-for="(item, index) in howToHelp"
             :key="index"
@@ -21,7 +21,7 @@
           </div>
         </div>
         <div class="block sources">
-          <span class="title">Trusted news sources </span>
+          <span class="title">{{ $t('index.trusted_sources') }} </span>
           <div
             v-for="(item, index) in sources"
             :key="index"
@@ -39,58 +39,59 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import Container from '../../ui/Container.vue';
+import i18n from '@/plugins/i18n';
 
 export default defineComponent({
   components: { Container },
   data() {
     return {
       goals: [
-        'Stop War in Ukraine',
-        'Shout out support for Ukrainian people who leave in fear',
-        'Demand Global Leaders to stop the war in Ukraine by implementing economical, political and personal levarages',
+        i18n.global.t('index.goals[0]'),
+        i18n.global.t('index.goals[1]'),
+        i18n.global.t('index.goals[2]'),
       ],
       howToHelp: [
         {
           link: 'https://bank.gov.ua/en/news/all/natsionalniy-bank-vidkriv-spetsrahunok-dlya-zboru-koshtiv-na-potrebi-armiyi',
-          text: 'Donate to Ukrainian Army',
+          text: i18n.global.t('index.how_to_help_links[0]'),
         },
         {
           link: 'https://savelife.in.ua/en/donate/',
-          text: 'Donate to Ukrainian civilians',
+          text: i18n.global.t('index.how_to_help_links[1]'),
         },
         {
           link: 'https://www.ukrainenow.org/i-can-host',
-          text: 'Help Ukrainian refugees',
+          text: i18n.global.t('index.how_to_help_links[2]'),
         },
       ],
       sources: [
         {
           link: 'https://www.dls.gov.ua/en/government-websites-of-ukraine/',
-          text: 'Government websites of Ukraine',
+          text: i18n.global.t('index.trusted_sources_links[0]'),
         },
         {
           link: 'https://www.president.gov.ua/en',
-          text: 'President of Ukraine - Official website',
+          text: i18n.global.t('index.trusted_sources_links[1]'),
         },
         {
           link: 'https://twitter.com/DefenceU?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor',
-          text: 'Defence of Ukraine on Twitter ',
+          text: i18n.global.t('index.trusted_sources_links[2]'),
         },
         {
           link: 'https://www.bbc.com/news/topics/cx1m7zg0gzdt/ukraine',
-          text: 'BBC News - Ukraine',
+          text: i18n.global.t('index.trusted_sources_links[3]'),
         },
         {
           link: 'https://www.kyivpost.com/',
-          text: 'Kyiv Post - Ukraine’s English-language newspaper',
+          text: i18n.global.t('index.trusted_sources_links[4]'),
         },
         {
           link: 'https://ukraine.ua/ukraine-news/',
-          text: 'Ukraine NOW ',
+          text: i18n.global.t('index.trusted_sources_links[5]'),
         },
         {
           link: 'https://twitter.com/i/lists/1497381085268922370',
-          text: 'Ukraine at war On Twitter ',
+          text: i18n.global.t('index.trusted_sources_links[6]'),
         },
       ],
     };
@@ -141,7 +142,6 @@ export default defineComponent({
 }
 
 .goal-number {
-
   color: $color-brand;
   font-weight: bold;
   font-size: 36px;

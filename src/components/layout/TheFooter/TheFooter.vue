@@ -6,10 +6,10 @@
           href="https://www.facebook.com/Stopwarinukraine/"
           target="_blank"
           class="text black underline"
-          >Follow us on Facebook</a
+          >{{ $t('footer.follow') }}</a
         >
         <div class="text black">
-          Contact us at
+          {{ $t('footer.contact') }}
           <a
             href="mailto:help@stopwarukraine.com"
             target="_blank"
@@ -21,7 +21,7 @@
           href="https://savelife.in.ua/en/donate/"
           target="_blank"
           class="text accent underline"
-          >Contribute to Ukrainian army</a
+          >{{ $t('footer.contribute') }}</a
         >
       </div>
     </Container>
@@ -39,29 +39,31 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .footer {
-  background-image: url('@/assets/img/pages/index/footer-bg.png');
-  background-position: center;
-  background-repeat: no-repeat;
   height: 570px;
+
+  background-image: url('@/assets/img/pages/index/footer-bg.png');
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .content {
-  width: 100%;
-  height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
 }
 
 .text {
   margin-bottom: 10px;
   padding: 10px;
+
   color: $color-white;
   font-weight: bold;
   font-size: 72px;
-  line-height: 72px;
   font-family: $secondary-font;
+  line-height: 72px;
 
   &.black {
     background: rgba(36, 36, 36, 0.8);
@@ -76,14 +78,17 @@ export default defineComponent({
   position: relative;
 
   &::before {
-    content: '';
     position: absolute;
     bottom: 10px;
     left: 50%;
-    transform: translateX(-50%);
+
     width: 97%;
     height: 2px;
+
     background-color: $color-white;
+    transform: translateX(-50%);
+
+    content: '';
   }
 }
 </style>

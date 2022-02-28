@@ -14,7 +14,7 @@
             target="_blank"
             rel="noopener nofollow"
             class="link">
-            Source</a
+            {{ $t('index.stats_source') }}</a
           >
         </div>
       </div>
@@ -25,6 +25,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import Container from '@/components/ui/Container.vue';
+import i18n from '@/plugins/i18n';
 
 export default defineComponent({
   components: { Container },
@@ -32,18 +33,18 @@ export default defineComponent({
     return {
       stats: [
         {
-          title: '50,000',
-          text: 'Estimated number of casualties in Ukraine',
+          title: i18n.global.t('index.stats1_value'),
+          text: i18n.global.t('index.stats1_text'),
           link: 'https://www.cfr.org/global-conflict-tracker/conflict/conflict-ukraine',
         },
         {
-          title: '1.5 million',
-          text: 'Internally displaced persons',
+          title: i18n.global.t('index.stats2_value'),
+          text: i18n.global.t('index.stats2_text'),
           link: 'https://www.cfr.org/global-conflict-tracker/conflict/conflict-ukraine',
         },
         {
-          title: '280 miles',
-          text: 'Length of front line',
+          title: i18n.global.t('index.stats3_value'),
+          text: i18n.global.t('index.stats3_text'),
           link: 'https://www.cfr.org/global-conflict-tracker/conflict/conflict-ukraine',
         },
       ],
@@ -65,22 +66,22 @@ export default defineComponent({
 }
 
 .stat-item {
-  padding: 30px;
-  background-color: $color-white;
-  box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.1);
-
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
   align-items: flex-start;
+  justify-content: flex-start;
+  padding: 30px;
 
   color: $color-black;
+
+  background-color: $color-white;
+  box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.1);
 }
 
 .title {
-  font-family: $secondary-font;
   font-weight: bold;
   font-size: 72px;
+  font-family: $secondary-font;
   line-height: 72px;
 }
 

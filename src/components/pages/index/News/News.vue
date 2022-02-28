@@ -3,7 +3,7 @@
     <div class="live-label">
       <img :src="liveLabel" width="83" height="30" />
     </div>
-    <div class="title">latest news</div>
+    <div class="title">{{ $t('index.latest_news') }}</div>
     <Article :article="news[0]" size="big" />
     <div class="row-2">
       <Article :article="news[1]" size="medium" />
