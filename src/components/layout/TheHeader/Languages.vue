@@ -4,7 +4,7 @@
     :class="{ active: dropdownOpened }"
     @click="toggleDropdown">
     <span class="language">
-      {{ activeItemSlug }}
+      {{ activeItemSlug?.name }}
     </span>
     <SvgIcon name="globe" width="16" height="16" fill="currentColor" />
   </div>
