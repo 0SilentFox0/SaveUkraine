@@ -53,6 +53,7 @@ export default defineComponent({
   color: #eff0f1;
   font-weight: bold;
   font-size: 60px;
+  font-family: Bebas Neue;
   font-style: normal;
   line-height: 76px;
 }

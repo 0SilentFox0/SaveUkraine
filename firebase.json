@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "site": "leadsforce-landing",
+    "site": "stopwarukraine",
     "public": "dist/static",
     "headers": [
       {
