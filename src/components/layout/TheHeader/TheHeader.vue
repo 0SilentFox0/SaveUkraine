@@ -46,20 +46,10 @@ export default defineComponent({
 
   computed: {
     buttonText() {
-      let text = '';
-      switch (this.$route.path) {
-        case '/':
-          text = 'Support Ukraine';
-          break;
-        case '/ru':
-          text = 'ПОМОЧЬ УКРАИНЕ';
-          break;
-        case '/ua':
-          text = 'Підтримати Україну';
-          break;
-      }
-
-      return text;
+      const path = this.$route.path;
+      if (path === '/ru') return 'ПОМОЧЬ УКРАИНЕ';
+      else if (path === '/ua') return 'Підтримати Україну';
+      return 'Support Ukraine';
     },
   },
 });
