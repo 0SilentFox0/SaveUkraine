@@ -6,7 +6,7 @@
           <ImageWebpWrapper
             :image-default="video.thumb.png"
             :image-webp="video.thumb.webp"
-            height="236"
+            height="210"
             width="374" />
         </div>
         <div class="hover-mask">

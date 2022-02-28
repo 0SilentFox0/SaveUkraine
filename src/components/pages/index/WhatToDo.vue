@@ -62,6 +62,10 @@ export default defineComponent({
           link: 'https://www.ukrainenow.org/i-can-host',
           text: 'Help Ukrainian refugees',
         },
+        {
+          link: 'https://helpukrainewin.org/',
+          text: 'Sources to help and donate ',
+        },
       ],
       sources: [
         {
@@ -141,7 +145,6 @@ export default defineComponent({
 }
 
 .goal-number {
-
   color: $color-brand;
   font-weight: bold;
   font-size: 36px;

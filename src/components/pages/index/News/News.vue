@@ -53,7 +53,7 @@ export default defineComponent({
     background-color: $color-brand;
     margin-right: 10px;
     box-shadow: 0 0 17px $color-brand-hover;
-    animation: pulsate 2s ease-out infinite;
+    animation: pulsate 1s ease-out infinite;
   }
 
   .text {
