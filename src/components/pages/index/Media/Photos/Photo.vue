@@ -29,13 +29,15 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .photo {
-  cursor: pointer;
   position: relative;
 
+  cursor: pointer;
+
   .img {
+    position: relative;
+
     width: 100%;
     height: 100%;
-    position: relative;
   }
 
   :deep(img) {
@@ -53,14 +55,16 @@ export default defineComponent({
   }
 
   .hover-mask {
+    position: absolute;
+    top: 0;
     z-index: 2;
+
+    width: 100%;
+    height: 100%;
+
     background: rgba(45, 43, 43, 0.36);
     visibility: hidden;
     opacity: 0;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
 
     transition: all 0.4s;
   }

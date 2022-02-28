@@ -113,19 +113,20 @@ export default defineComponent({
 }
 
 .title {
-  font-weight: bold;
-  font-size: 36px;
-  line-height: 36px;
   margin-bottom: 30px;
 
+  font-weight: bold;
+  font-size: 36px;
+
   font-family: $secondary-font;
+  line-height: 36px;
 }
 
 .block {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
   align-items: flex-start;
+  justify-content: flex-start;
   width: 100%;
   height: 100%;
 }
@@ -133,39 +134,42 @@ export default defineComponent({
 .goal-item {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
   align-items: flex-start;
-  margin-bottom: 20px;
+  justify-content: flex-start;
   width: 100%;
+  margin-bottom: 20px;
 }
 
 .goal-number {
+
+  color: $color-brand;
   font-weight: bold;
   font-size: 36px;
   line-height: 44px;
-
-  color: $color-brand;
 }
 
 .goal-text {
+  max-width: 65%;
+
+  margin-top: 10px;
+
   font-weight: 500;
   font-size: 14px;
   line-height: 20px;
-
-  margin-top: 10px;
-  max-width: 65%;
 }
 
 .how-to-help-item {
+  margin-bottom: 10px;
+
   font-weight: 500;
   font-size: 14px;
   line-height: 22px;
-  margin-bottom: 10px;
 }
 
 .sources,
 .how-to-help {
   padding-left: 40px;
+
   border-left: 1px solid $color-divider;
 }
 </style>

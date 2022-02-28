@@ -19,7 +19,14 @@ import img8webp from '@/assets/img/pages/index/photo-8.webp';
 import img9webp from '@/assets/img/pages/index/photo-9.webp';
 import img10webp from '@/assets/img/pages/index/photo-10.webp';
 
+import article1png from '@/assets/img/pages/index/article-1.png';
+import article1webp from '@/assets/img/pages/index/article-1.webp';
+
+import theGuardian from '@/assets/img/pages/index/the-guardian.svg?url';
+import bbc from '@/assets/img/pages/index/bbc.svg?url';
+
 import { IMedia } from '@/components/pages/index/Media/Media.types';
+import { INews } from '@/components/pages/index/News/News.types';
 
 export const images: IMedia.Photo[] = [
   {
@@ -132,5 +139,105 @@ export const videos: IMedia.Video[] = [
       webp: img5webp,
     },
     url: 'https://youtu.be/dZJ7zIB-qhU',
+  },
+];
+
+export const news: INews.Article[] = [
+  {
+    title:
+      'Ukraine fighting to stop ‘a new iron curtain’ after Russian invasion',
+    description:
+      'Ukraine’s president, Volodymyr Zelenskiy, has said his compatriots are fighting to stop “a new iron curtain” falling across the country after Russian forces launched a huge and long-dreaded invasion that has sparked fears of the biggest war Europe has seen since 1945.',
+    resourceIcon: theGuardian,
+    url: '#',
+    img: {
+      png: article1png,
+      webp: article1webp,
+    },
+  },
+  {
+    title: 'Ukraine conflict: Your guide to understanding day three',
+    description:
+      'We saw men, in jeans and trainers, taking up position: the luxury of camouflage protection not possible in this moment of crisis. Makeshift roadblocks had been assembled.',
+    resourceIcon: bbc,
+    url: '#',
+    img: {
+      png: article1png,
+      webp: article1webp,
+    },
+  },
+  {
+    title:
+      'The return of large-scale war to Europe Russia’s invasion of Ukraine',
+    description:
+      'February 24th, as dawn broke over Ukraine, that Vladimir Putin, Russia’s president, took to television to declare war on Ukraine in the form of a “special military operation” to “denazify” the country.',
+    url: '#',
+    img: {
+      png: article1png,
+      webp: article1webp,
+    },
+  },
+  {
+    title: 'In pictures: Destruction and fear as war hits Ukraine',
+    description:
+      'Russian forces have launched a military assault on neighbouring Ukraine, crossing its borders and bombing military targets near big cities.',
+    url: '#',
+    img: {
+      png: article1png,
+      webp: article1webp,
+    },
+  },
+
+  {
+    title: 'Ukraine War: Vladimir Putin has gambled everything and lost',
+    description:
+      'Overnight, Russia became a pariah state. The West has already imposed an expanding range of sanctions with more expected. International opinion has almost unanimously condemned Putin’s war of aggression, and thousands of his own citizens have expressed their opposition to the war in demonstrations and petitions.',
+    url: '#',
+    resourceIcon: bbc,
+    img: {
+      png: article1png,
+      webp: article1webp,
+    },
+  },
+  {
+    title:
+      'Russia out, down with Putin!’: Worldwide protests held in solidarity with Ukraine',
+    description:
+      'Moscow’s invasion has sparked global outcry and prompted punishing sanctions from the West, some directed against Russian President Vladimir Putin himself.',
+    url: '#',
+    img: {
+      png: article1png,
+      webp: article1webp,
+    },
+  },
+  {
+    title: 'Ukraine conflict: Russian forces attack from three sides',
+    description:
+      "Russian forces have launched a major assault on Ukraine, firing missiles on cities and military targets. The invasion by land, air and sea began after a pre-dawn TV address where Russian President Vladimir Putin demanded that Ukraine's military lay down its arms.",
+    url: '#',
+    img: {
+      png: article1png,
+      webp: article1webp,
+    },
+  },
+  {
+    title: 'Ukraine conflict: Russian forces attack from three sides',
+    description:
+      "Russian forces have launched a major assault on Ukraine, firing missiles on cities and military targets. The invasion by land, air and sea began after a pre-dawn TV address where Russian President Vladimir Putin demanded that Ukraine's military lay down its arms.",
+    url: '#',
+    img: {
+      png: article1png,
+      webp: article1webp,
+    },
+  },
+  {
+    title: 'Ukraine conflict: Russian forces attack from three sides',
+    description:
+      "Russian forces have launched a major assault on Ukraine, firing missiles on cities and military targets. The invasion by land, air and sea began after a pre-dawn TV address where Russian President Vladimir Putin demanded that Ukraine's military lay down its arms.",
+    url: '#',
+    img: {
+      png: article1png,
+      webp: article1webp,
+    },
   },
 ];

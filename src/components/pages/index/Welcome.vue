@@ -79,19 +79,21 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .welcome {
+
+  position: relative;
+
   height: 956px;
 
   background-image: url('@/assets/img/pages/index/home-background.png');
   background-repeat: no-repeat;
   background-position: center;
-
-  position: relative;
 }
 
 .welcome-stats {
   position: absolute;
   bottom: -80px;
   left: 50%;
+
   transform: translateX(-50%);
 }
 
