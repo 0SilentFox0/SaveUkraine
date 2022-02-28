@@ -66,6 +66,14 @@ export default defineComponent({
   grid-template-columns: repeat(3, 374px);
   width: 1200px;
 
+  @include media(laptop) {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    width: 100%;
+  }
+
   @include media(tablet) {
     display: flex;
     flex-direction: column;

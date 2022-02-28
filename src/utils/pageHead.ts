@@ -6,8 +6,6 @@ export interface PageHeadInterface {
   image?: string;
 }
 
-import ogImage from '@/assets/img/global/og.png';
-
 export function pageHead({
   title,
   route,
@@ -48,7 +46,7 @@ export function pageHead({
       },
       {
         property: 'og:image',
-        content: ogImage,
+        content: 'https://stopwarukraine.com/og.png',
         hid: 'og:image',
       },
     ],
