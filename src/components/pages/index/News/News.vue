@@ -76,6 +76,11 @@ export default defineComponent({
   font-family: $secondary-font;
   font-style: normal;
   line-height: 72px;
+
+  @include media(tablet) {
+    font-size: 44px;
+    line-height: 50px;
+  }
 }
 
 .row-2 {

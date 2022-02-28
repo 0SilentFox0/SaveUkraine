@@ -21,7 +21,7 @@
           href="https://savelife.in.ua/en/donate/"
           target="_blank"
           class="text black underline"
-          >{{ currentLoacaleText.contact }}</a
+          >{{ currentLoacaleText.contribute }}</a
         >
       </div>
     </Container>

@@ -31,7 +31,7 @@ import { INews } from '@/components/pages/index/News/News.types';
 export const news: INews.Article[] = [
   {
     title:
-      'Ukraine fighting to stop ‘a new iron curtain’ after Russian invasion',
+      'Ukraine fighting to stop "a new iron curtain" after Russian invasion',
     description:
       'Ukraine’s president, Volodymyr Zelenskiy, has said his compatriots are fighting to stop “a new iron curtain” falling across the country after Russian forces launched a huge and long-dreaded invasion that has sparked fears of the biggest war Europe has seen since 1945.',
     resourceIcon: theGuardian,

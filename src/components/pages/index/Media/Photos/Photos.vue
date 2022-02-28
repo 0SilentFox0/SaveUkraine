@@ -63,6 +63,11 @@ export default defineComponent({
   font-style: normal;
   line-height: 76px;
   text-transform: uppercase;
+
+  @include media(tablet) {
+    font-size: 44px;
+    line-height: 50px;
+  }
 }
 
 .photos-grid {
