@@ -20,7 +20,7 @@
         <a
           href="https://savelife.in.ua/en/donate/"
           target="_blank"
-          class="text accent underline"
+          class="text black underline"
           >Contribute to Ukrainian army</a
         >
       </div>
@@ -69,37 +69,43 @@ export default defineComponent({
   font-family: $secondary-font;
   line-height: 72px;
 
+  cursor: pointer;
+
+  transition: $transition-default;
+
   @include media(tablet) {
     font-size: 52px;
   }
 
   @include media(mobile) {
-    font-size: 32px;
-  }
-  &.black {
-    background: rgba(36, 36, 36, 0.8);
+    font-size: 36px;
+    line-height: 36px;
   }
 
-  &.accent {
-    background: rgba(226, 51, 40, 0.8);
+  &.black {
+    background: rgba(36, 36, 36, 0.8);
+    &:hover {
+      background: rgba(226, 51, 40, 0.8);
+    }
   }
 }
 
 .underline {
-  position: relative;
+  // border-bottom: 3px solid rgb(255, 255, 255);
+  // position: relative;
 
-  &::before {
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
+  // &::before {
+  //   position: absolute;
+  //   bottom: 10px;
+  //   left: 50%;
 
-    width: 97%;
-    height: 2px;
+  //   width: 97%;
+  //   height: 2px;
 
-    background-color: $color-white;
-    transform: translateX(-50%);
+  //   background-color: $color-white;
+  //   transform: translateX(-50%);
 
-    content: '';
-  }
+  //   content: '';
+  // }
 }
 </style>
