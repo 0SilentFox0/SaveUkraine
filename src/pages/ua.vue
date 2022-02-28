@@ -1,8 +1,8 @@
 <template>
   <main class="main">
     <HeadWrapper
-      title="Stop war in Ukraine"
-      description="Since February 24th, Ukraine is being attacked by Russian armed forces. Thanks to the unity of Ukrainians, we are standing strong but need help to get through this."
+      title="Зупинимо агресію проти України разом"
+      description="Подивись, як російська армія вмивається в крові українських мирних жителів. Світ ніяк не може виправдати це. Ви повинні знати правду."
       :route="$route.path" />
     <Welcome :stats="stats.ua">
       <template #firstText>
