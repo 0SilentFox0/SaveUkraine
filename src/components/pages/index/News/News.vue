@@ -81,7 +81,9 @@ export default defineComponent({
   display: grid;
   grid-column-gap: 40px;
   grid-template-columns: 1fr 1fr;
-
+  @include media(laptop) {
+    grid-template-columns: 1fr;
+  }
   @include media(tablet) {
     grid-template-columns: 1fr;
   }
@@ -91,7 +93,9 @@ export default defineComponent({
   display: grid;
   grid-column-gap: 40px;
   grid-template-columns: repeat(3, 1fr);
-
+  @include media(laptop) {
+    grid-template-columns: 1fr;
+  }
   @include media(tablet) {
     grid-template-columns: 1fr;
   }
