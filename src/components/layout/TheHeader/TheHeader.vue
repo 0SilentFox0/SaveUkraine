@@ -56,7 +56,7 @@ export default defineComponent({
   methods: {
     setLocale(locale: string) {
       i18n.global.locale.value = locale;
-      this.$router.replace({ query: { lang: locale } });
+      this.$router.push(locale);
     },
     isLocaleActive(locale: string): boolean {
       return locale === i18n.global.locale.value;
