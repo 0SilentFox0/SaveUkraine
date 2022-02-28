@@ -1,7 +1,8 @@
 <template>
   <Container class="news">
     <div class="live-label">
-      <img :src="liveLabel" width="83" height="30" />
+      <span class="circle" />
+      <span class="text">Live</span>
     </div>
     <div class="title">latest news</div>
     <Article :article="news[0]" size="big" />
@@ -40,23 +41,36 @@ export default defineComponent({
 }
 
 .live-label {
-  width: 83px;
-  height: 30px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
   margin-bottom: 10px;
 
-  img {
-    width: 100%;
-    height: 100%;
+  .circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: $color-brand;
+    margin-right: 10px;
+    box-shadow: 0 0 17px $color-brand-hover;
+    animation: pulsate 2s ease-out infinite;
+  }
+
+  .text {
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 30px;
+    text-transform: uppercase;
   }
 }
 
 .title {
   margin-bottom: 40px;
 
-  color: #242424;
+  color: $color-black;
   font-weight: bold;
   font-size: 72px;
-  font-family: Bebas Neue;
+  font-family: $secondary-font;
   font-style: normal;
   line-height: 72px;
 }
@@ -71,5 +85,29 @@ export default defineComponent({
   display: grid;
   grid-column-gap: 40px;
   grid-template-columns: repeat(3, 1fr);
+}
+
+@keyframes pulsate {
+  0% {
+    box-shadow: 0 0 0 $color-brand-hover;
+  }
+  50% {
+    box-shadow: 0 0 13px $color-brand-hover;
+  }
+  100% {
+    box-shadow: 0 0 0 $color-brand-hover;
+  }
+}
+
+@-webkit-keyframes pulsate {
+  0% {
+    box-shadow: 0 0 0 $color-brand-hover;
+  }
+  50% {
+    box-shadow: 0 0 13px $color-brand-hover;
+  }
+  100% {
+    box-shadow: 0 0 0 $color-brand-hover;
+  }
 }
 </style>
