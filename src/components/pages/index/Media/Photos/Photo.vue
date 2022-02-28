@@ -38,6 +38,15 @@ export default defineComponent({
 
     width: 100%;
     height: 100%;
+
+    @include media(tablet) {
+      max-width: 530px;
+      margin-bottom: 30px;
+    }
+
+    @include media(mobile) {
+      max-width: 350px;
+    }
   }
 
   :deep(img) {

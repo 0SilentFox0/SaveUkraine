@@ -3,10 +3,12 @@
     <Container>
       <div class="content">
         <div class="block goals">
-          <span class="title"> {{ $t('index.our_goal') }} </span>
-          <div v-for="(item, index) in goals" :key="index" class="goal-item">
-            <span class="goal-number">#{{ index + 1 }}</span>
-            <span class="goal-text">{{ item }}</span>
+          <span class="title"> {{ $t('index.our_goal') }}  </span>
+          <div class="goal-item-box">
+            <div v-for="(item, index) in goals" :key="index" class="goal-item">
+              <span class="goal-number">#{{ index + 1 }}</span>
+              <span class="goal-text">{{ item }}</span>
+            </div>
           </div>
         </div>
         <div class="block how-to-help">
@@ -103,6 +105,10 @@ export default defineComponent({
 .what-to-do {
   padding-top: 166px;
   padding-bottom: 100px;
+
+  @include media(tablet) {
+    padding-top: 440px;
+  }
 }
 
 .content {
@@ -111,6 +117,10 @@ export default defineComponent({
   gap: 20px;
 
   color: $color-black;
+
+  @include media(tablet) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .title {
@@ -132,6 +142,14 @@ export default defineComponent({
   height: 100%;
 }
 
+.goals {
+  @include media(tablet) {
+    padding-bottom: 20px;
+
+    border-bottom: 1px solid $color-divider;
+  }
+}
+
 .goal-item {
   display: flex;
   flex-direction: column;
@@ -142,6 +160,7 @@ export default defineComponent({
 }
 
 .goal-number {
+
   color: $color-brand;
   font-weight: bold;
   font-size: 36px;
@@ -171,5 +190,19 @@ export default defineComponent({
   padding-left: 40px;
 
   border-left: 1px solid $color-divider;
+
+  @include media(tablet) {
+    padding-top: 20px;
+    padding-bottom: 40px;
+    padding-left: 0;
+
+    border-bottom: 1px solid $color-divider;
+
+    border-left: none;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
 }
 </style>

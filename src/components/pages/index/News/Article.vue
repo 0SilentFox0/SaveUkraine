@@ -62,6 +62,10 @@ export default defineComponent({
   &.big {
     display: flex;
     gap: 40px;
+
+    @include media(tablet) {
+      flex-direction: column;
+    }
   }
 }
 
@@ -74,17 +78,47 @@ export default defineComponent({
     width: 580px;
     height: 350px;
     margin-bottom: 30px;
+    @include media(tablet) {
+      max-width: 500px;
+      height: 350px;
+    }
+    @include media(mobile) {
+      width: 100%;
+      max-width: 350px;
+      height: 239px;
+    }
   }
 
   .small & {
     width: 373.33px;
     height: 239px;
     margin-bottom: 30px;
+
+    @include media(tablet) {
+      width: 500px;
+      height: 350px;
+    }
+
+    @include media(mobile) {
+      width: 100%;
+      max-width: 350px;
+      height: 239px;
+    }
   }
 
   .big & {
     width: 800px;
     height: 570px;
+    @include media(tablet) {
+      max-width: 500px;
+      height: 350px;
+    }
+
+    @include media(mobile) {
+      width: 100%;
+      max-width: 350px;
+      height: 239px;
+    }
   }
 
   &:before {

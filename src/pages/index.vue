@@ -21,8 +21,6 @@ import HeadWrapper from '@/components/ui/HeadWrapper.vue';
 
 export default defineComponent({
   components: { News, Welcome, WhatToDo, Media, HeadWrapper },
-
-  data() {},
 });
 </script>
 

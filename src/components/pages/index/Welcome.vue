@@ -7,35 +7,36 @@
           <h2 class="title accent-text">#StopWarInUkraine</h2>
           <div class="text" v-html="$t('index.welcome_description_top')"></div>
           <div
-            class="text"
-            v-html="$t('index.welcome_description_bottom')"></div>
+              class="text"
+              v-html="$t('index.welcome_description_bottom')"></div>
           <div class="buttons">
             <VButton
-              href="https://savelife.in.ua/en/donate/"
-              rel="noopener nofollow"
+              class="btn"
               tag="a"
+              href="https://savelife.in.ua/en/donate/"
               target="_blank"
-              >{{ $t('index.welcome_button') }}
-            </VButton>
+              rel="noopener nofollow"
+              >{{ $t('index.welcome_button') }}</VButton
+            >
             <!-- <VButton
-            tag="a"
-            href="https://savelife.in.ua/en/donate/"
-            target="_blank"
-            rel="noopener nofollow"
-            class="button"
-            type="white"
-            >SHARE</VButton
-          > -->
+              tag="a"
+              href="https://savelife.in.ua/en/donate/"
+              target="_blank"
+              rel="noopener nofollow"
+              class="button"
+              type="white"
+              >SHARE</VButton
+            > -->
           </div>
         </div>
         <div class="image-wrapper">
           <ImageWebpWrapper
-            :image-default="img.png"
             :image-webp="img.webp"
-            alt="Ukraine"
+            :image-default="img.png"
             class="image"
+            width="549"
             height="376"
-            width="549" />
+            alt="Ukraine" />
         </div>
       </div>
     </Container>
@@ -71,11 +72,18 @@ export default defineComponent({
 .welcome {
   position: relative;
 
+  width: 100%;
   height: 956px;
 
   background-image: url('@/assets/img/pages/index/home-background.png');
   background-repeat: no-repeat;
   background-position: center;
+}
+
+.image-wrapper {
+  @include media(tablet) {
+    display: none;
+  }
 }
 
 .welcome-stats {
@@ -84,6 +92,10 @@ export default defineComponent({
   left: 50%;
 
   transform: translateX(-50%);
+
+  @include media(tablet) {
+    bottom: -360px;
+  }
 }
 
 .content {
@@ -91,6 +103,10 @@ export default defineComponent({
   align-items: flex-start;
   justify-content: space-between;
   padding-top: calc(150px + $header-height);
+
+  @include media(tablet) {
+    padding-top: calc(100px + $header-height);
+  }
 }
 
 .text-content {
@@ -98,10 +114,17 @@ export default defineComponent({
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
+
+  width: 100%;
   margin-right: 90px;
+
+  @include media(tablet) {
+    margin-right: 0;
+  }
 }
 
 .text {
+  width: 100%;
   margin-top: 20px;
 
   color: $color-black;
@@ -111,15 +134,24 @@ export default defineComponent({
   line-height: 24px;
 }
 
-:deep(.accent-text) {
+.accent-text {
   color: $color-brand;
 }
 
 .title {
+  width: 100%;
+
   font-weight: bold;
   font-size: 72px;
   font-family: $secondary-font;
   line-height: 72px;
+  @include media(tablet) {
+    font-size: 56px;
+  }
+
+  @include media(mobile) {
+    font-size: 52px;
+  }
 }
 
 .buttons {
@@ -130,9 +162,11 @@ export default defineComponent({
   margin-top: 20px;
 }
 
-.button {
-  margin-left: 15px;
-
+.btn {
   text-transform: uppercase;
+
+  @include media(mobile) {
+    width: 100%;
+  }
 }
 </style>

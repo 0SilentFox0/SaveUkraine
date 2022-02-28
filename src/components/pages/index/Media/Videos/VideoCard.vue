@@ -50,6 +50,15 @@ export default defineComponent({
   height: 236px;
   margin-bottom: 20px;
 
+  @include media(tablet) {
+    width: 500px;
+  }
+
+  @include media(mobile) {
+    width: 100%;
+    max-width: 350px;
+  }
+
   .hover-mask {
     position: absolute;
     top: 0;
@@ -98,6 +107,8 @@ export default defineComponent({
 }
 
 .title {
+  width: 100%;
+
   color: #ffffff;
   font-weight: bold;
   font-size: 18px;

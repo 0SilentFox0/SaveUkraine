@@ -53,6 +53,10 @@ export default defineComponent({
   justify-content: center;
   width: 100%;
   height: 100%;
+
+  @include media(tablet) {
+    max-width: 530px;
+  }
 }
 
 .text {
@@ -65,6 +69,13 @@ export default defineComponent({
   font-family: $secondary-font;
   line-height: 72px;
 
+  @include media(tablet) {
+    font-size: 52px;
+  }
+
+  @include media(mobile) {
+    font-size: 32px;
+  }
   &.black {
     background: rgba(36, 36, 36, 0.8);
   }
