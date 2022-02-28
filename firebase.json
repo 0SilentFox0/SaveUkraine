@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "site": "standwithukraine",
+    "site": "standwithukraine-af49d",
     "public": "dist/static",
     "headers": [
       {
