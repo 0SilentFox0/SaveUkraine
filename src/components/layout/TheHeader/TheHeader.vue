@@ -9,16 +9,7 @@
         </div>
 
         <div class="right-side">
-          <div class="languages">
-            <router-link
-              v-for="locale in locales"
-              :key="locale"
-              :to="locale.route"
-              :class="{ active: isLocaleActive(locale.route) }"
-              class="locale"
-              >{{ locale.slug }}
-            </router-link>
-          </div>
+          <Languages />
           <VButton
             class="button"
             href="https://savelife.in.ua/en/donate/"
@@ -37,9 +28,11 @@
 import { defineComponent } from 'vue';
 import VButton from '@/components/ui/VButton/VButton.vue';
 import logo from '@/assets/img/global/logo.svg?url';
+import Languages from '@/components/layout/TheHeader/Languages.vue';
 
 export default defineComponent({
   components: {
+    Languages,
     VButton,
   },
 
@@ -64,12 +57,15 @@ export default defineComponent({
       ],
     };
   },
+<<<<<<< HEAD
 
   methods: {
     isLocaleActive(locale: string): boolean {
       return locale === this.$route.path;
     },
   },
+=======
+>>>>>>> 78b33e5110bdd62ab1fc938d74e50673ffcdace4
 });
 </script>
 
@@ -109,46 +105,10 @@ export default defineComponent({
   display: flex;
   align-items: center;
   justify-content: flex-end;
-}
 
-.locale {
-  margin: 0 10px;
-
-  color: $color-black;
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 17px;
-  text-transform: uppercase;
-
-  cursor: pointer;
-
-  &.active {
-    color: #e23328;
-  }
-
-  &:nth-child(2) {
-    position: relative;
-
-    &::before,
-    &::after {
-      position: absolute;
-      top: 0;
-
-      width: 1px;
-      height: 15px;
-
-      color: $color-divider;
-
-      content: '|';
-    }
-
-    &::before {
-      left: -13px;
-    }
-
-    &::after {
-      right: -8px;
-    }
+  @include media(mobile) {
+    flex-direction: row-reverse;
+    gap: 10px;
   }
 }
 
