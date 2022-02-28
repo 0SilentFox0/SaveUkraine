@@ -4,7 +4,7 @@
     <div class="layout-content">
       <router-view />
     </div>
-    <!-- <TheFooter /> -->
+    <TheFooter />
   </div>
 </template>
 

@@ -6,10 +6,10 @@
           href="https://www.facebook.com/stooopwarinukraine"
           target="_blank"
           class="text black underline"
-          >{{ $t('footer.follow') }}</a
+          >{{ currentLoacaleText.follow }}</a
         >
         <div class="text black">
-          {{ $t('footer.contact') }}
+          {{ currentLoacaleText.contact }}
           <a
             href="mailto:help@stopwarukraine.com"
             target="_blank"
@@ -21,7 +21,7 @@
           href="https://uahelp.monobank.ua/"
           target="_blank"
           class="text black underline"
-          >{{ $t('footer.contribute') }}</a
+          >{{ currentLoacaleText.contact }}</a
         >
       </div>
     </Container>
@@ -34,6 +34,35 @@ import Container from '@/components/ui/Container.vue';
 
 export default defineComponent({
   components: { Container },
+  computed: {
+    currentLoacaleText() {
+      let text = {
+        follow: '',
+        contact: '',
+        contribute: '',
+      };
+
+      switch (this.$route.path) {
+        case '/':
+          text.follow = 'Follow us on Facebook';
+          text.contact = 'Contact us at';
+          text.contribute = 'Contribute to Ukrainian army';
+          break;
+        case '/ru':
+          text.follow = 'ПОДПИШИСЬ В Facebook';
+          text.contact = 'СВЯЗЬ С НАМИ';
+          text.contribute = 'ПОДДЕРЖАТЬ УКРАИНСКУЮ АРМИЮ';
+          break;
+        case '/ua':
+          text.follow = 'ПIДПИШИСЬ У Facebook';
+          text.contact = 'ЗʼЯЗОК З НАМИ';
+          text.contribute = 'ПIДТРИМАТИ УКРАЇНСЬКУ АРМIЮ';
+          break;
+      }
+
+      return text;
+    },
+  },
 });
 </script>
 
@@ -88,24 +117,5 @@ export default defineComponent({
       background: rgba(226, 51, 40, 0.8);
     }
   }
-}
-
-.underline {
-  // border-bottom: 3px solid rgb(255, 255, 255);
-  // position: relative;
-
-  // &::before {
-  //   position: absolute;
-  //   bottom: 10px;
-  //   left: 50%;
-
-  //   width: 97%;
-  //   height: 2px;
-
-  //   background-color: $color-white;
-  //   transform: translateX(-50%);
-
-  //   content: '';
-  // }
 }
 </style>

@@ -21,9 +21,9 @@
       </template>
       <template #buttonText> СДЕЛАТЬ ПОЖЕРТВОВАНИЕ </template>
     </Welcome>
-    <!-- <WhatToDo />
-    <News />
-    <Media /> -->
+    <WhatToDo :help-info="whatToDo.ru" />
+    <!-- <News /> -->
+    <!-- <Media /> -->
   </main>
 </template>
 
@@ -36,12 +36,14 @@ import Media from '@/components/pages/index/Media/Media.vue';
 import HeadWrapper from '@/components/ui/HeadWrapper.vue';
 
 import { stats } from '@/components/sections/content';
+import { whatToDo } from '@/components/pages/index/WhatToDo/content';
 
 export default defineComponent({
   components: { News, Welcome, WhatToDo, Media, HeadWrapper },
   data() {
     return {
       stats,
+      whatToDo,
     };
   },
 });

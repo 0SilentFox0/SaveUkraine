@@ -3,18 +3,21 @@
     <Container>
       <div class="content">
         <div class="block goals">
-          <span class="title"> {{ $t('index.our_goal') }} </span>
+          <span class="title"> {{ helpInfo.goal.title }} </span>
           <div class="goal-item-box">
-            <div v-for="(item, index) in goals" :key="index" class="goal-item">
+            <div
+              v-for="(item, index) in helpInfo.goal.content"
+              :key="index"
+              class="goal-item">
               <span class="goal-number">#{{ index + 1 }}</span>
               <span class="goal-text">{{ item }}</span>
             </div>
           </div>
         </div>
         <div class="block how-to-help">
-          <span class="title"> {{ $t('index.how_to_help') }} </span>
+          <span class="title"> {{ helpInfo.howToHelp.title }} </span>
           <div
-            v-for="(item, index) in howToHelp"
+            v-for="(item, index) in helpInfo.howToHelp.content"
             :key="index"
             class="how-to-help-item">
             <a
@@ -26,9 +29,9 @@
           </div>
         </div>
         <div class="block sources">
-          <span class="title">{{ $t('index.trusted_sources') }} </span>
+          <span class="title">{{ helpInfo.sources.title }} </span>
           <div
-            v-for="(item, index) in sources"
+            v-for="(item, index) in helpInfo.sources.content"
             :key="index"
             class="how-to-help-item">
             <a :href="item.link" class="how-to-help-link link">{{
@@ -43,62 +46,15 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import Container from '../../../ui/Container.vue';
+import Container from '@/components/ui/Container.vue';
 
 export default defineComponent({
   components: { Container },
-  data() {
-    return {
-      goals: [
-        i18n.global.t('index.goals[0]'),
-        i18n.global.t('index.goals[1]'),
-        i18n.global.t('index.goals[2]'),
-      ],
-      howToHelp: [
-        {
-          link: 'https://bank.gov.ua/en/news/all/natsionalniy-bank-vidkriv-spetsrahunok-dlya-zboru-koshtiv-na-potrebi-armiyi',
-          text: i18n.global.t('index.how_to_help_links[0]'),
-        },
-        {
-          link: 'https://savelife.in.ua/en/donate/',
-          text: i18n.global.t('index.how_to_help_links[1]'),
-        },
-        {
-          link: 'https://www.ukrainenow.org/i-can-host',
-          text: i18n.global.t('index.how_to_help_links[2]'),
-        },
-      ],
-      sources: [
-        {
-          link: 'https://www.dls.gov.ua/en/government-websites-of-ukraine/',
-          text: i18n.global.t('index.trusted_sources_links[0]'),
-        },
-        {
-          link: 'https://www.president.gov.ua/en',
-          text: i18n.global.t('index.trusted_sources_links[1]'),
-        },
-        {
-          link: 'https://twitter.com/DefenceU?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor',
-          text: i18n.global.t('index.trusted_sources_links[2]'),
-        },
-        {
-          link: 'https://www.bbc.com/news/topics/cx1m7zg0gzdt/ukraine',
-          text: i18n.global.t('index.trusted_sources_links[3]'),
-        },
-        {
-          link: 'https://www.kyivpost.com/',
-          text: i18n.global.t('index.trusted_sources_links[4]'),
-        },
-        {
-          link: 'https://ukraine.ua/ukraine-news/',
-          text: i18n.global.t('index.trusted_sources_links[5]'),
-        },
-        {
-          link: 'https://twitter.com/i/lists/1497381085268922370',
-          text: i18n.global.t('index.trusted_sources_links[6]'),
-        },
-      ],
-    };
+  props: {
+    helpInfo: {
+      type: Object,
+      required: true,
+    },
   },
 });
 </script>
