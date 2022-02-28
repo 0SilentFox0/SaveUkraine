@@ -3,7 +3,7 @@
     <Container>
       <div class="content">
         <a
-          href="https://www.facebook.com/Stopwarinukraine/"
+          href="https://www.facebook.com/stooopwarinukraine"
           target="_blank"
           class="text black underline"
           >{{ $t('footer.follow') }}</a
