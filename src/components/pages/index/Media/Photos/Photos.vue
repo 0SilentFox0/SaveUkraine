@@ -1,6 +1,6 @@
 <template>
   <div class="photos">
-    <div class="title">Photos</div>
+    <div class="title">{{ $t('index.photos') }}</div>
     <div class="photos-grid">
       <Photo
         v-for="image in images"
@@ -56,6 +56,7 @@ export default defineComponent({
   font-family: Bebas Neue;
   font-style: normal;
   line-height: 76px;
+  text-transform: uppercase;
 }
 
 .photos-grid {

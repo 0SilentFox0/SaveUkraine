@@ -10,18 +10,23 @@
 
         <div class="right-side">
           <div class="languages">
-            <!-- <span class="item"> EN </span> -->
-            <!-- <span class="item divider"> EN </span> -->
-            <!-- <span class="item"> EN </span> -->
+            <span
+              v-for="locale in locales"
+              :key="locale"
+              :class="{ active: isLocaleActive(locale) }"
+              class="locale"
+              @click="setLocale(locale)"
+              >{{ locale }}</span
+            >
           </div>
           <VButton
-            tag="a"
-            href="https://savelife.in.ua/en/donate/"
-            target="_blank"
-            rel="noopener nofollow"
             class="button"
-            >SUPPORT UKRAINE</VButton
-          >
+            href="https://savelife.in.ua/en/donate/"
+            rel="noopener nofollow"
+            tag="a"
+            target="_blank"
+            >{{ $t('header.support') }}
+          </VButton>
         </div>
       </div>
     </div>
@@ -32,17 +37,30 @@
 import { defineComponent } from 'vue';
 import VButton from '@/components/ui/VButton/VButton.vue';
 import logo from '@/assets/img/global/logo.svg?url';
+import i18n from '@/plugins/i18n';
 
 export default defineComponent({
   components: {
     VButton,
   },
+
   data() {
     return {
       img: {
         logo,
       },
+      locales: ['en', 'ua', 'ru'],
     };
+  },
+
+  methods: {
+    setLocale(locale: string) {
+      i18n.global.locale.value = locale;
+      this.$router.replace({ query: { lang: locale } });
+    },
+    isLocaleActive(locale: string): boolean {
+      return locale === i18n.global.locale.value;
+    },
   },
 });
 </script>
@@ -85,15 +103,22 @@ export default defineComponent({
   justify-content: flex-end;
 }
 
-.item {
+.locale {
   margin: 0 10px;
 
   color: $color-black;
   font-weight: 600;
   font-size: 14px;
   line-height: 17px;
+  text-transform: uppercase;
 
-  &.divider {
+  cursor: pointer;
+
+  &.active {
+    color: #e23328;
+  }
+
+  &:nth-child(2) {
     position: relative;
 
     &::before,
@@ -121,5 +146,7 @@ export default defineComponent({
 
 .button {
   margin-left: 10px;
+
+  text-transform: uppercase;
 }
 </style>

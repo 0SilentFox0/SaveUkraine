@@ -15,8 +15,13 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
+import i18n from '@/plugins/i18n';
 
-export default defineComponent({});
+export default defineComponent({
+  mounted() {
+    i18n.global.locale.value = (this.$route.query.lang as string) || 'en';
+  },
+});
 </script>
 
 <style lang="scss" scoped></style>

@@ -5,20 +5,10 @@
         <div class="text-content">
           <h2 class="title">#StandWithUkraine</h2>
           <h2 class="title accent-text">#StopWarInUkraine</h2>
-          <div class="text">
-            On February, 24th its whole territory
-            <span class="accent-text">
-              was attacked by Russian armed forces
-            </span>
-            - from the territories of Russia and Belarus, from the sea, and the
-            sky. They are deploying paratroopers, carrying our air strikes and
-            shoot at us from across the border.
-          </div>
-          <div class="text">
-            Thanks to the Army and the unity of Ukrainians, we are standing
-            strong but
-            <span class="accent-text"> need all the help we can get. </span>
-          </div>
+          <div class="text" v-html="$t('index.welcome_description_top')"></div>
+          <div
+              class="text"
+              v-html="$t('index.welcome_description_bottom')"></div>
           <div class="buttons">
             <VButton
               class="btn"
@@ -26,7 +16,7 @@
               href="https://savelife.in.ua/en/donate/"
               target="_blank"
               rel="noopener nofollow"
-              >DONATE TO HELP UKRAINE</VButton
+              >{{ $t('index.welcome_button') }}</VButton
             >
             <!-- <VButton
               tag="a"
@@ -173,6 +163,8 @@ export default defineComponent({
 }
 
 .btn {
+  text-transform: uppercase;
+
   @include media(mobile) {
     width: 100%;
   }

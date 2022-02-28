@@ -1,6 +1,6 @@
 <template>
   <div class="videos">
-    <div class="title">Videos</div>
+    <div class="title">{{ $t('index.videos') }}</div>
     <div class="grid">
       <VideoCard v-for="video in videos" :key="video.url" :video="video" />
     </div>
@@ -30,6 +30,7 @@ export default defineComponent({
   font-family: Bebas Neue;
   font-style: normal;
   line-height: 76px;
+  text-transform: uppercase;
 }
 
 .grid {

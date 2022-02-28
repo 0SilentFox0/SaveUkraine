@@ -6,10 +6,10 @@
           href="https://www.facebook.com/Stopwarinukraine/"
           target="_blank"
           class="text black underline"
-          >Follow us on Facebook</a
+          >{{ $t('footer.follow') }}</a
         >
         <div class="text black">
-          Contact us at
+          {{ $t('footer.contact') }}
           <a
             href="mailto:help@stopwarukraine.com"
             target="_blank"
@@ -20,8 +20,8 @@
         <a
           href="https://savelife.in.ua/en/donate/"
           target="_blank"
-          class="text black underline"
-          >Contribute to Ukrainian army</a
+          class="text accent underline"
+        >{{ $t('footer.contribute') }}</a
         >
       </div>
     </Container>

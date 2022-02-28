@@ -4,7 +4,7 @@
       <span class="circle" />
       <span class="text">Live</span>
     </div>
-    <div class="title">latest news</div>
+    <div class="title">{{ $t('index.latest_news') }}</div>
     <Article :article="news[0]" size="big" />
     <div class="row-2">
       <Article :article="news[1]" size="medium" />
