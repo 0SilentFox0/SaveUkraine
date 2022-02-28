@@ -21,7 +21,7 @@
       </template>
       <template #buttonText> ПОЖЕРТВУВАТИ КОШТИ </template>
     </Welcome>
-    <!--    <WhatToDo />-->
+    <WhatToDo :help-info="whatToDo.ua" />
     <News :news="news"><template #title>Останні новини</template></News>
     <!--    <Media /> -->
   </main>
@@ -37,12 +37,14 @@ import HeadWrapper from '@/components/ui/HeadWrapper.vue';
 
 import { stats } from '@/components/sections/content';
 import { news } from '@/components/pages/index/News/news_ua';
+import { whatToDo } from '@/components/pages/index/WhatToDo/content';
 
 export default defineComponent({
   components: { News, Welcome, WhatToDo, Media, HeadWrapper },
   data() {
     return {
       stats,
+      whatToDo,
       news,
     };
   },
@@ -52,5 +54,9 @@ export default defineComponent({
 <style lang="scss" scoped>
 .main {
   overflow: hidden;
+}
+
+.accent-text {
+  color: $color-brand;
 }
 </style>

@@ -19,7 +19,7 @@
       </template>
       <template #buttonText>DONATE TO HELP UKRAINE </template>
     </Welcome>
-    <!-- <WhatToDo /> -->
+    <WhatToDo :help-info="whatToDo.en" />
     <News :news="news">
       <template #title>LATEST NEWS</template>
     </News>
@@ -37,13 +37,16 @@ import HeadWrapper from '@/components/ui/HeadWrapper.vue';
 
 import { stats } from '@/components/sections/content';
 import { news } from '@/components/pages/index/News/news_en';
+import { whatToDo } from '@/components/pages/index/WhatToDo/content';
+
 
 export default defineComponent({
   components: { News, Welcome, WhatToDo, Media, HeadWrapper },
   data() {
     return {
       stats,
-      news,
+      whatToDo,
+      news
     };
   },
 });
@@ -52,5 +55,9 @@ export default defineComponent({
 <style lang="scss" scoped>
 .main {
   overflow: hidden;
+}
+
+.accent-text {
+  color: $color-brand;
 }
 </style>

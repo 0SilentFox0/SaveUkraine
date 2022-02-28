@@ -1,6 +1,11 @@
+export interface ILink {
+  text: string;
+  link: string;
+}
+
 export interface IHelp {
   title: string;
-  content: string[];
+  content: ILink[] | string[];
 }
 
 const goalEn: IHelp = {
@@ -13,36 +18,197 @@ const goalEn: IHelp = {
 };
 
 const howToHelpEn: IHelp = {
-  title: 'Trusted sources',
+  title: 'How to help',
   content: [
-    'Donate to Ukrainian Army',
-    'Donate to Ukrainian civilians',
-    'Help Ukrainian refugees',
-    'Sources to help and donate',
+    {
+      text: 'Donate to Ukrainian Army',
+      link: 'https://bank.gov.ua/en/news/all/natsionalniy-bank-vidkriv-spetsrahunok-dlya-zboru-koshtiv-na-potrebi-armiyi',
+    },
+    {
+      text: 'Donate to Ukrainian civilians',
+      link: 'https://savelife.in.ua/en/donate/',
+    },
+    {
+      text: 'Help Ukrainian refugees',
+      link: 'https://www.ukrainenow.org/i-can-host',
+    },
+    {
+      text: 'Sources to help and donate',
+      link: 'https://helpukrainewin.org/',
+    },
   ],
 };
 
 const sourcesEn: IHelp = {
   title: 'Trusted sources',
   content: [
-    'Government websites of Ukraine',
-    'President of Ukraine - Official website',
-    'Defence of Ukraine on Twitter',
-    'BBC News - Ukraine',
-    'Kyiv Post - Ukraine’s English-language newspaper ',
-    'Ukraine NOW - by the Ministry of Foreign Affairs',
-    'Ukraine at war On Twitter',
+    {
+      text: 'Government websites of Ukraine',
+      link: 'https://www.dls.gov.ua/en/government-websites-of-ukraine/',
+    },
+    {
+      text: 'President of Ukraine - Official website',
+      link: 'https://www.president.gov.ua/en',
+    },
+    {
+      text: 'Defence of Ukraine on Twitter',
+      link: 'https://twitter.com/DefenceU?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor',
+    },
+    {
+      text: 'BBC News - Ukraine',
+      link: 'https://www.bbc.com/news/topics/cx1m7zg0gzdt/ukraine',
+    },
+    {
+      text: 'Kyiv Post - Ukraine’s English-language newspaper ',
+      link: 'https://www.kyivpost.com/',
+    },
+    {
+      text: 'Ukraine NOW - by the Ministry of Foreign Affairs',
+      link: 'https://ukraine.ua/ukraine-news/',
+    },
+    {
+      text: 'Ukraine at war On Twitter',
+      link: 'https://twitter.com/i/lists/1497381085268922370',
+    },
+    {
+      text: 'Website to locate killed Russian soldiers',
+      link: 'https://200rf.com/',
+    },
+  ],
+};
+
+const goalRu: IHelp = {
+  title: 'Наша цель:',
+  content: [
+    'Остановить войну в Украине',
+    'Поддержать украинский народ, в стране покидащий свою страну',
+    'Добиться от мировых лидеров остановить войну путем  экономических, политических и персональных санкций',
+  ],
+};
+
+const howToHelpRu: IHelp = {
+  title: 'Как помочь?',
+  content: [
+    {
+      text: 'Пожертвовать на нужды украинской армии',
+      link: 'https://bank.gov.ua/en/news/all/natsionalniy-bank-vidkriv-spetsrahunok-dlya-zboru-koshtiv-na-potrebi-armiyi',
+    },
+    {
+      text: 'Помочь мирным жителям, жертвам военных действий',
+      link: 'https://savelife.in.ua/en/donate/',
+    },
+    {
+      text: 'Помочь украинским беженцам',
+      link: 'https://www.ukrainenow.org/i-can-host',
+    },
+  ],
+};
+
+const sourcesRu: IHelp = {
+  title: 'Проверенные\nновостные\nисточники',
+  content: [
+    {
+      text: 'Офис Президента Украины',
+      link: 'https://www.president.gov.ua/',
+    },
+    {
+      text: 'Министерство Внутренник Дел Украины',
+      link: 'https://www.facebook.com/mvs.gov.ua',
+    },
+    {
+      text: 'Президент Украины - Твиттер',
+      link: 'https://twitter.com/zelenskyyua?s=21',
+    },
+    {
+      text: 'BBC News - Украина',
+      link: 'https://www.bbc.com/ukrainian',
+    },
+    {
+      text: 'Сайт для поиска убитых Российских солдат',
+      link: 'https://200rf.com/',
+    },
+  ],
+};
+
+const goalUa: IHelp = {
+  title: 'Наша цiль:',
+  content: [
+    'Зупинити війну в Україні',
+    'Підтримати українців, які залишають країну у страху',
+    'Домогтися від світових лідерів зупинити війну шляхом економічних, політичних та персональних санкцій',
+  ],
+};
+
+const howToHelpUa: IHelp = {
+  title: 'Як допомогти',
+  content: [
+    {
+      text: 'Пожертвувати кошти на потреби української армії',
+      link: 'https://bank.gov.ua/en/news/all/natsionalniy-bank-vidkriv-spetsrahunok-dlya-zboru-koshtiv-na-potrebi-armiyi',
+    },
+    {
+      text: 'Допомогти мирним жителям, що стали жертвам воєнних дій',
+      link: 'https://savelife.in.ua/en/donate/',
+    },
+    {
+      text: 'Допомогти українським біженцям',
+      link: 'https://www.ukrainenow.org/i-can-host',
+    },
+    {
+      text: 'Ресурси для допомоги та збору коштів',
+      link: 'https://helpukrainewin.org/',
+    },
+  ],
+};
+
+const sourcesUa: IHelp = {
+  title: 'ПеревІренІ\nджерела\nIнформацIї',
+  content: [
+    {
+      text: 'Офіс Президента України',
+      link: 'https://www.president.gov.ua/en',
+    },
+    {
+      text: 'Офіційний вебпортал парламенту України',
+      link: 'https://www.rada.gov.ua/',
+    },
+    {
+      text: 'Генеральний штаб Збройних сил України',
+      link: 'https://www.zsu.gov.ua/All_news/ua',
+    },
+    {
+      text: 'Міністерство оборони України ',
+      link: 'https://www.facebook.com/MinistryofDefence.UA',
+    },
+    {
+      text: 'BBC News - Ukraine',
+      link: 'https://www.zsu.gov.ua/All_news/ua',
+    },
+    {
+      text: 'Володимир Зеленский у Twitter',
+      link: 'https://twitter.com/zelenskyyua?s=21',
+    },
+    {
+      text: 'Сайт для пошуку вбитих Російських солдатів',
+      link: 'https://200rf.com/',
+    },
   ],
 };
 
 export const whatToDo = {
-  goal: {
-    en: goalEn,
+  en: {
+    goal: goalEn,
+    howToHelp: howToHelpEn,
+    sources: sourcesEn,
   },
-  howToHelp: {
-    en: howToHelpEn,
+  ru: {
+    goal: goalRu,
+    howToHelp: howToHelpRu,
+    sources: sourcesRu,
   },
-  sources: {
-    en: sourcesEn,
+  ua: {
+    goal: goalUa,
+    howToHelp: howToHelpUa,
+    sources: sourcesUa,
   },
 };

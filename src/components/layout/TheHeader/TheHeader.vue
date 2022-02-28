@@ -12,12 +12,12 @@
           <Languages />
           <VButton
             class="button"
-            href="https://uahelp.monobank.ua/"
+            href="https://savelife.in.ua/en/donate/"
             rel="noopener nofollow"
             tag="a"
             target="_blank"
-            >Support</VButton
-          >
+            >{{ buttonText }}
+          </VButton>
         </div>
       </div>
     </div>
@@ -42,6 +42,25 @@ export default defineComponent({
         logo,
       },
     };
+  },
+
+  computed: {
+    buttonText() {
+      let text = '';
+      switch (this.$route.path) {
+        case '/':
+          text = 'Support Ukraine';
+          break;
+        case '/ru':
+          text = 'ПОМОЧЬ УКРАИНЕ';
+          break;
+        case '/ua':
+          text = 'Підтримати Україну';
+          break;
+      }
+
+      return text;
+    },
   },
 });
 </script>
