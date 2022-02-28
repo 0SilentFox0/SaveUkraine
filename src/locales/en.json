@@ -7,7 +7,7 @@
     "stats1_text": "Estimated number of casualties in Ukraine",
     "stats2_value": "1.5 million",
     "stats2_text": "Internally displaced persons",
-    "stats3_value": "450 miles",
+    "stats3_value": "450 КМ",
     "stats3_text": "Length of front line",
     "stats_source": "Source",
     "our_goal": "Our goal:",
@@ -40,7 +40,7 @@
   "footer": {
     "follow": "Follow us on Facebook",
     "contact": "Contact us at ",
-    "contribute":  "Contribute to Ukrainian army"
+    "contribute": "Contribute to Ukrainian army"
   },
   "header": {
     "support": "Support Ukraine"

@@ -5,28 +5,21 @@
         <div class="text-content">
           <h2 class="title">#StandWithUkraine</h2>
           <h2 class="title accent-text">#StopWarInUkraine</h2>
-          <div class="text" v-html="$t('index.welcome_description_top')"></div>
-          <div
-              class="text"
-              v-html="$t('index.welcome_description_bottom')"></div>
+          <div class="text">
+            <slot name="firstText" />
+          </div>
+          <div class="text">
+            <slot name="secondText" />
+          </div>
           <div class="buttons">
             <VButton
               class="btn"
               tag="a"
               href="https://savelife.in.ua/en/donate/"
               target="_blank"
-              rel="noopener nofollow"
-              >{{ $t('index.welcome_button') }}</VButton
-            >
-            <!-- <VButton
-              tag="a"
-              href="https://savelife.in.ua/en/donate/"
-              target="_blank"
-              rel="noopener nofollow"
-              class="button"
-              type="white"
-              >SHARE</VButton
-            > -->
+              rel="noopener nofollow">
+              <slot name="buttonText" />
+            </VButton>
           </div>
         </div>
         <div class="image-wrapper">
@@ -40,12 +33,12 @@
         </div>
       </div>
     </Container>
-    <Statistics class="welcome-stats" />
+    <Statistics class="welcome-stats" :stats="stats" />
   </section>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent, PropType } from 'vue';
 // import HeadWrapper from '@/components/ui/HeadWrapper.vue';
 import ukraineWebp from '@/assets/img/pages/index/ua.webp';
 import ukrainePng from '@/assets/img/pages/index/ua.png';
@@ -53,9 +46,17 @@ import VButton from '@/components/ui/VButton/VButton.vue';
 import ImageWebpWrapper from '@/components/ui/ImageWebpWrapper.vue';
 import Container from '@/components/ui/Container.vue';
 import Statistics from '@/components/sections/Statistics.vue';
+import { IStat } from '@/components/sections/content';
 
 export default defineComponent({
   components: { VButton, ImageWebpWrapper, Container, Statistics },
+
+  props: {
+    stats: {
+      type: Array as PropType<IStat[]>,
+      required: true,
+    },
+  },
 
   data() {
     return {

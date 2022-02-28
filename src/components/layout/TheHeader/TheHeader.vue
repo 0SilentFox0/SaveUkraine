@@ -10,14 +10,14 @@
 
         <div class="right-side">
           <div class="languages">
-            <span
+            <router-link
               v-for="locale in locales"
               :key="locale"
-              :class="{ active: isLocaleActive(locale) }"
+              :to="locale.route"
+              :class="{ active: isLocaleActive(locale.route) }"
               class="locale"
-              @click="setLocale(locale)"
-              >{{ locale }}</span
-            >
+              >{{ locale.slug }}
+            </router-link>
           </div>
           <VButton
             class="button"
@@ -25,8 +25,8 @@
             rel="noopener nofollow"
             tag="a"
             target="_blank"
-            >{{ $t('header.support') }}
-          </VButton>
+            >Support</VButton
+          >
         </div>
       </div>
     </div>
@@ -37,7 +37,6 @@
 import { defineComponent } from 'vue';
 import VButton from '@/components/ui/VButton/VButton.vue';
 import logo from '@/assets/img/global/logo.svg?url';
-import i18n from '@/plugins/i18n';
 
 export default defineComponent({
   components: {
@@ -49,17 +48,26 @@ export default defineComponent({
       img: {
         logo,
       },
-      locales: ['en', 'ua', 'ru'],
+      locales: [
+        {
+          slug: 'en',
+          route: '/',
+        },
+        {
+          slug: 'ru',
+          route: '/ru',
+        },
+        {
+          slug: 'ua',
+          route: '/ua',
+        },
+      ],
     };
   },
 
   methods: {
-    setLocale(locale: string) {
-      i18n.global.locale.value = locale;
-      this.$router.push(locale);
-    },
     isLocaleActive(locale: string): boolean {
-      return locale === i18n.global.locale.value;
+      return locale === this.$route.path;
     },
   },
 });
