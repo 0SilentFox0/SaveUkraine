@@ -83,7 +83,8 @@ export default defineComponent({
       height: 350px;
     }
     @include media(mobile) {
-      width: 373.33px;
+      width: 100%;
+      max-width: 350px;
       height: 239px;
     }
   }
@@ -99,7 +100,8 @@ export default defineComponent({
     }
 
     @include media(mobile) {
-      width: 373.33px;
+      width: 100%;
+      max-width: 350px;
       height: 239px;
     }
   }
@@ -113,7 +115,8 @@ export default defineComponent({
     }
 
     @include media(mobile) {
-      width: 373.33px;
+      width: 100%;
+      max-width: 350px;
       height: 239px;
     }
   }

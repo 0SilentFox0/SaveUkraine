@@ -74,7 +74,7 @@ export default defineComponent({
   }
 
   @include media(mobile) {
-    font-size: 40px;
+    font-size: 32px;
   }
   &.black {
     background: rgba(36, 36, 36, 0.8);

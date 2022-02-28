@@ -4,9 +4,11 @@
       <div class="content">
         <div class="block goals">
           <span class="title"> Our goal: </span>
-          <div v-for="(item, index) in goals" :key="index" class="goal-item">
-            <span class="goal-number">#{{ index + 1 }}</span>
-            <span class="goal-text">{{ item }}</span>
+          <div class="goal-item-box">
+            <div v-for="(item, index) in goals" :key="index" class="goal-item">
+              <span class="goal-number">#{{ index + 1 }}</span>
+              <span class="goal-text">{{ item }}</span>
+            </div>
           </div>
         </div>
         <div class="block how-to-help">

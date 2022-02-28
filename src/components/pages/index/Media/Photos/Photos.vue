@@ -73,7 +73,7 @@ export default defineComponent({
   }
 
   @include media(mobile) {
-    width: 380px;
+    width: 100%;
   }
 
   & > * {

@@ -1,6 +1,6 @@
 <template>
   <section class="statistics">
-    <Container class="custom-container">
+    <div class="custom-container">
       <div class="content">
         <div v-for="(stat, index) in stats" :key="index" class="stat-item">
           <span class="title">
@@ -18,16 +18,14 @@
           >
         </div>
       </div>
-    </Container>
+    </div>
   </section>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import Container from '@/components/ui/Container.vue';
 
 export default defineComponent({
-  components: { Container },
   data() {
     return {
       stats: [
@@ -54,7 +52,11 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .custom-container {
+  position: relative;
+
   width: 1240px;
+  height: 100%;
+  margin: 0 auto;
   @include media(laptop) {
     max-width: 900px;
   }
@@ -90,6 +92,10 @@ export default defineComponent({
 
   background-color: $color-white;
   box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.1);
+
+  @include media(mobile) {
+    padding: 30px 40px;
+  }
 }
 
 .title {

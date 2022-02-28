@@ -82,6 +82,7 @@ export default defineComponent({
 .welcome {
   position: relative;
 
+  width: 100%;
   height: 956px;
 
   background-image: url('@/assets/img/pages/index/home-background.png');
