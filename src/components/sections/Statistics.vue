@@ -37,6 +37,9 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
+.statistics {
+  width: 100%;
+}
 .custom-container {
   position: relative;
 
@@ -50,6 +53,7 @@ export default defineComponent({
 
   @include media(tablet) {
     max-width: 540px;
+    width: 100%;
   }
 
   @include media(mobile) {
@@ -81,7 +85,7 @@ export default defineComponent({
   box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.1);
 
   @include media(mobile) {
-    padding: 30px 40px;
+    padding: 20px 30px;
   }
 }
 
@@ -92,7 +96,7 @@ export default defineComponent({
   line-height: 72px;
 
   @include media(tablet) {
-    font-size: 62px;
+    font-size: 54px;
   }
 }
 

@@ -135,6 +135,10 @@ export default defineComponent({
   font-weight: 500;
   font-size: 14px;
   line-height: 20px;
+
+  @include media(tablet) {
+    max-width: 100%;
+  }
 }
 
 .how-to-help-item {

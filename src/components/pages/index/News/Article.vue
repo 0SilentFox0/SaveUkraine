@@ -211,6 +211,10 @@ export default defineComponent({
 
     font-size: 48px;
     line-height: 50px;
+
+    @include media(tablet) {
+      font-size: 34px;
+    }
   }
 }
 </style>

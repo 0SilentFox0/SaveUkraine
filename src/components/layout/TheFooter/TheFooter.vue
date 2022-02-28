@@ -66,6 +66,10 @@ export default defineComponent({
   background-image: url('@/assets/img/pages/index/footer-bg.png');
   background-repeat: no-repeat;
   background-position: center;
+
+  @include media(tablet) {
+    height: 470px;
+  }
 }
 
 .content {

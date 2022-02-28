@@ -118,6 +118,10 @@ export default defineComponent({
 
   transition: all 0.3s ease-out;
 
+  @include media(tablet) {
+    font-size: 24px;
+  }
+
   .video-card:hover & {
     color: #e23328;
     text-decoration-line: underline;

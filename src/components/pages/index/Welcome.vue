@@ -106,7 +106,7 @@ export default defineComponent({
   padding-top: calc(150px + $header-height);
 
   @include media(tablet) {
-    padding-top: calc(100px + $header-height);
+    padding-top: calc(50px + $header-height);
   }
 }
 
