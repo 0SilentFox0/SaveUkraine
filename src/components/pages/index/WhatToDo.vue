@@ -62,10 +62,6 @@ export default defineComponent({
           link: 'https://www.ukrainenow.org/i-can-host',
           text: 'Help Ukrainian refugees',
         },
-        {
-          link: 'https://helpukrainewin.org/',
-          text: 'Sources to help and donate ',
-        },
       ],
       sources: [
         {
@@ -106,6 +102,10 @@ export default defineComponent({
 .what-to-do {
   padding-top: 166px;
   padding-bottom: 100px;
+
+  @include media(tablet) {
+    padding-top: 440px;
+  }
 }
 
 .content {
@@ -114,6 +114,10 @@ export default defineComponent({
   gap: 20px;
 
   color: $color-black;
+
+  @include media(tablet) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .title {
@@ -133,6 +137,14 @@ export default defineComponent({
   justify-content: flex-start;
   width: 100%;
   height: 100%;
+}
+
+.goals {
+  @include media(tablet) {
+    padding-bottom: 20px;
+
+    border-bottom: 1px solid $color-divider;
+  }
 }
 
 .goal-item {
@@ -174,5 +186,19 @@ export default defineComponent({
   padding-left: 40px;
 
   border-left: 1px solid $color-divider;
+
+  @include media(tablet) {
+    padding-top: 20px;
+    padding-bottom: 40px;
+    padding-left: 0;
+
+    border-bottom: 1px solid $color-divider;
+
+    border-left: none;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
 }
 </style>

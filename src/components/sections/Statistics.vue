@@ -55,6 +55,17 @@ export default defineComponent({
 <style lang="scss" scoped>
 .custom-container {
   width: 1240px;
+  @include media(laptop) {
+    max-width: 900px;
+  }
+
+  @include media(tablet) {
+    max-width: 540px;
+  }
+
+  @include media(mobile) {
+    max-width: 420px;
+  }
 }
 .content {
   display: grid;
@@ -62,26 +73,34 @@ export default defineComponent({
   gap: 40px;
 
   width: 100%;
+
+  @include media(tablet) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .stat-item {
-  padding: 30px;
-  background-color: $color-white;
-  box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.1);
-
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
   align-items: flex-start;
+  justify-content: flex-start;
+  padding: 30px;
 
   color: $color-black;
+
+  background-color: $color-white;
+  box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.1);
 }
 
 .title {
-  font-family: $secondary-font;
   font-weight: bold;
   font-size: 72px;
+  font-family: $secondary-font;
   line-height: 72px;
+
+  @include media(tablet) {
+    font-size: 62px;
+  }
 }
 
 .text {
