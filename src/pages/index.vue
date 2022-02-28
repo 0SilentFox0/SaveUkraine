@@ -23,7 +23,7 @@
     <News :news="news">
       <template #title>LATEST NEWS</template>
     </News>
-    <!--    <Media /> &ndash;&gt;-->
+    <Media />
   </main>
 </template>
 
@@ -39,14 +39,13 @@ import { stats } from '@/components/sections/content';
 import { news } from '@/components/pages/index/News/news_en';
 import { whatToDo } from '@/components/pages/index/WhatToDo/content';
 
-
 export default defineComponent({
   components: { News, Welcome, WhatToDo, Media, HeadWrapper },
   data() {
     return {
       stats,
       whatToDo,
-      news
+      news,
     };
   },
 });

@@ -1,6 +1,6 @@
 <template>
   <div class="videos">
-    <div class="title">{{ $t('index.videos') }}</div>
+    <div class="title">Videos</div>
     <div class="grid">
       <VideoCard v-for="video in videos" :key="video.url" :video="video" />
     </div>

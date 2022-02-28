@@ -1,6 +1,6 @@
 <template>
   <div class="photos">
-    <div class="title">{{ $t('index.photos') }}</div>
+    <div class="title">Photos</div>
     <div class="photos-grid">
       <Photo
         v-for="image in images"
