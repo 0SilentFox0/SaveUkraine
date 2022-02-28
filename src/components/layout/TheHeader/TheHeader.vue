@@ -41,6 +41,7 @@ export default defineComponent({
       img: {
         logo,
       },
+      locales: ['en', 'ua', 'ru'],
     };
   },
 });
