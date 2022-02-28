@@ -15,7 +15,7 @@
             <VButton
               class="btn"
               tag="a"
-              href="https://savelife.in.ua/en/donate/"
+              href="https://uahelp.monobank.ua/"
               target="_blank"
               rel="noopener nofollow">
               <slot name="buttonText" />
@@ -151,7 +151,7 @@ export default defineComponent({
   }
 
   @include media(mobile) {
-    font-size: 52px;
+    font-size: 42px;
   }
 }
 

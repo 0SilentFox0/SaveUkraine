@@ -18,10 +18,10 @@
           >
         </div>
         <a
-          href="https://savelife.in.ua/en/donate/"
+          href="https://uahelp.monobank.ua/"
           target="_blank"
-          class="text accent underline"
-        >{{ $t('footer.contribute') }}</a
+          class="text black underline"
+          >{{ $t('footer.contribute') }}</a
         >
       </div>
     </Container>
@@ -78,7 +78,7 @@ export default defineComponent({
   }
 
   @include media(mobile) {
-    font-size: 36px;
+    font-size: 24px;
     line-height: 36px;
   }
 
