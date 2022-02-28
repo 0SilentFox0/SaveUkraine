@@ -46,7 +46,7 @@ export function pageHead({
       },
       {
         property: 'og:image',
-        content: '/og.png',
+        content: 'https://stopwarukraine.com/og.png',
         hid: 'og:image',
       },
     ],
