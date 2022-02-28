@@ -36,6 +36,10 @@ const howToHelpEn: IHelp = {
       text: 'Sources to help and donate',
       link: 'https://helpukrainewin.org/',
     },
+    {
+      text: 'International rescue committee',
+      link: 'https://www.rescue.org/',
+    },
   ],
 };
 
