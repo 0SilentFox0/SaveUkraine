@@ -53,4 +53,8 @@ export default defineComponent({
 .main {
   overflow: hidden;
 }
+
+.accent-text {
+  color: $color-brand;
+}
 </style>
