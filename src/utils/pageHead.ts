@@ -6,6 +6,8 @@ export interface PageHeadInterface {
   image?: string;
 }
 
+import ogImage from '@/assets/img/global/og.png';
+
 export function pageHead({
   title,
   route,
@@ -43,6 +45,11 @@ export function pageHead({
         property: 'og:description',
         content: description,
         hid: 'og:description',
+      },
+      {
+        property: 'og:image',
+        content: ogImage,
+        hid: 'og:image',
       },
     ],
   };
