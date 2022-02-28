@@ -57,6 +57,7 @@ export default defineComponent({
   width: 1240px;
   height: 100%;
   margin: 0 auto;
+  padding: 0 15px;
   @include media(laptop) {
     max-width: 900px;
   }

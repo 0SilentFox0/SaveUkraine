@@ -62,7 +62,9 @@ export default defineComponent({
   &.big {
     display: flex;
     gap: 40px;
-
+    @include media(laptop) {
+      flex-direction: column;
+    }
     @include media(tablet) {
       flex-direction: column;
     }
@@ -78,6 +80,11 @@ export default defineComponent({
     width: 580px;
     height: 350px;
     margin-bottom: 30px;
+
+    @include media(laptop) {
+      width: 100%;
+      height: 100%;
+    }
     @include media(tablet) {
       max-width: 500px;
       height: 350px;
@@ -93,7 +100,10 @@ export default defineComponent({
     width: 373.33px;
     height: 239px;
     margin-bottom: 30px;
-
+    @include media(laptop) {
+      width: 100%;
+      height: 100%;
+    }
     @include media(tablet) {
       width: 500px;
       height: 350px;
@@ -109,6 +119,10 @@ export default defineComponent({
   .big & {
     width: 800px;
     height: 570px;
+    @include media(laptop) {
+      width: 100%;
+      height: 100%;
+    }
     @include media(tablet) {
       max-width: 500px;
       height: 350px;
