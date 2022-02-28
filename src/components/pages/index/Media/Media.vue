@@ -1,20 +1,40 @@
 <template>
   <section class="media">
     <Container>
-      <Photos />
-      <Videos />
+      <Photos :photos="photos">
+        <template #title>
+          <slot name="photos-title"></slot>
+        </template>
+      </Photos>
+      <Videos :videos="videos">
+        <template #title>
+          <slot name="videos-title"></slot>
+        </template>
+      </Videos>
     </Container>
   </section>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent, PropType } from 'vue';
 import Container from '@/components/ui/Container.vue';
 import Photos from '@/components/pages/index/Media/Photos/Photos.vue';
 import Videos from '@/components/pages/index/Media/Videos/Videos.vue';
+import { IMedia } from '@/components/pages/index/Media/Media.types';
 
 export default defineComponent({
   components: { Videos, Photos, Container },
+
+  props: {
+    videos: {
+      type: Array as PropType<IMedia.Video[]>,
+      required: true,
+    },
+    photos: {
+      type: Array as PropType<IMedia.Photo[]>,
+      required: true,
+    },
+  },
 });
 </script>
 

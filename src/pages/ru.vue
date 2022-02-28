@@ -23,7 +23,10 @@
     </Welcome>
     <WhatToDo :help-info="whatToDo.ru" />
     <News :news="news"><template #title>ПОСЛЕДНИЕ НОВОСТИ</template></News>
-    <!--    <Media /> -->
+    <Media :photos="images" :videos="videos">
+      <template #photos-title>ФОТОГрАФИИ</template>
+      <template #videos-title>Видеоматериалы</template>
+    </Media>
   </main>
 </template>
 
@@ -38,6 +41,7 @@ import HeadWrapper from '@/components/ui/HeadWrapper.vue';
 import { stats } from '@/components/sections/content';
 import { news } from '@/components/pages/index/News/news_ru';
 import { whatToDo } from '@/components/pages/index/WhatToDo/content';
+import { images, videos } from '@/components/pages/index/Media/media_ru';
 
 export default defineComponent({
   components: { News, Welcome, WhatToDo, Media, HeadWrapper },
@@ -46,6 +50,8 @@ export default defineComponent({
       stats,
       news,
       whatToDo,
+      images,
+      videos,
     };
   },
 });
@@ -54,6 +60,7 @@ export default defineComponent({
 <style lang="scss" scoped>
 .main {
   overflow: hidden;
+  background: #eff0f1;
 }
 
 .accent-text {

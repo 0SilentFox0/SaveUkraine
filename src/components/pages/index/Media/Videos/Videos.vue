@@ -1,6 +1,6 @@
 <template>
   <div class="videos">
-    <div class="title">{{ $t('index.videos') }}</div>
+    <div class="title"><slot name="title"></slot></div>
     <div class="grid">
       <VideoCard v-for="video in videos" :key="video.url" :video="video" />
     </div>
@@ -8,15 +8,19 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
-import { videos } from '@/components/pages/index/content';
+import { defineComponent, PropType } from 'vue';
 import VideoCard from '@/components/pages/index/Media/Videos/VideoCard.vue';
+import { IMedia } from '@/components/pages/index/Media/Media.types';
 
 export default defineComponent({
   components: { VideoCard },
-  data: () => ({
-    videos,
-  }),
+
+  props: {
+    videos: {
+      type: Array as PropType<IMedia.Video[]>,
+      required: true,
+    },
+  },
 });
 </script>
 

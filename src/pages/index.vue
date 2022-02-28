@@ -23,7 +23,10 @@
     <News :news="news">
       <template #title>LATEST NEWS</template>
     </News>
-    <!--    <Media /> &ndash;&gt;-->
+    <Media :photos="images" :videos="videos">
+      <template #photos-title>Photos</template>
+      <template #videos-title>Video</template>
+    </Media>
   </main>
 </template>
 
@@ -38,7 +41,7 @@ import HeadWrapper from '@/components/ui/HeadWrapper.vue';
 import { stats } from '@/components/sections/content';
 import { news } from '@/components/pages/index/News/news_en';
 import { whatToDo } from '@/components/pages/index/WhatToDo/content';
-
+import { images, videos } from '@/components/pages/index/Media/media_en';
 
 export default defineComponent({
   components: { News, Welcome, WhatToDo, Media, HeadWrapper },
@@ -46,7 +49,9 @@ export default defineComponent({
     return {
       stats,
       whatToDo,
-      news
+      news,
+      images,
+      videos,
     };
   },
 });
@@ -55,6 +60,7 @@ export default defineComponent({
 <style lang="scss" scoped>
 .main {
   overflow: hidden;
+  background: #eff0f1;
 }
 
 .accent-text {
