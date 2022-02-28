@@ -21,7 +21,7 @@
           </div>
           <VButton
             class="button"
-            href="https://savelife.in.ua/en/donate/"
+            href="https://uahelp.monobank.ua/"
             rel="noopener nofollow"
             tag="a"
             target="_blank"

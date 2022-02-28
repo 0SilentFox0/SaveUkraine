@@ -7,13 +7,13 @@
           <h2 class="title accent-text">#StopWarInUkraine</h2>
           <div class="text" v-html="$t('index.welcome_description_top')"></div>
           <div
-              class="text"
-              v-html="$t('index.welcome_description_bottom')"></div>
+            class="text"
+            v-html="$t('index.welcome_description_bottom')"></div>
           <div class="buttons">
             <VButton
               class="btn"
               tag="a"
-              href="https://savelife.in.ua/en/donate/"
+              href="https://uahelp.monobank.ua/"
               target="_blank"
               rel="noopener nofollow"
               >{{ $t('index.welcome_button') }}</VButton
@@ -150,7 +150,7 @@ export default defineComponent({
   }
 
   @include media(mobile) {
-    font-size: 52px;
+    font-size: 42px;
   }
 }
 
