@@ -11,12 +11,11 @@ export function pageHead({
   route,
   url,
   description,
-  image,
 }: PageHeadInterface) {
   return {
     title,
     link: [
-      { rel: 'canonical', href: `https://folderly.com${route}` },
+      { rel: 'canonical', href: `https://stopwarukraine.com${route}` },
       { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
     ],
     meta: [
@@ -27,7 +26,7 @@ export function pageHead({
       },
       {
         property: 'og:url',
-        content: url || `https://folderly.com${route}`,
+        content: url || `https://stopwarukraine.com${route}`,
         hid: 'og:url',
       },
       {
@@ -44,13 +43,6 @@ export function pageHead({
         property: 'og:description',
         content: description,
         hid: 'og:description',
-      },
-      {
-        property: 'og:image',
-        content:
-          image ||
-          'https://folderly.nyc3.digitaloceanspaces.com/ed4902989cec4a7676c3bf3bcf86927c.jpg',
-        hid: 'og:image',
       },
     ],
   };

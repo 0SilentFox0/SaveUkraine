@@ -1,4 +1,4 @@
-<!-- <template>
+<template>
   <Head />
 </template>
 
@@ -30,21 +30,15 @@ export default defineComponent({
       required: false,
       default: '',
     },
-    image: {
-      type: String,
-      required: false,
-      default: '',
-    },
   },
   setup(props) {
     const meta = pageHead({
       title: props.title,
       route: props.route,
       description: props.description,
-      image: props.image,
       url: props.url,
     });
     useHead(meta);
   },
 });
-</script> -->
+</script>
