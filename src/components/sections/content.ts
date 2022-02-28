@@ -29,7 +29,7 @@ const statsEn: IStat[] = [
 const statsRu: IStat[] = [
   {
     title: '50,000',
-    text: 'Предполагаемое количество жертв в Украине',
+    text: 'Предполагаемое количество пострадавших в Украине',
     link: 'https://www.cfr.org/global-conflict-tracker/conflict/conflict-ukraine',
     linkText: 'Источник',
   },
@@ -50,7 +50,7 @@ const statsRu: IStat[] = [
 const statsUa: IStat[] = [
   {
     title: '50,000',
-    text: 'Передбачувана кількість жертв в Україні',
+    text: 'Передбачувана кількість постраждалих в Україні',
     link: 'https://www.cfr.org/global-conflict-tracker/conflict/conflict-ukraine',
     linkText: 'Джерело',
   },
