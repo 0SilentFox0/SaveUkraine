@@ -40,6 +40,10 @@ const howToHelpEn: IHelp = {
       text: 'International rescue committee',
       link: 'https://www.rescue.org/',
     },
+    {
+      text: 'International Committee of the Red Cross',
+      link: 'https://www.icrc.org/en/where-we-work/europe-central-asia/ukraine',
+    },
   ],
 };
 
@@ -166,7 +170,7 @@ const howToHelpUa: IHelp = {
 };
 
 const sourcesUa: IHelp = {
-  title: 'ПеревІренІ\nджерела\nIнформацIї',
+  title: 'Перевірені\nджерела\nIнформації',
   content: [
     {
       text: 'Офіс Президента України',
