@@ -43,12 +43,11 @@ export namespace News {
 }
 
 export namespace Media {
-  // export interface IPhoto {
-  //   webp: string;
-  //   png: string;
-  //   width: string;
-  //   height: string;
-  // }
+  export interface IPhoto {
+    id: number;
+    pages_id: number;
+    directus_files_id: string;
+  }
 
   export interface IVideo {
     id: number;
@@ -73,7 +72,7 @@ export interface IPageInfo {
   news_title: string;
   photos_title: string;
   videos_title: string;
-  photos: number[];
+  photos: Media.IPhoto[];
   videos: Media.IVideo[];
   seo: ISeo[];
 }

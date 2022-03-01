@@ -4,15 +4,15 @@
     <div class="photos-grid">
       <Photo
         v-for="image in photos"
-        :key="image"
+        :key="image.id"
         :photo="image"
-        @click="openImage(image)" />
+        @click="openImage(image.directus_files_id)" />
     </div>
     <VPopup :is-opened="!!openedImageUrl" width="1202px" @close="closeImage">
       <div class="popup-image">
         <img
           v-lazy="{
-            src: `https://stopwarukraine.directus.app/assets/${openImage}`,
+            src: `https://stopwarukraine.directus.app/assets/${openedImageUrl}`,
           }"
           alt="" />
       </div>
@@ -24,28 +24,29 @@
 import { defineComponent, PropType } from 'vue';
 import Photo from '@/components/pages/index/Media/Photos/Photo.vue';
 import VPopup from '@/components/ui/VPopup.vue';
+import { Media } from '@/database/pageInfo.interface';
 
 export default defineComponent({
   components: { VPopup, Photo },
 
   props: {
     photos: {
-      type: Array as PropType<number[]>,
+      type: Array as PropType<Media.IPhoto[]>,
       required: true,
     },
   },
 
   data: () => ({
-    openedImageUrl: 0,
+    openedImageUrl: '',
   }),
 
   methods: {
-    openImage(url: number) {
+    openImage(url: string) {
       this.openedImageUrl = url;
     },
 
     closeImage() {
-      this.openedImageUrl = 0;
+      this.openedImageUrl = '';
     },
   },
 });

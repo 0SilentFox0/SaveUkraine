@@ -3,7 +3,7 @@
     <div class="img">
       <img
         v-lazy="{
-          src: `https://stopwarukraine.directus.app/assets/${photo}`,
+          src: `https://stopwarukraine.directus.app/assets/${photo.directus_files_id}`,
         }"
         alt="Photo" />
     </div>
@@ -12,12 +12,13 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { Media } from '@/database/pageInfo.interface';
+import { defineComponent, PropType } from 'vue';
 
 export default defineComponent({
   props: {
     photo: {
-      type: Number,
+      type: Object as PropType<Media.IPhoto>,
       required: true,
     },
   },
