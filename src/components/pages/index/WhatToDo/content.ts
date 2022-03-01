@@ -128,8 +128,8 @@ const sourcesRu: IHelp = {
       link: 'https://twitter.com/zelenskyyua?s=21',
     },
     {
-      text: 'BBC News - Украина',
-      link: 'https://www.bbc.com/ukrainian',
+      text: 'BBC News - Россия',
+      link: 'https://www.bbc.com/russian',
     },
     {
       text: 'Сайт для поиска убитых Российских солдат',
