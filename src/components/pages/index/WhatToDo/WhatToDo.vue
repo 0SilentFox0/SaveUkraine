@@ -7,7 +7,7 @@
           <div class="goal-item-box">
             <div v-for="(item, index) in goals" :key="index" class="goal-item">
               <span class="goal-number">#{{ index + 1 }}</span>
-              <span class="goal-text">{{ item }}</span>
+              <span class="goal-text">{{ item.goal }}</span>
             </div>
           </div>
         </div>
@@ -32,10 +32,10 @@
             :key="index"
             class="how-to-help-item">
             <a
-              :href="item.link"
+              :href="item.Link"
               target="_blank"
               class="how-to-help-link link"
-              >{{ item.text }}</a
+              >{{ item.Text }}</a
             >
           </div>
         </div>
@@ -53,15 +53,15 @@ export default defineComponent({
   components: { Container },
   props: {
     goals: {
-      type: Object as PropType<WhatToDo.IHelp>,
+      type: Array as PropType<WhatToDo.IGoal[]>,
       required: true,
     },
     howToHelp: {
-      type: Object as PropType<WhatToDo.IHelp>,
+      type: Array as PropType<WhatToDo.ILink[]>,
       required: true,
     },
     trustedSource: {
-      type: Object as PropType<WhatToDo.IHelp>,
+      type: Array as PropType<WhatToDo.ILink[]>,
       required: true,
     },
   },

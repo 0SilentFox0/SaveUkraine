@@ -16,14 +16,12 @@ export interface IStat {
 }
 
 export namespace WhatToDo {
+  export interface IGoal {
+    goal: string;
+  }
   export interface ILink {
     text: string;
     link: string;
-  }
-
-  export interface IHelp {
-    title: string;
-    content: ILink[] | string[];
   }
 }
 
@@ -69,11 +67,11 @@ export interface IPageInfo {
   banner_button_text: string;
   statistics: IStat[];
   goal_title: string;
-  goals: WhatToDo.IHelp;
+  goals: WhatToDo.IGoal[];
   how_to_help_title: string;
-  how_to_help: WhatToDo.IHelp;
-  trusted_source_title: string;
-  trusted_source: WhatToDo.IHelp;
+  how_to_help: WhatToDo.ILink[];
+  trusted_sources_title: string;
+  trusted_sources: WhatToDo.ILink[];
   news_title: string;
   photos_title: string;
   videos_title: string;

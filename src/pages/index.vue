@@ -12,7 +12,7 @@
     <WhatToDo
       :goals="pageInfo.goals"
       :how-to-help="pageInfo.how_to_help"
-      :trusted-source="pageInfo.trusted_source">
+      :trusted-source="pageInfo.trusted_sources">
       <template #goalTitle>
         {{ pageInfo.goal_title }}
       </template>
@@ -20,7 +20,7 @@
         {{ pageInfo.how_to_help_title }}
       </template>
       <template #sourceTitle>
-        {{ pageInfo.trusted_source_title }}
+        {{ pageInfo.trusted_sources_title }}
       </template>
     </WhatToDo>
     <!-- <News :news="pageInfo.news">
@@ -76,9 +76,5 @@ export default defineComponent({
   overflow: hidden;
 
   background: #eff0f1;
-}
-
-.accent-text {
-  color: $color-brand;
 }
 </style>

@@ -139,10 +139,6 @@ export default defineComponent({
   line-height: 24px;
 }
 
-.accent-text {
-  color: $color-brand;
-}
-
 .title {
   width: 100%;
 
