@@ -1,26 +1,23 @@
 <template>
   <div class="photo">
     <div class="img">
-      <ImageWebpWrapper
-        :image-default="photo.png"
-        :image-webp="photo.webp"
-        :width="photo.width"
-        :height="photo.height" />
+      <img
+        v-lazy="{
+          src: `https://stopwarukraine.directus.app/assets/${photo}`,
+        }"
+        alt="Photo" />
     </div>
     <div class="hover-mask"></div>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType } from 'vue';
-import ImageWebpWrapper from '@/components/ui/ImageWebpWrapper.vue';
-import { Media } from '@/database/pageInfo.interface';
+import { defineComponent } from 'vue';
 
 export default defineComponent({
-  components: { ImageWebpWrapper },
   props: {
     photo: {
-      type: Object as PropType<Media.IPhoto>,
+      type: String,
       required: true,
     },
   },

@@ -6,7 +6,7 @@
         v-for="image in photos"
         :key="image"
         :photo="image"
-        @click="openImage(image.png)" />
+        @click="openImage(image)" />
     </div>
     <VPopup :is-opened="!!openedImageUrl" width="1202px" @close="closeImage">
       <div class="popup-image">
@@ -20,14 +20,13 @@
 import { defineComponent, PropType } from 'vue';
 import Photo from '@/components/pages/index/Media/Photos/Photo.vue';
 import VPopup from '@/components/ui/VPopup.vue';
-import { Media } from '@/database/pageInfo.interface';
 
 export default defineComponent({
   components: { VPopup, Photo },
 
   props: {
     photos: {
-      type: Array as PropType<Media.IPhoto[]>,
+      type: Array as PropType<string[]>,
       required: true,
     },
   },

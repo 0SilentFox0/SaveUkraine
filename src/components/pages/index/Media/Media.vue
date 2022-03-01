@@ -31,7 +31,7 @@ export default defineComponent({
       required: true,
     },
     photos: {
-      type: Array as PropType<Media.IPhoto[]>,
+      type: Array as PropType<string[]>,
       required: true,
     },
   },

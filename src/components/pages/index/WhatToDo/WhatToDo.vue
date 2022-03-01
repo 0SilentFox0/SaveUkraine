@@ -32,10 +32,10 @@
             :key="index"
             class="how-to-help-item">
             <a
-              :href="item.Link"
+              :href="item.link"
               target="_blank"
               class="how-to-help-link link"
-              >{{ item.Text }}</a
+              >{{ item.text }}</a
             >
           </div>
         </div>

@@ -12,7 +12,7 @@ export interface IStat {
   title: string;
   text: string;
   link: string;
-  linkText: string;
+  link_text: string;
 }
 
 export namespace WhatToDo {
@@ -43,18 +43,16 @@ export namespace News {
 }
 
 export namespace Media {
-  export interface IPhoto {
-    webp: string;
-    png: string;
-    width: string;
-    height: string;
-  }
+  // export interface IPhoto {
+  //   webp: string;
+  //   png: string;
+  //   width: string;
+  //   height: string;
+  // }
 
   export interface IVideo {
-    thumb: {
-      png: string;
-      webp: string;
-    };
+    id: number;
+    image: string;
     title: string;
     url: string;
   }
@@ -75,6 +73,7 @@ export interface IPageInfo {
   news_title: string;
   photos_title: string;
   videos_title: string;
-  // photos: Media.IPhoto[];
+  photos: string[];
+  videos: Media.IVideo[];
   seo: ISeo[];
 }

@@ -14,7 +14,7 @@
             target="_blank"
             rel="noopener nofollow"
             class="link">
-            {{ stat.linkText }}</a
+            {{ stat.link_text }}</a
           >
         </div>
       </div>

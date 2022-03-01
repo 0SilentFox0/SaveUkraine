@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
   <main class="main">
     <HeadWrapper
       :title="pageInfo.seo.title || ''"
@@ -10,13 +10,13 @@
       </template>
     </Welcome>
     <WhatToDo :help-info="pageInfo.how_to_help" />
-    <!-- <News :news="pageInfo.news">
+    <News :news="pageInfo.news">
       <template #title>{{ pageInfo.how_to_help_title }}</template>
     </News>
     <Media :photos="pageInfo.media.photos" :videos="pageInfo.media.videos">
       <template #photos-title>{{ pageInfo.photos_title }}</template>
       <template #videos-title>{{ pageInfo.videos_title }}</template>
-    </Media> -->
+    </Media>
   </main>
 </template>
 
@@ -71,4 +71,4 @@ export default defineComponent({
 .accent-text {
   color: $color-brand;
 }
-</style>
+</style> -->
