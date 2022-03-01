@@ -81,79 +81,76 @@ export default defineComponent({
   &.active {
     color: #e23328;
   }
-
-  &:nth-child(2) {
-    padding: 1px 10px;
-
-    border-right: 1px solid #d9d9d9;
-    border-left: 1px solid #d9d9d9;
-
-    @include media(mobile) {
-      padding: 0;
-
-      border: none;
-    }
-  }
 }
 
 .languages-mobile {
-  display: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  color: #121212;
+
+  transition: color 0.3s ease-out;
+
+  position: relative;
+
+  max-height: 160px;
+  overflow-y: scroll;
 
   @include media(mobile) {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     width: 17px;
+  }
 
-    color: #121212;
+  .language {
+    color: inherit;
+    font-weight: 700;
+  }
 
-    transition: color 0.3s ease-out;
+  &.active {
+    color: #e23328;
 
-    .language {
-      color: inherit;
-      font-weight: 700;
-    }
-
-    &.active {
-      color: #e23328;
-
-      .dropdown {
-        display: block;
-      }
+    .dropdown {
+      display: block;
     }
   }
 }
 
 .languages {
-  @include media(mobile) {
-    display: none;
+  display: none;
+  position: absolute;
+  top: $header-height;
+  right: 23%;
 
-    &.mobile-opened {
-      position: absolute;
-      top: 72px;
-      left: 0;
+  @media screen and (max-width: 1500px) {
+    right: 13%;
+  }
 
-      display: flex;
-      flex-direction: column;
+  &.mobile-opened {
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    width: 230px;
+
+    background: #ffffff;
+    box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.1);
+
+    @include media(mobile) {
       width: 100vw;
-      padding: 5px;
+      left: 0;
+    }
 
-      background: #ffffff;
-      box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.1);
+    .language {
+      padding: 15px 0;
 
-      .language {
-        padding: 15px 0;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 19px;
+      text-transform: none;
 
-        font-weight: 500;
-        font-size: 16px;
-        line-height: 19px;
-        text-transform: none;
+      border-bottom: 1px solid #eff0f1;
 
-        border-bottom: 1px solid #eff0f1;
-
-        &:last-child {
-          border: none;
-        }
+      &:last-child {
+        border: none;
       }
     }
   }

@@ -91,17 +91,16 @@ export default defineComponent({
   display: flex;
   align-items: center;
   justify-content: flex-end;
-
-  @include media(mobile) {
-    flex-direction: row-reverse;
-    gap: 10px;
-  }
 }
 
 .button {
-  margin-left: 10px;
+  margin-left: 20px;
 
   text-transform: uppercase;
+
+  @include media(mobile) {
+    margin-left: 10px;
+  }
 }
 
 .image-wrapper {
