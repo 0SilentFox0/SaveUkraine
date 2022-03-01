@@ -9,7 +9,7 @@
         On February, 24th its whole territory
         <span class="accent-text">was attacked by Russian armed forces</span> -
         from the territories of Russia and Belarus, from the sea, and the sky.
-        They are deploying paratroopers, carrying our air strikes and shoot at
+        They are deploying paratroopers, carrying out air strikes and shoot at
         us from across the border.
       </template>
       <template #secondText>
