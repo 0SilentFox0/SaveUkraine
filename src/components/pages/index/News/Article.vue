@@ -189,13 +189,13 @@ export default defineComponent({
 .title {
   margin-bottom: 20px;
 
-  font-weight: bold;
-  font-size: 18px;
-  line-height: 22px;
-
   /* Black */
 
   color: #242424;
+
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 22px;
 
   transition: all 0.3s ease-out;
 
@@ -205,11 +205,11 @@ export default defineComponent({
   }
 
   .big & {
-    font-family: Bebas Neue;
 
     margin-bottom: 30px;
 
     font-size: 48px;
+    font-family: Bebas Neue;
     line-height: 50px;
 
     @include media(tablet) {

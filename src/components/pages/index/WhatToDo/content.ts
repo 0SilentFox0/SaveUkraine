@@ -59,7 +59,7 @@ const sourcesEn: IHelp = {
       link: 'https://www.president.gov.ua/en',
     },
     {
-      text: 'Defence of Ukraine on Twitter',
+      text: 'Ministry of Defence of Ukraine on Twitter',
       link: 'https://twitter.com/DefenceU?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor',
     },
     {

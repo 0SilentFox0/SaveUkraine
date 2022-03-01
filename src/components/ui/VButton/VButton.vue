@@ -100,6 +100,10 @@ export default defineComponent({
 
   font-size: 14px;
   line-height: 17px;
+
+  @include media(mobile) {
+    padding: 12px 16px;
+  }
 }
 
 .small {
@@ -129,5 +133,10 @@ export default defineComponent({
   &:hover {
     color: $color-brand;
   }
+}
+
+.text {
+  white-space: nowrap;
+  text-align: center;
 }
 </style>

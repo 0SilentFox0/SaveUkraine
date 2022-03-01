@@ -109,12 +109,13 @@ export default defineComponent({
 .title {
   width: 100%;
 
-  font-family: Bebas Neue;
-  font-style: normal;
+  color: white;
   font-weight: bold;
   font-size: 30px;
+
+  font-family: Bebas Neue;
+  font-style: normal;
   line-height: 36px;
-  color: white;
 
   transition: all 0.3s ease-out;
 

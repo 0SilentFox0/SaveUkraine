@@ -72,10 +72,10 @@ export default defineComponent({
 }
 
 .header-container {
-  max-width: 1240px;
+  max-width: 1230px;
   height: 100%;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 15px;
 }
 
 .header-content {
@@ -102,5 +102,16 @@ export default defineComponent({
   margin-left: 10px;
 
   text-transform: uppercase;
+}
+
+.image-wrapper {
+  @include media(mobile) {
+    width: 94px;
+  }
+}
+
+.image {
+  width: 100%;
+  height: 100%;
 }
 </style>

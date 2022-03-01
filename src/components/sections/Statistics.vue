@@ -52,8 +52,8 @@ export default defineComponent({
   }
 
   @include media(tablet) {
-    max-width: 540px;
     width: 100%;
+    max-width: 540px;
   }
 
   @include media(mobile) {

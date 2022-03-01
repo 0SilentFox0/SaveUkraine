@@ -45,22 +45,28 @@ ul {
 }
 
 .link {
+  position: relative;
+
+  color: $color-brand;
   font-weight: 500;
   font-size: 14px;
   line-height: 22px;
-  color: $color-brand;
-  position: relative;
+
   transition: $transition-default;
 
   &::before {
-    content: '';
     position: absolute;
     bottom: -1px;
     left: 0;
+
     width: 100%;
     height: 1px;
+
     background-color: $color-brand;
+
     transition: $transition-default;
+
+    content: '';
   }
 
   &:hover {

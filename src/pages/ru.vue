@@ -60,6 +60,7 @@ export default defineComponent({
 <style lang="scss" scoped>
 .main {
   overflow: hidden;
+
   background: #eff0f1;
 }
 

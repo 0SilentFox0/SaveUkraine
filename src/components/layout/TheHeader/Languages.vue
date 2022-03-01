@@ -73,17 +73,24 @@ export default defineComponent({
 
   cursor: pointer;
 
+  @include media(mobile) {
+    font-style: 12px !important;
+    line-height: 15px;
+  }
+
   &.active {
     color: #e23328;
   }
 
   &:nth-child(2) {
+    padding: 1px 10px;
+
     border-right: 1px solid #d9d9d9;
     border-left: 1px solid #d9d9d9;
-    padding: 1px 10px;
 
     @include media(mobile) {
       padding: 0;
+
       border: none;
     }
   }
@@ -96,12 +103,15 @@ export default defineComponent({
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 17px;
+
     color: #121212;
+
     transition: color 0.3s ease-out;
 
     .language {
-      font-weight: 700;
       color: inherit;
+      font-weight: 700;
     }
 
     &.active {
@@ -119,23 +129,27 @@ export default defineComponent({
     display: none;
 
     &.mobile-opened {
-      padding: 5px;
-      display: flex;
-      flex-direction: column;
       position: absolute;
       top: 72px;
       left: 0;
+
+      display: flex;
+      flex-direction: column;
       width: 100vw;
+      padding: 5px;
+
       background: #ffffff;
       box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.1);
 
       .language {
-        text-transform: none;
         padding: 15px 0;
-        border-bottom: 1px solid #eff0f1;
+
         font-weight: 500;
         font-size: 16px;
         line-height: 19px;
+        text-transform: none;
+
+        border-bottom: 1px solid #eff0f1;
 
         &:last-child {
           border: none;
