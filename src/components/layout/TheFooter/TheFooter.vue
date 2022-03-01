@@ -2,25 +2,40 @@
   <footer class="footer">
     <Container>
       <div class="content">
-        <a
-          href=" https://www.facebook.com/stooopwarinukraine"
-          target="_blank"
-          class="text black underline"
-          >{{ currentLoacaleText.follow }}</a
-        >
-        <div class="text black">
-          {{ currentLoacaleText.contact }}
+        <div class="socials">
           <a
-            href="mailto:help@stopwarukraine.com"
+            href="https://www.facebook.com/stooopwarinukraine"
             target="_blank"
-            class="underline"
-            >help@stopwarukraine.com</a
-          >
+            class="text black">
+            <SvgIcon name="facebook" width="54" height="54" class="icon" />
+            <span> Facebook </span>
+          </a>
+          <a
+            href="https://www.instagram.com/stopwarinukrainemedia"
+            target="_blank"
+            class="text black">
+            <SvgIcon name="instagram" width="54" height="54" class="icon" />
+            <span> Instagram </span>
+          </a>
+          <a
+            href="https://www.youtube.com/channel/UCP31d6_bWK2C991APvSa4VA/videos"
+            target="_blank"
+            class="text black">
+            <SvgIcon name="youtube" width="54" height="54" class="icon" />
+            <span> YOUTUBE </span>
+          </a>
         </div>
+        <a
+          href="mailto:help@stopwarukraine.com"
+          target="_blank"
+          class="text black">
+          {{ currentLoacaleText.contact }}
+          help@stopwarukraine.com</a
+        >
         <a
           href="https://uahelp.monobank.ua/"
           target="_blank"
-          class="text black underline"
+          class="text black"
           >{{ currentLoacaleText.contribute }}</a
         >
       </div>
@@ -31,26 +46,24 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import Container from '@/components/ui/Container.vue';
+import SvgIcon from '@/components/ui/SvgIcon.vue';
 
 export default defineComponent({
-  components: { Container },
+  components: { Container, SvgIcon },
   computed: {
     currentLoacaleText() {
       const path = this.$route.path;
       if (path === '/ru')
         return {
-          follow: 'ПОДПИШИСЬ В Facebook',
           contact: 'СВЯЗЬ С НАМИ',
           contribute: 'ПОДДЕРЖАТЬ УКРАИНСКУЮ АРМИЮ',
         };
       else if (path === '/ua')
         return {
-          follow: 'ПIДПИШИСЬ У Facebook',
           contact: 'ЗʼЯЗОК З НАМИ',
           contribute: 'ПIДТРИМАТИ УКРАЇНСЬКУ АРМIЮ',
         };
       return {
-        follow: 'Follow us on Facebook',
         contact: 'Contact us at',
         contribute: 'Contribute to Ukrainian army',
       };
@@ -85,6 +98,51 @@ export default defineComponent({
   }
 }
 
+.socials {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  @include media(mobile) {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    margin-right: 10px;
+
+    @include media(laptop) {
+      font-size: 52px;
+
+      svg {
+        width: 38px;
+        height: 38px;
+      }
+    }
+
+    @include media(tablet) {
+      font-size: 24px;
+      svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+
+    @include media(mobile) {
+      width: 100%;
+    }
+  }
+}
+
+.icon {
+  margin-right: 10px;
+}
+
 .text {
   margin-bottom: 10px;
   padding: 10px;
@@ -92,20 +150,18 @@ export default defineComponent({
   color: $color-white;
   font-weight: bold;
   font-size: 72px;
+  line-height: 68px;
   font-family: $secondary-font;
-  line-height: 72px;
 
   cursor: pointer;
 
   transition: $transition-default;
 
   @include media(tablet) {
-    font-size: 52px;
-  }
-
-  @include media(mobile) {
+    width: 100%;
     font-size: 24px;
     line-height: 36px;
+    text-align: center;
   }
 
   &.black {
