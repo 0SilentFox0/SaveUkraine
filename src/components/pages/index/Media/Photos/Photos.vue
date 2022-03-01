@@ -10,7 +10,11 @@
     </div>
     <VPopup :is-opened="!!openedImageUrl" width="1202px" @close="closeImage">
       <div class="popup-image">
-        <img :src="openedImageUrl" alt="" />
+        <img
+          v-lazy="{
+            src: `https://stopwarukraine.directus.app/assets/${openImage}`,
+          }"
+          alt="" />
       </div>
     </VPopup>
   </div>
@@ -26,22 +30,22 @@ export default defineComponent({
 
   props: {
     photos: {
-      type: Array as PropType<string[]>,
+      type: Array as PropType<number[]>,
       required: true,
     },
   },
 
   data: () => ({
-    openedImageUrl: '',
+    openedImageUrl: 0,
   }),
 
   methods: {
-    openImage(url: string) {
+    openImage(url: number) {
       this.openedImageUrl = url;
     },
 
     closeImage() {
-      this.openedImageUrl = '';
+      this.openedImageUrl = 0;
     },
   },
 });

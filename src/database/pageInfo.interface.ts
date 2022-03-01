@@ -73,7 +73,7 @@ export interface IPageInfo {
   news_title: string;
   photos_title: string;
   videos_title: string;
-  photos: string[];
+  photos: number[];
   videos: Media.IVideo[];
   seo: ISeo[];
 }

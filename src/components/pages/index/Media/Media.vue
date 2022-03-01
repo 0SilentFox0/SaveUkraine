@@ -31,7 +31,7 @@ export default defineComponent({
       required: true,
     },
     photos: {
-      type: Array as PropType<string[]>,
+      type: Array as PropType<number[]>,
       required: true,
     },
   },

@@ -17,7 +17,7 @@ import { defineComponent } from 'vue';
 export default defineComponent({
   props: {
     photo: {
-      type: String,
+      type: Number,
       required: true,
     },
   },
