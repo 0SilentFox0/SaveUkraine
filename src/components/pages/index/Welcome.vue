@@ -6,7 +6,7 @@
           <h2 class="title">#StandWithUkraine</h2>
           <h2 class="title accent-text">#StopWarInUkraine</h2>
           <!-- eslint-disable vue/no-v-html -->
-          <div class="text" v-html="text"></div>
+          <div class="text" v-html="text" />
           <!--eslint-enable-->
           <div class="buttons">
             <VButton
@@ -42,7 +42,7 @@ import VButton from '@/components/ui/VButton/VButton.vue';
 import ImageWebpWrapper from '@/components/ui/ImageWebpWrapper.vue';
 import Container from '@/components/ui/Container.vue';
 import Statistics from '@/components/sections/Statistics.vue';
-import { IStat } from '@/components/sections/content';
+import { IStat } from '@/database/pageInfo.interface';
 
 export default defineComponent({
   components: {
@@ -85,7 +85,6 @@ export default defineComponent({
   background-repeat: no-repeat;
   background-position: center;
 }
-
 .image-wrapper {
   @include media(tablet) {
     display: none;

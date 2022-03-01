@@ -24,7 +24,7 @@
 
 <script lang="ts">
 import { defineComponent, PropType } from 'vue';
-import { IStat } from './content';
+import { IStat } from '@/database/pageInfo.interface';
 
 export default defineComponent({
   props: {

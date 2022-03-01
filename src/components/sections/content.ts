@@ -1,9 +1,4 @@
-export interface IStat {
-  title: string;
-  text: string;
-  link: string;
-  linkText: string;
-}
+import { IStat } from '@/database/pageInfo.interface';
 
 const statsEn: IStat[] = [
   {

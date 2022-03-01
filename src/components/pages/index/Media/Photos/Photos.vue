@@ -20,14 +20,14 @@
 import { defineComponent, PropType } from 'vue';
 import Photo from '@/components/pages/index/Media/Photos/Photo.vue';
 import VPopup from '@/components/ui/VPopup.vue';
-import { IMedia } from '@/components/pages/index/Media/Media.types';
+import { Media } from '@/database/pageInfo.interface';
 
 export default defineComponent({
   components: { VPopup, Photo },
 
   props: {
     photos: {
-      type: Array as PropType<IMedia.Photo[]>,
+      type: Array as PropType<Media.IPhoto[]>,
       required: true,
     },
   },

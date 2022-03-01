@@ -14,13 +14,13 @@
 <script lang="ts">
 import { defineComponent, PropType } from 'vue';
 import ImageWebpWrapper from '@/components/ui/ImageWebpWrapper.vue';
-import { IMedia } from '@/components/pages/index/Media/Media.types';
+import { Media } from '@/database/pageInfo.interface';
 
 export default defineComponent({
   components: { ImageWebpWrapper },
   props: {
     photo: {
-      type: Object as PropType<IMedia.Photo>,
+      type: Object as PropType<Media.IPhoto>,
       required: true,
     },
   },

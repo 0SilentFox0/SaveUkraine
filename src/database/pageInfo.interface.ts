@@ -64,21 +64,19 @@ export namespace Media {
 
 export interface IPageInfo {
   id: number;
-  welcome_section: IWelcomeSection;
-  news: News.IArticle[];
+  language: string;
+  banner_text: string;
+  banner_button_text: string;
   statistics: IStat[];
-  points: {
-    goals: WhatToDo.IHelp;
-    how_to_help: WhatToDo.IHelp;
-    trusted_source: WhatToDo.IHelp;
-  };
-  media: {
-    media_section: {
-      title_photos: string;
-      title_videos: string;
-    };
-    photos: Media.IPhoto[];
-    videos: Media.IVideo[];
-  };
-  seo: ISeo;
+  goal_title: string;
+  goals: WhatToDo.IHelp;
+  how_to_help_title: string;
+  how_to_help: WhatToDo.IHelp;
+  trusted_source_title: string;
+  trusted_source: WhatToDo.IHelp;
+  news_title: string;
+  photos_title: string;
+  videos_title: string;
+  // photos: Media.IPhoto[];
+  seo: ISeo[];
 }

@@ -20,18 +20,18 @@ import { defineComponent, PropType } from 'vue';
 import Container from '@/components/ui/Container.vue';
 import Photos from '@/components/pages/index/Media/Photos/Photos.vue';
 import Videos from '@/components/pages/index/Media/Videos/Videos.vue';
-import { IMedia } from '@/components/pages/index/Media/Media.types';
+import { Media } from '@/database/pageInfo.interface';
 
 export default defineComponent({
   components: { Videos, Photos, Container },
 
   props: {
     videos: {
-      type: Array as PropType<IMedia.Video[]>,
+      type: Array as PropType<Media.IVideo[]>,
       required: true,
     },
     photos: {
-      type: Array as PropType<IMedia.Photo[]>,
+      type: Array as PropType<Media.IPhoto[]>,
       required: true,
     },
   },

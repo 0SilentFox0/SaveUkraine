@@ -22,13 +22,13 @@
 <script lang="ts">
 import { defineComponent, PropType } from 'vue';
 import ImageWebpWrapper from '@/components/ui/ImageWebpWrapper.vue';
-import { INews } from '@/components/pages/index/News/News.types';
+import { News } from '@/database/pageInfo.interface';
 
 export default defineComponent({
   components: { ImageWebpWrapper },
   props: {
     article: {
-      type: Object as PropType<INews.Article>,
+      type: Object as PropType<News.IArticle>,
       required: true,
     },
     size: {
@@ -205,7 +205,6 @@ export default defineComponent({
   }
 
   .big & {
-
     margin-bottom: 30px;
 
     font-size: 48px;

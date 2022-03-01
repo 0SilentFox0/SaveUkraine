@@ -23,15 +23,15 @@
 <script lang="ts">
 import { defineComponent, PropType } from 'vue';
 import ImageWebpWrapper from '@/components/ui/ImageWebpWrapper.vue';
-import { IMedia } from '@/components/pages/index/Media/Media.types';
 import playIcon from '@/assets/img/icons/play.svg?url';
+import { Media } from '@/database/pageInfo.interface';
 
 export default defineComponent({
   components: { ImageWebpWrapper },
 
   props: {
     video: {
-      type: Object as PropType<IMedia.Video>,
+      type: Object as PropType<Media.IVideo>,
       required: true,
     },
   },

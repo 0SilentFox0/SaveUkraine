@@ -1,28 +1,35 @@
 <template>
   <main class="main">
     <HeadWrapper
-      :title="pageInfo.seo.title || ''"
-      :description="pageInfo.seo.description || ''"
+      :title="pageInfo.seo[0].title || ''"
+      :description="pageInfo.seo[0].description || ''"
       :route="$route.path" />
-    <Welcome
-      :stats="pageInfo.statistics"
-      :text="pageInfo.welcome_section.bunner_button">
+    <Welcome :stats="pageInfo.statistics" :text="pageInfo.banner_text">
       <template #buttonText>
-        {{ pageInfo.welcome_section.bunner_button }}
+        {{ pageInfo.banner_button_text }}
       </template>
     </Welcome>
-    <WhatToDo :help-info="pageInfo.points.how_to_help" />
-    <News :news="pageInfo.news">
-      <template #title>LATEST NEWS</template>
+    <WhatToDo
+      :goals="pageInfo.goals"
+      :how-to-help="pageInfo.how_to_help"
+      :trusted-source="pageInfo.trusted_source">
+      <template #goalTitle>
+        {{ pageInfo.goal_title }}
+      </template>
+      <template #howToHelpTitle>
+        {{ pageInfo.how_to_help_title }}
+      </template>
+      <template #sourceTitle>
+        {{ pageInfo.trusted_source_title }}
+      </template>
+    </WhatToDo>
+    <!-- <News :news="pageInfo.news">
+      <template #title>{{ pageInfo.how_to_help_title }}</template>
     </News>
     <Media :photos="pageInfo.media.photos" :videos="pageInfo.media.videos">
-      <template #photos-title>{{
-        pageInfo.media.media_section.title_photos
-      }}</template>
-      <template #videos-title>{{
-        pageInfo.media.media_section.title_videos
-      }}</template>
-    </Media>
+      <template #photos-title>{{ pageInfo.photos_title }}</template>
+      <template #videos-title>{{ pageInfo.videos_title }}</template>
+    </Media> -->
   </main>
 </template>
 
@@ -48,7 +55,7 @@ export default defineComponent({
   async setup() {
     const pageStore = usePageInfoStore();
 
-    await pageStore.getPageInfo({ lang: 'en' });
+    await pageStore.getPageInfo();
 
     return {
       pageStore,
@@ -56,7 +63,9 @@ export default defineComponent({
   },
   computed: {
     pageInfo(): IPageInfo {
-      return this.pageStore.pageInfo;
+      return this.pageStore.pageInfo.find(
+        page => page.language === 'ua',
+      ) as IPageInfo;
     },
   },
 });

@@ -23,13 +23,13 @@
 import { defineComponent, PropType } from 'vue';
 import Container from '@/components/ui/Container.vue';
 import Article from '@/components/pages/index/News/Article.vue';
-import { INews } from '@/components/pages/index/News/News.types';
+import { News } from '@/database/pageInfo.interface';
 
 export default defineComponent({
   components: { Article, Container },
   props: {
     news: {
-      type: Array as PropType<INews.Article[]>,
+      type: Array as PropType<News.IArticle[]>,
       required: true,
     },
   },

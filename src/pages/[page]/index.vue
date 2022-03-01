@@ -4,25 +4,19 @@
       :title="pageInfo.seo.title || ''"
       :description="pageInfo.seo.description || ''"
       :route="$route.path" />
-    <Welcome
-      :stats="pageInfo.statistics"
-      :text="pageInfo.welcome_section.bunner_button">
+    <Welcome :stats="pageInfo.statistics" :text="pageInfo.banner_text">
       <template #buttonText>
-        {{ pageInfo.welcome_section.bunner_button }}
+        {{ pageInfo.bunner_button }}
       </template>
     </Welcome>
-    <WhatToDo :help-info="pageInfo.points.how_to_help" />
-    <News :news="pageInfo.news">
-      <template #title>LATEST NEWS</template>
+    <WhatToDo :help-info="pageInfo.how_to_help" />
+    <!-- <News :news="pageInfo.news">
+      <template #title>{{ pageInfo.how_to_help_title }}</template>
     </News>
     <Media :photos="pageInfo.media.photos" :videos="pageInfo.media.videos">
-      <template #photos-title>{{
-        pageInfo.media.media_section.title_photos
-      }}</template>
-      <template #videos-title>{{
-        pageInfo.media.media_section.title_videos
-      }}</template>
-    </Media>
+      <template #photos-title>{{ pageInfo.photos_title }}</template>
+      <template #videos-title>{{ pageInfo.videos_title }}</template>
+    </Media> -->
   </main>
 </template>
 
@@ -50,15 +44,18 @@ export default defineComponent({
     const pageStore = usePageInfoStore();
     const langSlug = useRoute()?.params.lang as string;
 
-    await pageStore.getPageInfo({ lang: langSlug });
+    await pageStore.getPageInfo();
 
     return {
       pageStore,
+      langSlug,
     };
   },
   computed: {
     pageInfo(): IPageInfo {
-      return this.pageStore.pageInfo;
+      return this.pageStore.pageInfo.find(
+        page => page.language === this.langSlug.replace('/', ''),
+      ) as IPageInfo;
     },
   },
 });
