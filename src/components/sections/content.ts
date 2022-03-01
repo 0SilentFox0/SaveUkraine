@@ -19,7 +19,7 @@ const statsEn: IStat[] = [
     linkText: 'Source',
   },
   {
-    title: '450 miles',
+    title: '280 miles',
     text: 'Length of front line',
     link: 'https://www.cfr.org/global-conflict-tracker/conflict/conflict-ukraine',
     linkText: 'Source',
@@ -40,7 +40,7 @@ const statsRu: IStat[] = [
     linkText: 'Источник',
   },
   {
-    title: '280 miles',
+    title: '450 КМ',
     text: 'Протяженность линии фронта',
     link: 'https://www.cfr.org/global-conflict-tracker/conflict/conflict-ukraine',
     linkText: 'Источник',
