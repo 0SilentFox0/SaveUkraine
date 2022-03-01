@@ -109,6 +109,18 @@ const howToHelpRu: IHelp = {
       text: 'Помочь украинским беженцам',
       link: 'https://www.ukrainenow.org/i-can-host',
     },
+    {
+      text: 'Ресурсы для помощи и сбора средств',
+      link: 'https://helpukrainewin.org/',
+    },
+    {
+      text: 'Международный комитет спасения',
+      link: 'https://www.rescue.org/',
+    },
+    {
+      text: 'Международный комитет красного Креста',
+      link: 'https://www.icrc.org/ru/document/zayavlenie-prezidenta-mkkk-petera-maurera-otnositelno-konflikta-na-territorii-ukrainy',
+    },
   ],
 };
 
@@ -120,7 +132,7 @@ const sourcesRu: IHelp = {
       link: 'https://www.president.gov.ua/',
     },
     {
-      text: 'Министерство Внутренник Дел Украины',
+      text: 'Министерство Внутренних Дел Украины',
       link: 'https://www.facebook.com/mvs.gov.ua',
     },
     {
@@ -165,6 +177,14 @@ const howToHelpUa: IHelp = {
     {
       text: 'Ресурси для допомоги та збору коштів',
       link: 'https://helpukrainewin.org/',
+    },
+    {
+      text: 'Міжнародний комітет порятунку',
+      link: 'https://www.rescue.org/',
+    },
+    {
+      text: 'Міжнародний комітет Червоного Хреста',
+      link: 'https://redcross.org.ua/',
     },
   ],
 };
