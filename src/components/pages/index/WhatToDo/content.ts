@@ -18,7 +18,7 @@ const howToHelpEn: WhatToDo.IHelp = {
     },
     {
       text: 'Donate to Ukrainian civilians',
-      link: 'https://savelife.in.ua/en/donate/',
+      link: 'https://uahelp.monobank.ua/',
     },
     {
       text: 'Help Ukrainian refugees',
@@ -95,7 +95,7 @@ const howToHelpRu: WhatToDo.IHelp = {
     },
     {
       text: 'Помочь мирным жителям, жертвам военных действий',
-      link: 'https://savelife.in.ua/en/donate/',
+      link: 'https://uahelp.monobank.ua/',
     },
     {
       text: 'Помочь украинским беженцам',
@@ -160,7 +160,7 @@ const howToHelpUa: WhatToDo.IHelp = {
     },
     {
       text: 'Допомогти мирним жителям, що стали жертвам воєнних дій',
-      link: 'https://savelife.in.ua/en/donate/',
+      link: 'https://uahelp.monobank.ua/',
     },
     {
       text: 'Допомогти українським біженцям',

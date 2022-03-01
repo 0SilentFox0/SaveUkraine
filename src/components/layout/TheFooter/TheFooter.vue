@@ -18,7 +18,7 @@
           >
         </div>
         <a
-          href="https://savelife.in.ua/en/donate/"
+          href="https://uahelp.monobank.ua/"
           target="_blank"
           class="text black underline"
           >{{ currentLoacaleText.contribute }}</a
