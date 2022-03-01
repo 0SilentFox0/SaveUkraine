@@ -1,5 +1,5 @@
-import article1png from '@/assets/img/pages/index/article/photo/en/article-1.png';
-import article1webp from '@/assets/img/pages/index/article/photo/en/article-1.webp';
+import article1png from '@/assets/img/pages/index/photo/photo-3.png';
+import article1webp from '@/assets/img/pages/index/photo/photo-3.webp';
 import article2png from '@/assets/img/pages/index/article/photo/en/article-2.png';
 import article2webp from '@/assets/img/pages/index/article/photo/en/article-2.webp';
 import article3png from '@/assets/img/pages/index/article/photo/en/article-3.png';
