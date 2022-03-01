@@ -1,22 +1,26 @@
 import { defineStore } from 'pinia';
 import { useCommonStore } from '@/store/common';
 import { ref, Ref } from 'vue';
+import { IPageInfo } from '@/database/pageInfo.interface';
+import { pageInfoGateway } from '@/database/pageInfo.gateway';
 
 interface State {
-  pageInfo: Ref<>;
+  pageInfo: Ref<IPageInfo>;
 }
 
-export const useNewsStore = defineStore('news', () => {
+export const usePageInfoStore = defineStore('pageInfo', () => {
   const { isPrefetched } = useCommonStore();
 
   const state: State = {
-    news: ref<I>({}),
+    pageInfo: ref({} as IPageInfo),
   };
 
   const actions = {
-    async getNews(params: { lang: string }) {
-      if (!state.pageInfo.value.length && !isPrefetched) {
-        state.pageInfo.value = await PageInfo.getPageInfo(params);
+    async getPageInfo(params: { lang: string }) {
+      const isEmpty = !Object.keys(state.pageInfo.value).length;
+
+      if (isEmpty && !isPrefetched) {
+        state.pageInfo.value = await pageInfoGateway.getPageInfo(params);
       }
     },
   };

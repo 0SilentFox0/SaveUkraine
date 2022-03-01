@@ -1,31 +1,27 @@
 <template>
   <main class="main">
     <HeadWrapper
-      title="Stop war in Ukraine"
-      description="Since February 24th, Ukraine is being attacked by Russian armed forces. Thanks to the unity of Ukrainians, we are standing strong but need help to get through this."
+      :title="pageInfo.seo.title || ''"
+      :description="pageInfo.seo.description || ''"
       :route="$route.path" />
-    <Welcome :stats="stats.en">
-      <template #firstText>
-        On February, 24th its whole territory
-        <span class="accent-text">was attacked by Russian armed forces</span> -
-        from the territories of Russia and Belarus, from the sea, and the sky.
-        They are deploying paratroopers, carrying out air strikes and shoot at
-        us from across the border.
+    <Welcome
+      :stats="pageInfo.statistics"
+      :text="pageInfo.welcome_section.bunner_button">
+      <template #buttonText>
+        {{ pageInfo.welcome_section.bunner_button }}
       </template>
-      <template #secondText>
-        Thanks to the Army and the unity of Ukrainians, we are standing strong
-        but
-        <span class="accent-text"> need all the help we can get. </span>
-      </template>
-      <template #buttonText>DONATE TO HELP UKRAINE </template>
     </Welcome>
-    <WhatToDo :help-info="whatToDo.en" />
-    <News :news="news">
+    <WhatToDo :help-info="pageInfo.points.how_to_help" />
+    <News :news="pageInfo.news">
       <template #title>LATEST NEWS</template>
     </News>
-    <Media :photos="images" :videos="videos">
-      <template #photos-title>Photos</template>
-      <template #videos-title>Video</template>
+    <Media :photos="pageInfo.media.photos" :videos="pageInfo.media.videos">
+      <template #photos-title>{{
+        pageInfo.media.media_section.title_photos
+      }}</template>
+      <template #videos-title>{{
+        pageInfo.media.media_section.title_videos
+      }}</template>
     </Media>
   </main>
 </template>
@@ -38,21 +34,30 @@ import News from '@/components/pages/index/News/News.vue';
 import Media from '@/components/pages/index/Media/Media.vue';
 import HeadWrapper from '@/components/ui/HeadWrapper.vue';
 
-import { stats } from '@/components/sections/content';
-import { news } from '@/components/pages/index/News/news_en';
-import { whatToDo } from '@/components/pages/index/WhatToDo/content';
-import { images, videos } from '@/components/pages/index/Media/media_en';
+import { usePageInfoStore } from '@/store/pageInfo';
+import { IPageInfo } from '@/database/pageInfo.interface';
 
 export default defineComponent({
-  components: { News, Welcome, WhatToDo, Media, HeadWrapper },
-  data() {
+  components: {
+    News,
+    Welcome,
+    WhatToDo,
+    Media,
+    HeadWrapper,
+  },
+  async setup() {
+    const pageStore = usePageInfoStore();
+
+    await pageStore.getPageInfo({ lang: 'en' });
+
     return {
-      stats,
-      whatToDo,
-      news,
-      images,
-      videos,
+      pageStore,
     };
+  },
+  computed: {
+    pageInfo(): IPageInfo {
+      return this.pageStore.pageInfo;
+    },
   },
 });
 </script>
