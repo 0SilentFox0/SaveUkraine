@@ -1,10 +1,10 @@
 <template>
   <div class="default-layout">
-    <TheHeader />
+    <TheHeader v-once />
     <div class="layout-content">
       <router-view />
     </div>
-    <TheFooter />
+    <TheFooter v-if="showFooter" v-once />
   </div>
 </template>
 
@@ -20,6 +20,11 @@ export default defineComponent({
   components: {
     TheHeader,
     TheFooter,
+  },
+  computed: {
+    showFooter() {
+      return this.$route.path !== '/404';
+    },
   },
   mounted() {
     window.addEventListener('load', () => {
