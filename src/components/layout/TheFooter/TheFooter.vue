@@ -24,6 +24,13 @@
             <SvgIcon name="youtube" width="54" height="54" class="icon" />
             <span> YOUTUBE </span>
           </a>
+          <a
+            href="https://www.linkedin.com/company/stop-war-in-ukraine"
+            target="_blank"
+            class="text black">
+            <SvgIcon name="linkedin" width="54" height="54" class="icon" />
+            <span> LinkedIn </span>
+          </a>
         </div>
         <a
           href="mailto:help@stopwarukraine.com"
@@ -100,14 +107,12 @@ export default defineComponent({
 
 .socials {
   width: 100%;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto;
 
   @include media(mobile) {
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
+    grid-template-columns: repeat(1, 1fr);
   }
 
   a {

@@ -42,7 +42,7 @@ const howToHelpEn: IHelp = {
     },
     {
       text: 'International Committee of the Red Cross',
-      link: 'https://www.icrc.org/en/where-we-work/europe-central-asia/ukraine',
+      link: 'https://www.icrc.org/en/donate/ukraine-b',
     },
   ],
 };
@@ -119,7 +119,7 @@ const howToHelpRu: IHelp = {
     },
     {
       text: 'Международный комитет красного Креста',
-      link: 'https://www.icrc.org/ru/document/zayavlenie-prezidenta-mkkk-petera-maurera-otnositelno-konflikta-na-territorii-ukrainy',
+      link: 'https://www.icrc.org/en/donate/ukraine-b',
     },
   ],
 };
@@ -184,7 +184,7 @@ const howToHelpUa: IHelp = {
     },
     {
       text: 'Міжнародний комітет Червоного Хреста',
-      link: 'https://redcross.org.ua/',
+      link: 'https://www.icrc.org/en/donate/ukraine-b',
     },
   ],
 };
