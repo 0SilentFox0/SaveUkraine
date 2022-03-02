@@ -70,7 +70,7 @@ export default defineComponent({
   async setup() {
     const pageStore = usePageInfoStore();
 
-    await pageStore.getPageInfo({ lang: 'ua' });
+    await pageStore.getPageInfo({ lang: 'en' });
 
     return {
       pageStore,
