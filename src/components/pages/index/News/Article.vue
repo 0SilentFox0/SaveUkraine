@@ -1,19 +1,23 @@
 <template>
-  <a :href="article.url" rel="noopener nofollow" target="_blank">
+  <a :href="article.link" rel="noopener nofollow" target="_blank">
     <article :class="size" class="article">
       <div class="image">
-        <ImageWebpWrapper
-          :height="imgSize[size].height"
-          :image-default="article.img.png"
-          :image-webp="article.img.webp"
-          :width="imgSize[size].width" />
+        <img
+          v-lazy="{
+            src: `https://stopwarukraine.directus.app/assets/${article.image}`,
+          }"
+          alt="" />
       </div>
       <div class="info">
-        <div v-if="article.resourceIcon" class="resource-logo">
-          <img v-lazy="{ src: article.resourceIcon }" alt="" />
+        <div class="resource-logo">
+          <img
+            v-lazy="{
+              src: `https://stopwarukraine.directus.app/assets/${article.logo}`,
+            }"
+            alt="" />
         </div>
         <div class="title">{{ article.title }}</div>
-        <div class="description">{{ article.description }}</div>
+        <div class="description">{{ article.preview_text }}</div>
       </div>
     </article>
   </a>
@@ -21,11 +25,9 @@
 
 <script lang="ts">
 import { defineComponent, PropType } from 'vue';
-import ImageWebpWrapper from '@/components/ui/ImageWebpWrapper.vue';
 import { News } from '@/database/pageInfo.interface';
 
 export default defineComponent({
-  components: { ImageWebpWrapper },
   props: {
     article: {
       type: Object as PropType<News.IArticle>,

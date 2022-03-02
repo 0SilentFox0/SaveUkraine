@@ -13,7 +13,7 @@
     <div class="grid">
       <Article
         v-for="article in news.slice(3)"
-        :key="article.url"
+        :key="article.link"
         :article="article" />
     </div>
   </Container>

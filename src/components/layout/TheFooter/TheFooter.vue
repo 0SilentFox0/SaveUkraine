@@ -29,15 +29,15 @@
           href="mailto:help@stopwarukraine.com"
           target="_blank"
           class="text black">
-          {{ currentLoacaleText.contact }}
+          <slot name="contantText" />
           help@stopwarukraine.com</a
         >
         <a
           href="https://uahelp.monobank.ua/"
           target="_blank"
-          class="text black"
-          >{{ currentLoacaleText.contribute }}</a
-        >
+          class="text black">
+          <slot name="contributeText" />
+        </a>
       </div>
     </Container>
   </footer>
@@ -49,26 +49,8 @@ import Container from '@/components/ui/Container.vue';
 import SvgIcon from '@/components/ui/SvgIcon.vue';
 
 export default defineComponent({
+  name: 'TheFooter',
   components: { Container, SvgIcon },
-  computed: {
-    currentLoacaleText() {
-      const path = this.$route.path;
-      if (path === '/ru')
-        return {
-          contact: 'СВЯЗЬ С НАМИ',
-          contribute: 'ПОДДЕРЖАТЬ УКРАИНСКУЮ АРМИЮ',
-        };
-      else if (path === '/ua')
-        return {
-          contact: 'ЗʼЯЗОК З НАМИ',
-          contribute: 'ПIДТРИМАТИ УКРАЇНСЬКУ АРМIЮ',
-        };
-      return {
-        contact: 'Contact us at',
-        contribute: 'Contribute to Ukrainian army',
-      };
-    },
-  },
 });
 </script>
 

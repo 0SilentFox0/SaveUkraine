@@ -26,19 +26,13 @@ export namespace WhatToDo {
 }
 
 export namespace News {
-  export interface INewsSection {
-    title: string;
-  }
-
   export interface IArticle {
+    id: string;
     title: string;
-    description: string;
-    resourceIcon?: string;
-    img: {
-      png: string;
-      webp: string;
-    };
-    url: string;
+    preview_text: string;
+    logo: string;
+    image: string;
+    link: string;
   }
 }
 
@@ -60,6 +54,7 @@ export namespace Media {
 export interface IPageInfo {
   id: number;
   language: string;
+  header_button_text: string;
   banner_text: string;
   banner_button_text: string;
   statistics: IStat[];
@@ -70,9 +65,12 @@ export interface IPageInfo {
   trusted_sources_title: string;
   trusted_sources: WhatToDo.ILink[];
   news_title: string;
+  news: News.IArticle[];
   photos_title: string;
   videos_title: string;
   photos: Media.IPhoto[];
   videos: Media.IVideo[];
+  footer_contact_text: string;
+  footer_contribute_text: string;
   seo: ISeo[];
 }

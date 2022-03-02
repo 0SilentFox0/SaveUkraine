@@ -5,6 +5,7 @@ import { JSDOM } from 'jsdom';
 const { render } = require('./dist/server/entry-server.js');
 import manifest from './dist/static/ssr-manifest.json';
 import { generateSitemap, IPage } from '@/utils/sitemap';
+import { allLanguages, ILang } from '@/locales/languages';
 
 const domain = 'https://leadsforce.io/';
 
@@ -49,7 +50,14 @@ let routesToPrerender = fs.readdirSync(toAbsolute('src/pages')).map(file => {
 
   // put requests for pages here
 
-  const allUrls = [...routesToPrerender];
+  const allLanguagesUrls = allLanguages.map((language: ILang) => {
+    if (language.slug !== 'en') {
+      return language.path;
+    }
+    return;
+  }) as string[];
+
+  const allUrls = [...routesToPrerender, ...allLanguagesUrls];
 
   const sitemapRoutes = [] as IPage[];
 

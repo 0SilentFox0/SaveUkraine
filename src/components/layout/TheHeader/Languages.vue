@@ -10,7 +10,7 @@
   </div>
   <div class="languages" :class="{ 'mobile-opened': dropdownOpened }">
     <router-link
-      v-for="locale in items"
+      v-for="locale in allLanguages"
       :key="locale.slug"
       :to="locale.path"
       :class="{ active: locale.path === $route.path }"
@@ -23,33 +23,18 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import SvgIcon from '@/components/ui/SvgIcon.vue';
+import { allLanguages } from '@/locales/languages';
 
 export default defineComponent({
   components: { SvgIcon },
   data: () => ({
-    items: [
-      {
-        name: 'English',
-        slug: 'en',
-        path: '/',
-      },
-      {
-        name: 'Ukrainian',
-        slug: 'ua',
-        path: '/ua',
-      },
-      {
-        name: 'Russian',
-        slug: 'ru',
-        path: '/ru',
-      },
-    ],
+    allLanguages,
     dropdownOpened: false,
   }),
 
   computed: {
     activeItemSlug() {
-      return this.items.find(locale => locale.path === this.$route.path);
+      return this.allLanguages.find(locale => locale.path === this.$route.path);
     },
   },
 
