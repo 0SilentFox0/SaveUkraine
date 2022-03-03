@@ -27,7 +27,7 @@
       </template>
     </WhatToDo>
     <News :news="pageInfo.news">
-      <template #title>{{ pageInfo.how_to_help_title }}</template>
+      <template #title>{{ pageInfo.news_title }}</template>
     </News>
     <Medias :videos="pageInfo.videos" :photos="pageInfo.photos">
       <template #photos-title>{{ pageInfo.photos_title }}</template>
