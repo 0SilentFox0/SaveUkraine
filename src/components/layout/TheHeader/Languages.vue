@@ -63,7 +63,7 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .language {
-  margin: 0 10px;
+  padding: 0 10px;
 
   color: $color-black;
   font-weight: 600;
@@ -77,7 +77,8 @@ export default defineComponent({
   }
 
   &:hover {
-    color: $color-brand-hover;
+    color: $color-brand;
+    background-color: $color-header;
   }
 
   &.active {
@@ -141,7 +142,6 @@ export default defineComponent({
   &.mobile-opened {
     display: flex;
     flex-direction: column;
-    padding: 5px;
 
     background: #ffffff;
     box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.1);
@@ -153,18 +153,15 @@ export default defineComponent({
     }
 
     .language {
-      padding: 15px 0;
+      padding: 15px;
 
       font-weight: 500;
       font-size: 16px;
       line-height: 19px;
       text-transform: none;
 
-      border-bottom: 1px solid #eff0f1;
-
-      &:last-child {
-        border: none;
-      }
+      border-bottom: 1px solid $color-header;
+      border-right: 1px solid $color-header;
     }
   }
 }
