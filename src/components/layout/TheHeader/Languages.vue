@@ -2,13 +2,18 @@
   <div
     class="languages-mobile"
     :class="{ active: dropdownOpened }"
-    @click="toggleDropdown">
+    @click="toggleDropdown"
+    @mouseenter="dropdownOpened = true">
     <span class="language">
       {{ activeItemSlug?.slug }}
     </span>
     <SvgIcon name="globe" width="16" height="16" fill="currentColor" />
   </div>
-  <div class="languages" :class="{ 'mobile-opened': dropdownOpened }">
+  <div
+    class="languages"
+    :class="{ 'mobile-opened': dropdownOpened }"
+    @mouseenter="dropdownOpened = true"
+    @mouseleave="dropdownOpened = false">
     <router-link
       v-for="language in languages"
       :key="language.slug"
@@ -71,13 +76,20 @@ export default defineComponent({
     line-height: 15px;
   }
 
+  &:hover {
+    color: $color-brand-hover;
+  }
+
   &.active {
-    color: #e23328;
+    color: $color-brand;
+
+    &:hover {
+      color: $color-brand-hover;
+    }
   }
 }
 
 .languages-mobile {
-
   position: relative;
 
   display: flex;
@@ -87,7 +99,7 @@ export default defineComponent({
   max-height: 160px;
   overflow-y: scroll;
 
-  color: #121212;
+  color: $color-black;
 
   cursor: pointer;
 
