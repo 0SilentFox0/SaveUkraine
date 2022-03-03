@@ -1,12 +1,12 @@
 import { defineStore } from 'pinia';
 import { useCommonStore } from '@/store/common';
 import { ref, Ref } from 'vue';
-import { IPageInfo } from '@/database/pageInfo.interface';
+import { ILang, IPageInfo } from '@/database/pageInfo.interface';
 import { pageInfoGateway } from '@/database/pageInfo.gateway';
 
 interface State {
   pageInfo: Ref<IPageInfo>;
-  languages: Ref<string[]>;
+  languages: Ref<ILang[]>;
 }
 
 export const usePageInfoStore = defineStore('pageInfo', () => {
@@ -14,7 +14,7 @@ export const usePageInfoStore = defineStore('pageInfo', () => {
 
   const state: State = {
     pageInfo: ref({} as IPageInfo),
-    languages: ref([] as string[]),
+    languages: ref<ILang[]>([]),
   };
 
   const actions = {

@@ -64,7 +64,7 @@ export default defineComponent({
   },
 
   methods: {
-    handleCloseOnEscape(e) {
+    handleCloseOnEscape(e: any) {
       if (e.keyCode === 27) {
         this.$emit('close');
       }
@@ -115,7 +115,6 @@ export default defineComponent({
 
 <style>
 .scroll-off {
-
   margin-right: 17px;
   overflow-y: hidden;
 }

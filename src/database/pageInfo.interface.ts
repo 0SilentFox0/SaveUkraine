@@ -3,6 +3,12 @@ export interface ISeo {
   description: string;
 }
 
+export interface ILang {
+  slug: string;
+  path: string;
+  name: string;
+}
+
 export interface IWelcomeSection {
   banner_text: string;
   bunner_button: string;
@@ -54,6 +60,7 @@ export namespace Media {
 export interface IPageInfo {
   id: number;
   language: string;
+  language_full: string;
   header_button_text: string;
   banner_text: string;
   banner_button_text: string;

@@ -5,8 +5,8 @@ import { JSDOM } from 'jsdom';
 const { render } = require('./dist/server/entry-server.js');
 import manifest from './dist/static/ssr-manifest.json';
 import { generateSitemap, IPage } from '@/utils/sitemap';
-import { ILang } from '@/locales/languages';
 import { pageInfoGateway } from '@/database/pageInfo.gateway';
+import { ILang } from '@/database/pageInfo.interface';
 
 const domain = 'https://stopwarukraine.com/';
 

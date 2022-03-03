@@ -1,26 +1,29 @@
 <template>
-  <a :href="article.link" rel="noopener nofollow" target="_blank">
-    <article :class="size" class="article">
+  <a
+    :href="article.link"
+    rel="noopener nofollow"
+    target="_blank"
+    class="article-link">
+    <div :class="size" class="article">
       <div class="image">
         <img
           v-lazy="{
             src: `https://stopwarukraine.directus.app/assets/${article.image.id}`,
           }"
+          class="news-image"
           alt="" />
       </div>
       <div class="info">
-        <div class="resource-logo">
-          <img
-            v-lazy="{
-              src: `https://stopwarukraine.directus.app/assets/${article.logo.id}`,
-            }"
-            class="resource-logo-img"
-            alt="" />
-        </div>
+        <img
+          v-lazy="{
+            src: `https://stopwarukraine.directus.app/assets/${article.logo.id}`,
+          }"
+          class="resource-logo-img"
+          alt="" />
         <div class="title">{{ article.title }}</div>
         <div class="description">{{ article.preview_text }}</div>
       </div>
-    </article>
+    </div>
   </a>
 </template>
 
@@ -59,8 +62,8 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-.resource-logo-img {
-  height: 50px;
+.article-link {
+  width: 100%;
 }
 .article {
   margin-bottom: 40px;
@@ -75,6 +78,12 @@ export default defineComponent({
       flex-direction: column;
     }
   }
+}
+
+.news-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .image {
@@ -176,7 +185,8 @@ export default defineComponent({
   }
 }
 
-.resource-logo {
+.resource-logo-img {
+  width: 100px;
   margin-bottom: 20px;
 }
 

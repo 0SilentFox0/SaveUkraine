@@ -23,8 +23,8 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import SvgIcon from '@/components/ui/SvgIcon.vue';
-import { allLanguages } from '@/locales/languages';
 import { usePageInfoStore } from '@/store/pageInfo';
+import { ILang } from '@/database/pageInfo.interface';
 
 export default defineComponent({
   components: { SvgIcon },
@@ -34,16 +34,17 @@ export default defineComponent({
     return { pageStore };
   },
   data: () => ({
-    allLanguages,
     dropdownOpened: false,
   }),
 
   computed: {
-    languages() {
+    languages(): ILang[] {
       return this.pageStore.languages;
     },
-    activeItemSlug() {
-      return this.languages.find(locale => locale.path === this.$route.path);
+    activeItemSlug(): ILang {
+      return this.languages.find(
+        locale => locale.path === this.$route.path,
+      ) as ILang;
     },
   },
 
