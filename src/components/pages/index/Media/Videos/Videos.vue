@@ -2,7 +2,7 @@
   <div class="videos">
     <div class="title"><slot name="title"></slot></div>
     <div class="grid">
-      <VideoCard v-for="video in videos" :key="video.url" :video="video" />
+      <VideoCard v-for="video in videos" :key="video.link" :video="video" />
     </div>
   </div>
 </template>

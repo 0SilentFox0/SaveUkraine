@@ -66,8 +66,6 @@ export default defineComponent({
   line-height: 17px;
   text-transform: uppercase;
 
-  cursor: pointer;
-
   @include media(mobile) {
     font-style: 12px !important;
     line-height: 15px;
@@ -79,18 +77,21 @@ export default defineComponent({
 }
 
 .languages-mobile {
+
+  position: relative;
+
   display: flex;
   flex-direction: column;
   align-items: center;
 
-  color: #121212;
-
-  transition: color 0.3s ease-out;
-
-  position: relative;
-
   max-height: 160px;
   overflow-y: scroll;
+
+  color: #121212;
+
+  cursor: pointer;
+
+  transition: color 0.3s ease-out;
 
   @include media(mobile) {
     width: 17px;
@@ -111,14 +112,15 @@ export default defineComponent({
 }
 
 .languages {
-  display: none;
   position: absolute;
   top: $header-height;
   right: 23%;
-  height: 500px;
-  width: 460px;
+
+  display: none;
 
   flex-wrap: wrap;
+  width: 460px;
+  height: 500px;
 
   @media screen and (max-width: 1500px) {
     right: 13%;
@@ -133,8 +135,9 @@ export default defineComponent({
     box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.1);
 
     @include media(mobile) {
-      width: 100vw;
       left: 0;
+
+      width: 100vw;
     }
 
     .language {

@@ -36,8 +36,12 @@ export namespace News {
     id: string;
     title: string;
     preview_text: string;
-    logo: string;
-    image: string;
+    logo: {
+      id: string;
+    };
+    image: {
+      id: string;
+    };
     link: string;
   }
 }
@@ -51,9 +55,11 @@ export namespace Media {
 
   export interface IVideo {
     id: number;
-    image: string;
+    image: {
+      id: string;
+    };
     title: string;
-    url: string;
+    link: string;
   }
 }
 
