@@ -5,7 +5,7 @@
         <div class="image">
           <img
             v-lazy="{
-              src: `https://stopwarukraine.directus.app/assets/${video.image}`,
+              src: `https://stopwarukraine.directus.app/assets/${video.image.id}`,
             }"
             height="236"
             width="374" />

@@ -1,8 +1,8 @@
 <template>
   <main class="main">
     <HeadWrapper
-      :title="pageInfo.seo[0].title || ''"
-      :description="pageInfo.seo[0].description || ''"
+      :title="pageInfo.seo ? pageInfo.seo[0].title : ''"
+      :description="pageInfo.seo ? pageInfo.seo[0].description : ''"
       :route="$route.path" />
     <TheHeader>
       <template #headerButton>{{ pageInfo.header_button_text }}</template>
@@ -70,9 +70,12 @@ export default defineComponent({
   },
   async setup() {
     const pageStore = usePageInfoStore();
-    const langSlug = useRoute()?.params.lang as string;
+    const lang = useRoute()?.params.page as string;
 
-    await pageStore.getPageInfo({ lang: langSlug });
+    await Promise.all([
+      pageStore.getPageInfo({ lang }),
+      pageStore.getLanguages(),
+    ]);
 
     return {
       pageStore,

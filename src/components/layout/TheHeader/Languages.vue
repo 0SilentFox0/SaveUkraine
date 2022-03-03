@@ -10,12 +10,12 @@
   </div>
   <div class="languages" :class="{ 'mobile-opened': dropdownOpened }">
     <router-link
-      v-for="locale in allLanguages"
-      :key="locale.slug"
-      :to="locale.path"
-      :class="{ active: locale.path === $route.path }"
+      v-for="language in languages"
+      :key="language.slug"
+      :to="language.path"
+      :class="{ active: language.path === $route.path }"
       class="language"
-      >{{ dropdownOpened ? locale.name : locale.slug }}
+      >{{ dropdownOpened ? language.name : language.slug }}
     </router-link>
   </div>
 </template>
@@ -24,17 +24,26 @@
 import { defineComponent } from 'vue';
 import SvgIcon from '@/components/ui/SvgIcon.vue';
 import { allLanguages } from '@/locales/languages';
+import { usePageInfoStore } from '@/store/pageInfo';
 
 export default defineComponent({
   components: { SvgIcon },
+  setup() {
+    const pageStore = usePageInfoStore();
+
+    return { pageStore };
+  },
   data: () => ({
     allLanguages,
     dropdownOpened: false,
   }),
 
   computed: {
+    languages() {
+      return this.pageStore.languages;
+    },
     activeItemSlug() {
-      return this.allLanguages.find(locale => locale.path === this.$route.path);
+      return this.languages.find(locale => locale.path === this.$route.path);
     },
   },
 
@@ -105,6 +114,10 @@ export default defineComponent({
   position: absolute;
   top: $header-height;
   right: 23%;
+  height: 500px;
+  width: 460px;
+
+  flex-wrap: wrap;
 
   @media screen and (max-width: 1500px) {
     right: 13%;
@@ -114,7 +127,6 @@ export default defineComponent({
     display: flex;
     flex-direction: column;
     padding: 5px;
-    width: 230px;
 
     background: #ffffff;
     box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.1);

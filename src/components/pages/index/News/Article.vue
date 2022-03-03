@@ -4,7 +4,7 @@
       <div class="image">
         <img
           v-lazy="{
-            src: `https://stopwarukraine.directus.app/assets/${article.image}`,
+            src: `https://stopwarukraine.directus.app/assets/${article.image.id}`,
           }"
           alt="" />
       </div>
@@ -12,8 +12,9 @@
         <div class="resource-logo">
           <img
             v-lazy="{
-              src: `https://stopwarukraine.directus.app/assets/${article.logo}`,
+              src: `https://stopwarukraine.directus.app/assets/${article.logo.id}`,
             }"
+            class="resource-logo-img"
             alt="" />
         </div>
         <div class="title">{{ article.title }}</div>
@@ -58,6 +59,9 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
+.resource-logo-img {
+  height: 50px;
+}
 .article {
   margin-bottom: 40px;
 
