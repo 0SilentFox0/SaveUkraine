@@ -88,10 +88,10 @@ export default defineComponent({
 }
 
 .socials {
-  width: 100%;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
   grid-template-rows: auto;
+  grid-template-columns: repeat(2, 1fr);
+  width: 100%;
 
   @include media(mobile) {
     grid-template-columns: repeat(1, 1fr);
@@ -99,8 +99,8 @@ export default defineComponent({
 
   a {
     display: flex;
-    justify-content: center;
     align-items: baseline;
+    justify-content: center;
     margin-right: 10px;
 
     @include media(laptop) {
@@ -137,8 +137,8 @@ export default defineComponent({
   color: $color-white;
   font-weight: bold;
   font-size: 72px;
-  line-height: 68px;
   font-family: $secondary-font;
+  line-height: 68px;
 
   cursor: pointer;
 
@@ -146,6 +146,7 @@ export default defineComponent({
 
   @include media(tablet) {
     width: 100%;
+
     font-size: 24px;
     line-height: 36px;
     text-align: center;

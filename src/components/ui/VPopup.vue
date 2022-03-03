@@ -48,10 +48,10 @@ export default defineComponent({
         }
 
         if (isOpened) {
-          document.querySelector('body').classList.add('scroll-off');
+          document.querySelector('body')?.classList.add('scroll-off');
           document.addEventListener('keydown', this.handleCloseOnEscape);
         } else {
-          document.querySelector('body').classList.remove('scroll-off');
+          document.querySelector('body')?.classList.remove('scroll-off');
           document.removeEventListener('keydown', this.handleCloseOnEscape);
         }
       },
@@ -64,7 +64,7 @@ export default defineComponent({
   },
 
   methods: {
-    handleCloseOnEscape(e) {
+    handleCloseOnEscape(e: any) {
       if (e.keyCode === 27) {
         this.$emit('close');
       }
@@ -115,7 +115,6 @@ export default defineComponent({
 
 <style>
 .scroll-off {
-
   margin-right: 17px;
   overflow-y: hidden;
 }

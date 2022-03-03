@@ -3,6 +3,12 @@ export interface ISeo {
   description: string;
 }
 
+export interface ILang {
+  slug: string;
+  path: string;
+  name: string;
+}
+
 export interface IWelcomeSection {
   banner_text: string;
   bunner_button: string;
@@ -30,8 +36,12 @@ export namespace News {
     id: string;
     title: string;
     preview_text: string;
-    logo: string;
-    image: string;
+    logo: {
+      id: string;
+    };
+    image: {
+      id: string;
+    };
     link: string;
   }
 }
@@ -45,15 +55,18 @@ export namespace Media {
 
   export interface IVideo {
     id: number;
-    image: string;
+    image: {
+      id: string;
+    };
     title: string;
-    url: string;
+    link: string;
   }
 }
 
 export interface IPageInfo {
   id: number;
   language: string;
+  language_full: string;
   header_button_text: string;
   banner_text: string;
   banner_button_text: string;

@@ -5,7 +5,9 @@
       <span class="text">Live</span>
     </div>
     <div class="title"><slot name="title"></slot></div>
-    <Article :article="news[0]" size="big" />
+    <div class="row-1">
+      <Article :article="news[0]" size="big" />
+    </div>
     <div class="row-2">
       <Article :article="news[1]" size="medium" />
       <Article :article="news[2]" size="medium" />
@@ -81,6 +83,10 @@ export default defineComponent({
     font-size: 44px;
     line-height: 50px;
   }
+}
+
+.row-1 {
+  width: 100%;
 }
 
 .row-2 {

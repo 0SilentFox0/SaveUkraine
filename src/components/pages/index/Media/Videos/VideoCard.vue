@@ -1,6 +1,6 @@
 <template>
   <div class="video-card">
-    <a :href="video.url" target="_blank" rel="noopener nofollow">
+    <a :href="video.link" target="_blank" rel="noopener nofollow">
       <div class="thumb">
         <div class="image">
           <img

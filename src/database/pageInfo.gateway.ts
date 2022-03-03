@@ -1,6 +1,6 @@
 import { directus } from '@/plugins/axios';
 
-import { IPageInfo } from './pageInfo.interface';
+import { ILang, IPageInfo } from './pageInfo.interface';
 
 export async function getLanguages() {
   const pages = (
@@ -14,7 +14,7 @@ export async function getLanguages() {
     })
   ).data.data;
 
-  const languages = pages.map((page: any) => {
+  const languages: ILang[] = pages.map((page: IPageInfo) => {
     if (page.language === 'eng')
       return { slug: 'eng', path: '/', name: page.language_full };
 
