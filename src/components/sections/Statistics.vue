@@ -14,7 +14,7 @@
             target="_blank"
             rel="noopener nofollow"
             class="link">
-            {{ stat.linkText }}</a
+            {{ stat.link_text }}</a
           >
         </div>
       </div>
@@ -24,7 +24,7 @@
 
 <script lang="ts">
 import { defineComponent, PropType } from 'vue';
-import { IStat } from './content';
+import { IStat } from '@/database/pageInfo.interface';
 
 export default defineComponent({
   props: {

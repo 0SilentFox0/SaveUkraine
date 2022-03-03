@@ -5,12 +5,9 @@
         <div class="text-content">
           <h2 class="title">#StandWithUkraine</h2>
           <h2 class="title accent-text">#StopWarInUkraine</h2>
-          <div class="text">
-            <slot name="firstText" />
-          </div>
-          <div class="text">
-            <slot name="secondText" />
-          </div>
+          <!-- eslint-disable vue/no-v-html -->
+          <div class="text" v-html="text" />
+          <!--eslint-enable-->
           <div class="buttons">
             <VButton
               class="btn"
@@ -39,19 +36,27 @@
 
 <script lang="ts">
 import { defineComponent, PropType } from 'vue';
-// import HeadWrapper from '@/components/ui/HeadWrapper.vue';
 import ukraineWebp from '@/assets/img/pages/index/ua.webp';
 import ukrainePng from '@/assets/img/pages/index/ua.png';
 import VButton from '@/components/ui/VButton/VButton.vue';
 import ImageWebpWrapper from '@/components/ui/ImageWebpWrapper.vue';
 import Container from '@/components/ui/Container.vue';
 import Statistics from '@/components/sections/Statistics.vue';
-import { IStat } from '@/components/sections/content';
+import { IStat } from '@/database/pageInfo.interface';
 
 export default defineComponent({
-  components: { VButton, ImageWebpWrapper, Container, Statistics },
+  components: {
+    VButton,
+    ImageWebpWrapper,
+    Container,
+    Statistics,
+  },
 
   props: {
+    text: {
+      type: String,
+      default: '',
+    },
     stats: {
       type: Array as PropType<IStat[]>,
       required: true,
@@ -80,7 +85,6 @@ export default defineComponent({
   background-repeat: no-repeat;
   background-position: center;
 }
-
 .image-wrapper {
   @include media(tablet) {
     display: none;
@@ -133,10 +137,6 @@ export default defineComponent({
 
   font-size: 15px;
   line-height: 24px;
-}
-
-.accent-text {
-  color: $color-brand;
 }
 
 .title {

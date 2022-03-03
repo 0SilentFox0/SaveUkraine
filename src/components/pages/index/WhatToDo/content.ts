@@ -1,14 +1,6 @@
-export interface ILink {
-  text: string;
-  link: string;
-}
+import { WhatToDo } from '@/database/pageInfo.interface';
 
-export interface IHelp {
-  title: string;
-  content: ILink[] | string[];
-}
-
-const goalEn: IHelp = {
+const goalEn: WhatToDo.IHelp = {
   title: 'Our goal:',
   content: [
     'Stop War in Ukraine',
@@ -17,7 +9,7 @@ const goalEn: IHelp = {
   ],
 };
 
-const howToHelpEn: IHelp = {
+const howToHelpEn: WhatToDo.IHelp = {
   title: 'How to help',
   content: [
     {
@@ -47,7 +39,7 @@ const howToHelpEn: IHelp = {
   ],
 };
 
-const sourcesEn: IHelp = {
+const sourcesEn: WhatToDo.IHelp = {
   title: 'Trusted sources',
   content: [
     {
@@ -85,7 +77,7 @@ const sourcesEn: IHelp = {
   ],
 };
 
-const goalRu: IHelp = {
+const goalRu: WhatToDo.IHelp = {
   title: 'Наша цель:',
   content: [
     'Остановить войну в Украине',
@@ -94,7 +86,7 @@ const goalRu: IHelp = {
   ],
 };
 
-const howToHelpRu: IHelp = {
+const howToHelpRu: WhatToDo.IHelp = {
   title: 'Как помочь?',
   content: [
     {
@@ -124,7 +116,7 @@ const howToHelpRu: IHelp = {
   ],
 };
 
-const sourcesRu: IHelp = {
+const sourcesRu: WhatToDo.IHelp = {
   title: 'Проверенные\nновостные\nисточники',
   content: [
     {
@@ -150,7 +142,7 @@ const sourcesRu: IHelp = {
   ],
 };
 
-const goalUa: IHelp = {
+const goalUa: WhatToDo.IHelp = {
   title: 'Наша цiль:',
   content: [
     'Зупинити війну в Україні',
@@ -159,7 +151,7 @@ const goalUa: IHelp = {
   ],
 };
 
-const howToHelpUa: IHelp = {
+const howToHelpUa: WhatToDo.IHelp = {
   title: 'Як допомогти',
   content: [
     {
@@ -189,7 +181,7 @@ const howToHelpUa: IHelp = {
   ],
 };
 
-const sourcesUa: IHelp = {
+const sourcesUa: WhatToDo.IHelp = {
   title: 'Перевірені\nджерела\nIнформації',
   content: [
     {

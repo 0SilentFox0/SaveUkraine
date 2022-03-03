@@ -15,8 +15,8 @@
             href="https://uahelp.monobank.ua/"
             rel="noopener nofollow"
             tag="a"
-            target="_blank"
-            >{{ buttonText }}
+            target="_blank">
+            <slot name="headerButton" />
           </VButton>
         </div>
       </div>
@@ -31,6 +31,7 @@ import logo from '@/assets/img/global/logo.svg?url';
 import Languages from '@/components/layout/TheHeader/Languages.vue';
 
 export default defineComponent({
+  name: 'TheHeader',
   components: {
     Languages,
     VButton,
@@ -42,15 +43,6 @@ export default defineComponent({
         logo,
       },
     };
-  },
-
-  computed: {
-    buttonText() {
-      const path = this.$route.path;
-      if (path === '/ru') return 'ПОМОЧЬ УКРАИНЕ';
-      else if (path === '/ua') return 'Support Ukraine';
-      return 'Support Ukraine';
-    },
   },
 });
 </script>

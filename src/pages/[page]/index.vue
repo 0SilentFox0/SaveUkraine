@@ -56,6 +56,7 @@ import TheFooter from '@/components/layout/TheFooter/TheFooter.vue';
 
 import { usePageInfoStore } from '@/store/pageInfo';
 import { IPageInfo } from '@/database/pageInfo.interface';
+import { useRoute } from 'vue-router';
 
 export default defineComponent({
   components: {
@@ -69,9 +70,10 @@ export default defineComponent({
   },
   async setup() {
     const pageStore = usePageInfoStore();
+    const lang = useRoute()?.params.page as string;
 
     await Promise.all([
-      pageStore.getPageInfo({ lang: 'eng' }),
+      pageStore.getPageInfo({ lang }),
       pageStore.getLanguages(),
     ]);
 

@@ -15,8 +15,21 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
+import { useCommonStore } from './store/common';
 
-export default defineComponent({});
+export default defineComponent({
+  setup() {
+    const commonStore = useCommonStore();
+
+    return {
+      commonStore,
+    };
+  },
+
+  mounted() {
+    this.commonStore.setIsPrefetched(false);
+  },
+});
 </script>
 
 <style lang="scss" scoped></style>

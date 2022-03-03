@@ -1,5 +1,6 @@
 <template>
   <section class="welcome">
+    <!-- <TheHeader v-once /> -->
     <Container>
       <div class="content">
         <VButton to="/" class="btn"> Back to main page </VButton>

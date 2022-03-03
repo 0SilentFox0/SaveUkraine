@@ -5,8 +5,10 @@ import { JSDOM } from 'jsdom';
 const { render } = require('./dist/server/entry-server.js');
 import manifest from './dist/static/ssr-manifest.json';
 import { generateSitemap, IPage } from '@/utils/sitemap';
+import { ILang } from '@/locales/languages';
+import { pageInfoGateway } from '@/database/pageInfo.gateway';
 
-const domain = 'https://leadsforce.io/';
+const domain = 'https://stopwarukraine.com/';
 
 const toAbsolute = (p: string) => path.resolve(__dirname, p);
 
@@ -48,19 +50,25 @@ let routesToPrerender = fs.readdirSync(toAbsolute('src/pages')).map(file => {
   // pre-render each route...
 
   // put requests for pages here
+  const allLanguages = await pageInfoGateway.getLanguages();
+  const allLanguagesUrls = allLanguages.map((language: ILang) => {
+    return language.path;
+  }) as string[];
 
-  const allUrls = [...routesToPrerender];
+  const allUrls = [...routesToPrerender, ...allLanguagesUrls];
 
   const sitemapRoutes = [] as IPage[];
+  console.log(allUrls);
+  for await (const url of allUrls) {
+    if (url.includes('[')) continue;
 
-  allUrls.forEach(async (url: string) => {
     sitemapRoutes.push({
       path: domain + url,
       lastmod: new Date(),
       changefreq: 'daily',
       priority: 1.0,
     });
-
+    console.log('URL: ', url);
     const { html, preloadLinks } = await render(url, manifest);
 
     const newTemplate = replaceHead(template);
@@ -77,7 +85,7 @@ let routesToPrerender = fs.readdirSync(toAbsolute('src/pages')).map(file => {
       fs.outputFile(toAbsolute(filePath + 'index.html'), htmlTemplate),
     ]);
     console.log('pre-rendered:', filePath + 'index.html');
-  });
+  }
 
   await generateSitemap({
     outputDir: './dist/static',

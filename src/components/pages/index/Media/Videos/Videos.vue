@@ -10,14 +10,14 @@
 <script lang="ts">
 import { defineComponent, PropType } from 'vue';
 import VideoCard from '@/components/pages/index/Media/Videos/VideoCard.vue';
-import { IMedia } from '@/components/pages/index/Media/Media.types';
+import { Media } from '@/database/pageInfo.interface';
 
 export default defineComponent({
   components: { VideoCard },
 
   props: {
     videos: {
-      type: Array as PropType<IMedia.Video[]>,
+      type: Array as PropType<Media.IVideo[]>,
       required: true,
     },
   },

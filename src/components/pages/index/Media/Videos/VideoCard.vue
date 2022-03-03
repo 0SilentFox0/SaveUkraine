@@ -3,9 +3,10 @@
     <a :href="video.url" target="_blank" rel="noopener nofollow">
       <div class="thumb">
         <div class="image">
-          <ImageWebpWrapper
-            :image-default="video.thumb.png"
-            :image-webp="video.thumb.webp"
+          <img
+            v-lazy="{
+              src: `https://stopwarukraine.directus.app/assets/${video.image.id}`,
+            }"
             height="236"
             width="374" />
         </div>
@@ -22,16 +23,13 @@
 
 <script lang="ts">
 import { defineComponent, PropType } from 'vue';
-import ImageWebpWrapper from '@/components/ui/ImageWebpWrapper.vue';
-import { IMedia } from '@/components/pages/index/Media/Media.types';
 import playIcon from '@/assets/img/icons/play.svg?url';
+import { Media } from '@/database/pageInfo.interface';
 
 export default defineComponent({
-  components: { ImageWebpWrapper },
-
   props: {
     video: {
-      type: Object as PropType<IMedia.Video>,
+      type: Object as PropType<Media.IVideo>,
       required: true,
     },
   },

@@ -3,21 +3,18 @@
     <Container>
       <div class="content">
         <div class="block goals">
-          <span class="title"> {{ helpInfo.goal.title }} </span>
+          <span class="title"> <slot name="goalTitle" /> </span>
           <div class="goal-item-box">
-            <div
-              v-for="(item, index) in helpInfo.goal.content"
-              :key="index"
-              class="goal-item">
+            <div v-for="(item, index) in goals" :key="index" class="goal-item">
               <span class="goal-number">#{{ index + 1 }}</span>
-              <span class="goal-text">{{ item }}</span>
+              <span class="goal-text">{{ item.goal }}</span>
             </div>
           </div>
         </div>
         <div class="block how-to-help">
-          <span class="title"> {{ helpInfo.howToHelp.title }} </span>
+          <span class="title"> <slot name="howToHelpTitle" /> </span>
           <div
-            v-for="(item, index) in helpInfo.howToHelp.content"
+            v-for="(item, index) in howToHelp"
             :key="index"
             class="how-to-help-item">
             <a
@@ -29,9 +26,9 @@
           </div>
         </div>
         <div class="block sources">
-          <span class="title">{{ helpInfo.sources.title }} </span>
+          <span class="title"> <slot name="sourceTitle" /> </span>
           <div
-            v-for="(item, index) in helpInfo.sources.content"
+            v-for="(item, index) in trustedSource"
             :key="index"
             class="how-to-help-item">
             <a
@@ -48,14 +45,23 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent, PropType } from 'vue';
 import Container from '@/components/ui/Container.vue';
+import { WhatToDo } from '@/database/pageInfo.interface';
 
 export default defineComponent({
   components: { Container },
   props: {
-    helpInfo: {
-      type: Object,
+    goals: {
+      type: Array as PropType<WhatToDo.IGoal[]>,
+      required: true,
+    },
+    howToHelp: {
+      type: Array as PropType<WhatToDo.ILink[]>,
+      required: true,
+    },
+    trustedSource: {
+      type: Array as PropType<WhatToDo.ILink[]>,
       required: true,
     },
   },

@@ -25,8 +25,6 @@ import dw from '@/assets/img/pages/index/article/icon/dw.png';
 import espresso from '@/assets/img/pages/index/article/icon/espresso.png';
 import ukrainianTruth from '@/assets/img/pages/index/article/icon/ukrainian-truth.svg?url';
 
-import { INews } from '@/components/pages/index/News/News.types';
-
 export const news: INews.Article[] = [
   {
     title:
