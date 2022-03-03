@@ -71,7 +71,7 @@ export default defineComponent({
     const pageStore = usePageInfoStore();
 
     await Promise.all([
-      pageStore.getPageInfo({ lang: 'eng' }),
+      pageStore.getPageInfo({ lang: 'en' }),
       pageStore.getLanguages(),
     ]);
 

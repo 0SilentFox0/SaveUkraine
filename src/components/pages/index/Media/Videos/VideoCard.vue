@@ -1,6 +1,6 @@
 <template>
   <div class="video-card">
-    <a :href="video.link" target="_blank" rel="noopener nofollow">
+    <a class="link" :href="video.link" target="_blank" rel="noopener nofollow">
       <div class="thumb">
         <div class="image">
           <img
@@ -41,6 +41,9 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
+.link {
+  display: block;
+}
 .thumb {
   position: relative;
 

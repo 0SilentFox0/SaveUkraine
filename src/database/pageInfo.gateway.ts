@@ -15,8 +15,8 @@ export async function getLanguages() {
   ).data.data;
 
   const languages: ILang[] = pages.map((page: IPageInfo) => {
-    if (page.language === 'eng')
-      return { slug: 'eng', path: '/', name: page.language_full };
+    if (page.language === 'en')
+      return { slug: 'en', path: '/', name: page.language_full };
 
     return {
       slug: page.language,
