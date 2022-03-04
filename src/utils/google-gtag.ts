@@ -3,7 +3,7 @@ export const initGTag = () => {
 
   const gtagScript = document.createElement('script');
 
-  gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-7K0JRMEYR3';
+  gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=UA-222088630-1';
 
   gtagScript.async = true;
 
@@ -13,10 +13,10 @@ export const initGTag = () => {
 
   awScript.innerHTML = `
     window.dataLayer = window.dataLayer || [];
-    function gtag(){window.dataLayer.push(arguments);}
-    gtag('js', new Date());
-    
-    gtag('config', 'G-7K0JRMEYR3');
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-222088630-1');
     `;
 
   gtagScript.onload = () =>
