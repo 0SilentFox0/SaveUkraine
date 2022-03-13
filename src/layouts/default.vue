@@ -10,14 +10,12 @@
 import { defineComponent } from 'vue';
 
 import { initGTag } from '@/utils/google-gtag';
-import { initGoogleTagManager } from '@/utils/google-tag-manager';
 
 export default defineComponent({
   name: 'DefaultLayout',
   mounted() {
     window.addEventListener('load', () => {
       initGTag();
-      initGoogleTagManager();
     });
   },
 });
